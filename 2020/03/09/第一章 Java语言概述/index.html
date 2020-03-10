@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583754477694&di=d47ff8f87aa5b9681aecc5c39f66319f&imgtype=0&src=http%253A%252F%252Fsz.tedu.cn%252Fupload%252F20171127%252F20171127165435_329.jpg">
 <meta property="article:published_time" content="2020-03-09T07:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-09T09:26:18.597Z">
+<meta property="article:modified_time" content="2020-03-10T04:50:36.234Z">
 <meta property="article:author" content="Crazy-Sky">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java SE">
@@ -166,7 +166,7 @@
 					<i class="far fa-clock"></i>&nbsp;
                     
                     
-                    22 分钟 读完 (大约 3358 个字)
+                    22 分钟 读完 (大约 3349 个字)
                 </span>
                 
                 
@@ -220,7 +220,7 @@
 </blockquote>
 <h3 id="Java语言概述"><a href="#Java语言概述" class="headerlink" title="Java语言概述"></a>Java语言概述</h3><blockquote>
 <ul>
-<li>是SUN(Stanford University Network，斯坦福大学网络公司)1995年推出的一门高级编程语言。<br>  95年，SUN发布JDK 1.0，98年，JDK1.2，后续JDK1.3， 1.4，1.5（更名为Java5.0）最新为JDK10。</li>
+<li>是SUN(Stanford University Network，斯坦福大学网络公司)1995年推出的一门高级编程语言。<br>  95年，SUN发布JDK 1.0，98年，JDK1.2，后续JDK1.3， 1.4，1.5（更名为Java5.0）最新为JDK13。</li>
 <li>是一种面向Internet的编程语言。</li>
 <li>随着Java技术在web方面的不断成熟，已经成为Web应用程序的首选开发语言。</li>
 </ul>
@@ -305,7 +305,7 @@
 <h3 id="什么是JDK，JRE"><a href="#什么是JDK，JRE" class="headerlink" title="什么是JDK，JRE"></a>什么是JDK，JRE</h3><blockquote>
 <ul>
 <li><strong>JDK(Java Development Kit    Java开发工具包)</strong><br>  JDK是提供给Java开发人员使用的，其中包含了java的开发工具，也包括了JRE。所以安装了JDK，就不用在单独安装JRE了。<pre><code>其中的开发工具：编译工具(javac.exe)  打包工具(jar.exe)等</code></pre></li>
-<li>*<em>JRE(Java Runtime Environment    Java运行环境) *</em><br>  包括Java虚拟机(JVM Java Virtual Machine)和Java程序所需的核心类库等，如果想要运行一个开发好的Java程序，计算机中只需要安装JRE即可。<br>简单而言，使用JDK的开发工具完成的java程序，交给JRE去运行。</li>
+<li><strong>JRE(Java Runtime Environment    Java运行环境)</strong><br>  包括Java虚拟机(JVM Java Virtual Machine)和Java程序所需的核心类库等，如果想要运行一个开发好的Java程序，计算机中只需要安装JRE即可。<br>简单而言，使用JDK的开发工具完成的java程序，交给JRE去运行。</li>
 </ul>
 </blockquote>
 <h3 id="JVM、JRE、JDK-关系"><a href="#JVM、JRE、JDK-关系" class="headerlink" title="JVM、JRE、JDK 关系"></a>JVM、JRE、JDK 关系</h3><blockquote>
@@ -326,10 +326,6 @@
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
 
 <h3 id="步骤二：编译"><a href="#步骤二：编译" class="headerlink" title="步骤二：编译"></a>步骤二：编译</h3><blockquote>
 <ul>
@@ -376,20 +372,11 @@
 <li>文档注释（java特有）</li>
 </ul>
 </blockquote>
-<h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><blockquote>
-<p>格式： </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注释文字</span></span><br></pre></td></tr></table></figure>
+<h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注释文字</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><blockquote>
-<p>格式：    </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  注释文字 */</span></span><br></pre></td></tr></table></figure>
+<h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  注释文字 */</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="文档注释（java特有）"><a href="#文档注释（java特有）" class="headerlink" title="文档注释（java特有）"></a>文档注释（java特有）</h3><blockquote>
-<p>格式：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>  指定java程序的作者</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span>  指定源文件的版本</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>   方法的参数说明信息</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="文档注释（java特有）"><a href="#文档注释（java特有）" class="headerlink" title="文档注释（java特有）"></a>文档注释（java特有）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>  指定java程序的作者</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span>  指定源文件的版本</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>   方法的参数说明信息</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h3><blockquote>
 <ul>
