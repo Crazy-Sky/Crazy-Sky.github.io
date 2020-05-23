@@ -7,13 +7,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: 算法 - Crazy-Sky</title>
+<title>标签: 双指针 - Crazy-Sky</title>
 
 
     <meta name="description" content="Crazy-Sky个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Crazy-Sky">
-<meta property="og:url" content="http://crazy-sky.github.io/categories/%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:url" content="http://crazy-sky.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
 <meta property="og:description" content="Crazy-Sky个人博客">
 <meta property="og:locale" content="zh_CN">
@@ -72,6 +72,7 @@
 
 <link rel="stylesheet" href="/css/style.css">
 </head>
+<!-- <body class="is-3-column"> -->
 <body class="is-3-column">
     <nav class="navbar navbar-main">
     <div class="container">
@@ -131,9 +132,8 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">算法</a></li>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">双指针</a></li>
         </ul>
         </nav>
     </div>
@@ -143,16 +143,21 @@
 <div class="card">
     
     <div class="card-image">
-        <a href="/2020/03/10/%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/" class="image is-7by1">
-            <img class="thumbnail" src="https://bkimg.cdn.bcebos.com/pic/c8177f3e6709c93d043f7cfc9c3df8dcd00054ef?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2U4MA==,xp_5,yp_5" alt="四则运算">
+        <a href="/2020/05/23/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/" class="image is-7by1">
+            <img class="thumbnail" src="/thumbnails/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/leetcode.png" alt="167. 两数之和 II - 输入有序数组">
         </a>
     </div>
     
     <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/23/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">167. 两数之和 II - 输入有序数组</a>
+            
+        </h1>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-03-09T16:34:00.000Z">2020-03-10</time>
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-05-23T07:48:51.426Z">2020-05-23</time>
                 
 				
                 
@@ -160,21 +165,24 @@
 					<i class="far fa-clock"></i>&nbsp;
                     
                     
-                    8 分钟 读完 (大约 1138 个字)
+                    5 分钟 读完 (大约 692 个字)
                 </span>
                 
                 
             </div>
         </div>
         
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/10/%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/">四则运算</a>
-            
-        </h1>
         <div class="content">
-            <h2 id="1、题目要求"><a href="#1、题目要求" class="headerlink" title="1、题目要求"></a>1、题目要求</h2><blockquote>
-<p>写一个能自动生成小学四则运算题目的命令行 “软件”。<br>具体要求：任何编程语言都可以，命令行程序接受一个数字输入，然后输出相应数目的四则运算题目和答案。例如输入数字是 30， 那就输出 30 道题目和答案。 运算式子必须至少有两个运算符，运算数字是在 100 之内的正整数，答案不能是负数。 如：<br>23 - 3 * 4 = 11<br>扩展要求：看看小学三、四、五年级的四则运算要求， 逐步实现各个年级的难度。 写博客记录自己实现每一个扩展的思路。 在扩展的过程种，你是独立开发每个年级的运算题的功能，处理四年级的代码和三年级的代码没有任何联系，还是逐步把一些公共的代码放在一起？ 或者你用面向对象的方法，运用基类 (base class) 和子类来管理各种不同的需求和实现的细节？  </p>
+            <p><strong>题目：167. 两数之和 II - 输入有序数组</strong><br>给定一个已按照升序排列的有序数组，找到两个数使得它们相加之和等于目标数。</p>
+<p>函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。</p>
+<p><strong>说明:</strong></p>
+<ul>
+<li>返回的下标值（index1 和 index2）不是从零开始的。</li>
+<li>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。</li>
+</ul>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p>输入: numbers = [2, 7, 11, 15], target = 9<br>输出: [1,2]<br>解释: 2 与 7 之和等于目标数 9。因此 index1 = 1, index2 = 2 。</p>
 </blockquote>
         </div>
 		
@@ -186,13 +194,13 @@
 				
 				<div class="level-item is-size-7 is-uppercase">
 					<i class="fas fa-tags has-text-grey"></i>&nbsp;
-					<a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>,&nbsp;<a class="has-link-grey -link" href="/tags/Java-SE/" rel="tag">Java SE</a>,&nbsp;<a class="has-link-grey -link" href="/tags/OOP/" rel="tag">OOP</a>
+					<a class="has-link-grey -link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a>
 				</div>
 				
 			</div>
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/10/%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2020/05/23/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -253,7 +261,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            6
+                            7
                         </p>
                     </a>
                 </div>
@@ -384,20 +392,20 @@
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/LeetCode/">
+            <span class="level-start">
+                <span class="level-item">LeetCode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/%E5%AD%A6%E4%B9%A0/">
             <span class="level-start">
                 <span class="level-item">学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/%E7%AE%97%E6%B3%95/">
-            <span class="level-start">
-                <span class="level-item">算法</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li>
             </ul>
@@ -410,7 +418,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/Java-SE/" style="font-size: 15px;">Java SE</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 20px;">软件工程</a>
+        <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Java-SE/" style="font-size: 10px;">Java SE</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 10px;">双指针</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" style="font-size: 20px;">软件工程</a>
     </div>
 </div>
     
@@ -425,18 +433,37 @@
         
         <article class="media">
             
-            <a href="/2020/03/10/%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/" class="media-left">
+            <a href="/2020/05/23/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bkimg.cdn.bcebos.com/pic/c8177f3e6709c93d043f7cfc9c3df8dcd00054ef?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2U4MA==,xp_5,yp_5" alt="四则运算">
+                    <img class="thumbnail" src="/thumbnails/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/leetcode.png" alt="167. 两数之和 II - 输入有序数组">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-09T16:34:00.000Z">2020-03-10</time></div>
-                    <a href="/2020/03/10/%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">四则运算</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-23T07:48:51.426Z">2020-05-23</time></div>
+                    <a href="/2020/05/23/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/" class="title has-link-black-ter is-size-6 has-text-weight-normal">167. 两数之和 II - 输入有序数组</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/26/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/d009b3de9c82d158e8ea11eb870a19d8bc3e427b.jpg" alt="第二部分 结构化分析与设计方法（一）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-26T06:05:34.360Z">2020-03-26</time></div>
+                    <a href="/2020/03/26/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第二部分 结构化分析与设计方法（一）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
                     </p>
                 </div>
             </div>
@@ -499,25 +526,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/03/03/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/d009b3de9c82d158e8ea11eb870a19d8bc3e427b.jpg" alt="第一部分 软件工程概述（一）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-03T09:56:00.000Z">2020-03-03</time></div>
-                    <a href="/2020/03/03/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第一部分 软件工程概述（一）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -528,6 +536,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/03/">
@@ -556,20 +575,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java-SE/">
                         <span class="tag">Java SE</span>
-                        <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/OOP/">
-                        <span class="tag">OOP</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -582,9 +594,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
+                        <span class="tag">双指针</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
                         <span class="tag">软件工程</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -612,18 +631,37 @@
         
         <article class="media">
             
-            <a href="/2020/03/10/%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/" class="media-left">
+            <a href="/2020/05/23/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bkimg.cdn.bcebos.com/pic/c8177f3e6709c93d043f7cfc9c3df8dcd00054ef?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2U4MA==,xp_5,yp_5" alt="四则运算">
+                    <img class="thumbnail" src="/thumbnails/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/leetcode.png" alt="167. 两数之和 II - 输入有序数组">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-09T16:34:00.000Z">2020-03-10</time></div>
-                    <a href="/2020/03/10/%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/" class="title has-link-black-ter is-size-6 has-text-weight-normal">四则运算</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-23T07:48:51.426Z">2020-05-23</time></div>
+                    <a href="/2020/05/23/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/" class="title has-link-black-ter is-size-6 has-text-weight-normal">167. 两数之和 II - 输入有序数组</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                        <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/26/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/d009b3de9c82d158e8ea11eb870a19d8bc3e427b.jpg" alt="第二部分 结构化分析与设计方法（一）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-26T06:05:34.360Z">2020-03-26</time></div>
+                    <a href="/2020/03/26/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第二部分 结构化分析与设计方法（一）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
                     </p>
                 </div>
             </div>
@@ -686,25 +724,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/03/03/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/d009b3de9c82d158e8ea11eb870a19d8bc3e427b.jpg" alt="第一部分 软件工程概述（一）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-03T09:56:00.000Z">2020-03-03</time></div>
-                    <a href="/2020/03/03/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第一部分 软件工程概述（一）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -715,6 +734,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/03/">
@@ -743,20 +773,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java-SE/">
                         <span class="tag">Java SE</span>
-                        <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/OOP/">
-                        <span class="tag">OOP</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -769,9 +792,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
+                        <span class="tag">双指针</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
                         <span class="tag">软件工程</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
