@@ -7,21 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>88. 合并两个有序数组 - Crazy-Sky</title>
+<title>215. 数组中的第K个最大元素 - Crazy-Sky</title>
 
 
-    <meta name="description" content="leetcode 88. 合并两个有序数组">
+    <meta name="description" content="leetcode 215. 数组中的第K个最大元素">
 <meta property="og:type" content="article">
-<meta property="og:title" content="88. 合并两个有序数组">
-<meta property="og:url" content="http://crazy-sky.github.io/2020/03/22/88.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:title" content="215. 数组中的第K个最大元素">
+<meta property="og:url" content="http://crazy-sky.github.io/2020/04/01/215.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
-<meta property="og:description" content="leetcode 88. 合并两个有序数组">
+<meta property="og:description" content="leetcode 215. 数组中的第K个最大元素">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
-<meta property="article:published_time" content="2020-03-22T08:24:00.000Z">
-<meta property="article:modified_time" content="2020-06-23T11:38:44.003Z">
+<meta property="article:published_time" content="2020-04-01T06:47:00.000Z">
+<meta property="article:modified_time" content="2020-06-23T11:40:06.453Z">
 <meta property="article:author" content="Crazy-Sky">
-<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="排序，堆排序，快速排序">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/head.jpg" alt="88. 合并两个有序数组" height="28">
+                <img src="/images/head.jpg" alt="215. 数组中的第K个最大元素" height="28">
             
             </a>
         </div>
@@ -140,20 +140,20 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="88. 合并两个有序数组">
+            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="215. 数组中的第K个最大元素">
         </span>
     </div>
     
     <div class="card-content article ">
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                88. 合并两个有序数组
+                215. 数组中的第K个最大元素
             
         </h1>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-03-22T08:24:00.000Z">2020-03-22</time>
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-04-01T06:47:00.000Z">2020-04-01</time>
                 
                 <div class="level-item">
 				<i class="far fa-folder-open has-text-grey"></i>&nbsp;
@@ -163,7 +163,7 @@
 				
                 <div class="level-item">
 				<i class="fas fa-tags has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a>
+                <a class="has-link-grey -link" href="/tags/%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" rel="tag">排序，堆排序，快速排序</a>
                 </div>
                 
                 
@@ -171,7 +171,7 @@
 					<i class="far fa-clock"></i>&nbsp;
                     
                     
-                    2 分钟 读完 (大约 367 个字)
+                    6 分钟 读完 (大约 872 个字)
                 </span>
                 
                 
@@ -184,39 +184,45 @@
         </div>
         
         <div class="content">
-            <p>leetcode 88. 合并两个有序数组</p>
+            <p>leetcode 215. 数组中的第K个最大元素</p>
 <a id="more"></a>
 
 <hr>
-<p><strong>题目：88. 合并两个有序数组</strong></p>
-<p>给你两个有序整数数组 <em>nums1</em> 和 <em>nums2*，请你将 *nums2</em> 合并到 <em>nums1</em> 中<em>，</em>使 <em>nums1</em> 成为一个有序数组。</p>
+<p><strong>题目：215. 数组中的第K个最大元素</strong></p>
+<p>在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。</p>
+<p><strong>示例1:</strong></p>
+<blockquote>
+<p>输入: [3,2,1,5,6,4] 和 k = 2<br>输出: 5</p>
+</blockquote>
+<p><strong>示例2:</strong></p>
+<blockquote>
+<p>输入: [3,2,3,1,2,4,5,5,6] 和 k = 4<br>输出: 4</p>
+</blockquote>
 <p><strong>说明:</strong></p>
-<blockquote>
-<p>初始化 nums1 和 nums2 的元素数量分别为 m 和 n 。<br>你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。</p>
-</blockquote>
-<p><strong>示例:</strong></p>
-<blockquote>
-<p>输入:<br>    nums1 = [1,2,3,0,0,0], m = 3<br>    nums2 = [2,5,6],       n = 3<br>输出: [1,2,2,3,5,6]</p>
-</blockquote>
-<h2 id="方法：双指针（快慢指针）"><a href="#方法：双指针（快慢指针）" class="headerlink" title="方法：双指针（快慢指针）"></a>方法：双指针（快慢指针）</h2><p><strong>思路：</strong>双指针（快慢指针） ，一个指针指向nums1的尾部，一个指针指向nums2的尾部，从尾到头遍历，比较大小之后将大的一方放入到nums1尾部，指针向前移一格。</p>
-<p><strong>运行数据：</strong>执行用时：0 ms，内存消耗：39.7 MB</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// i标识头nums1指针位置，j标识nums2指针位置</span></span><br><span class="line">    <span class="keyword">int</span> i = m - <span class="number">1</span>, j = n - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 双指针（快慢指针）算法</span></span><br><span class="line">    <span class="keyword">while</span> (j &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">0</span> || nums1[i] &lt; nums2[j]) &#123;</span><br><span class="line">            nums1[i + j + <span class="number">1</span>]  = nums2[j--];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            nums1[i + j + <span class="number">1</span>]  = nums1[i--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。</p>
+<h2 id="方法一：java-util-Arrays的sort方法"><a href="#方法一：java-util-Arrays的sort方法" class="headerlink" title="方法一：java.util.Arrays的sort方法"></a>方法一：java.util.Arrays的sort方法</h2><p><strong>思路：</strong>使用java.util.Arrays的sort方法排序</p>
+<p><strong>运行数据：</strong>执行用时：2 ms，内存消耗：40.4 MB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="keyword">return</span> nums[nums.length - k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p><strong>相关链接：</strong></p>
-<ul>
-<li><a href="https://crazy-sky.github.io/2020/03/14/双指针/">双指针算法思想</a></li>
-</ul>
+<h2 id="方法二：堆排序（大顶堆）"><a href="#方法二：堆排序（大顶堆）" class="headerlink" title="方法二：堆排序（大顶堆）"></a>方法二：堆排序（大顶堆）</h2><p><strong>思路：</strong>使用堆排序（大顶堆）</p>
+<p><strong>运行数据：</strong>执行用时：2 ms，内存消耗：39.9 MB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = nums.length;</span><br><span class="line">    createBigHeap(nums, len);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过大顶堆排序，找出第 k个最大的元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> temp = nums[len - i];</span><br><span class="line">        nums[len - i] = nums[<span class="number">0</span>];</span><br><span class="line">        nums[<span class="number">0</span>] = temp;</span><br><span class="line">        adjustBigHeap(nums, <span class="number">0</span>, len - i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> nums[len - k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建大顶堆</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createBigHeap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = len / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="comment">//从第一个非叶子结点从下至上，从右至左调整结构</span></span><br><span class="line">        adjustBigHeap(nums, i, len);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调整大顶堆</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">adjustBigHeap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = nums[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i * <span class="number">2</span> + <span class="number">1</span>; j &lt; len; j = j * <span class="number">2</span> + <span class="number">1</span>)&#123; <span class="comment">// 遍历从i开始的左子节点，左子节点的左子节点</span></span><br><span class="line">        <span class="keyword">if</span>(j + <span class="number">1</span> &lt; len &amp;&amp; nums[j] &lt; nums[j + <span class="number">1</span>])&#123; <span class="comment">// 如果左子结点小于右子结点，则将子节点指针j指向右子结点</span></span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(nums[j] &gt; temp)&#123; <span class="comment">// 如果子节点大于父节点，将子节点值赋给父节点，并将父节点指针i指向该子节点</span></span><br><span class="line">            nums[i] = nums[j];</span><br><span class="line">            i = j;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    nums[i] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法三：快速排序（快速选择）"><a href="#方法三：快速排序（快速选择）" class="headerlink" title="方法三：快速排序（快速选择）"></a>方法三：快速排序（快速选择）</h2><p><strong>思路：</strong>使用快速排序，并结合题目要求对其进行优化。（通过随机数确定枢轴，降低有序数据对快速排序的影响，当确定了第 k个最大的元素时，结束快速排序，直接返回结果）</p>
+<p><strong>运行数据：</strong>执行用时：2 ms，内存消耗：39.9 MB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> len = nums.length;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> high = len - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将第 k个最大的元素的下标赋值给k（从小到大排序）</span></span><br><span class="line">    k = len - k;</span><br><span class="line">    <span class="comment">// 枢轴位置</span></span><br><span class="line">    <span class="keyword">int</span> pos;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 结合题目需求，优化后的快速排序</span></span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        pos = partition(nums, low, high);</span><br><span class="line">        <span class="keyword">if</span> (pos == k) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span>  <span class="keyword">if</span> (pos &gt; k) &#123;</span><br><span class="line">            high = pos - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            low = pos + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 进行一次快速排序，确定枢轴位置</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过随机数确定枢轴，降低有序数据对快速排序的影响</span></span><br><span class="line">    Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">int</span> random_index = low + random.nextInt(high - low); </span><br><span class="line">    <span class="comment">// 枢轴</span></span><br><span class="line">    <span class="keyword">int</span> temp = nums[random_index];</span><br><span class="line">    nums[random_index] = nums[low];</span><br><span class="line">    nums[low] = temp;</span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[high] &gt;= temp) &#123; <span class="comment">// 从右往左找小于枢轴的元素</span></span><br><span class="line">            high--;</span><br><span class="line">        &#125;</span><br><span class="line">        nums[low] = nums[high];</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high &amp;&amp; nums[low] &lt;= temp) &#123; <span class="comment">// 从左往右找大于枢轴的元素</span></span><br><span class="line">            low++;</span><br><span class="line">        &#125;</span><br><span class="line">        nums[high] = nums[low];</span><br><span class="line">    &#125;</span><br><span class="line">    nums[low] = temp;</span><br><span class="line">    <span class="keyword">return</span> low; <span class="comment">// 返回枢轴位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
 <p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
 
         </div>
 		
         <ul class="post-copyright">
-			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/03/22/88.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">88. 合并两个有序数组</a></li>
+			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/04/01/215.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/">215. 数组中的第K个最大元素</a></li>
 			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
-			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/03/22/88.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">http://crazy-sky.github.io/2020/03/22/88.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</a></li>
-			<li><strong>发布时间：</strong>2020-03-22</li>
+			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/04/01/215.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/">http://crazy-sky.github.io/2020/04/01/215.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/</a></li>
+			<li><strong>发布时间：</strong>2020-04-01</li>
 			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
         </ul>
     	
@@ -226,7 +232,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a>
+                    <a class="has-link-grey -link" href="/tags/%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" rel="tag">排序，堆排序，快速排序</a>
                 </div>
             </div>
         </div>
@@ -276,17 +282,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/24/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">141. 环形链表</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/20/680.%20%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2%20%E2%85%A1/">
-                <span class="level-item">680. 验证回文字符串 Ⅱ</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/30/6675.%20%E5%BA%A6%E5%BA%A6%E7%86%8A%E4%B8%8E%E6%8E%92%E5%88%97/">
+                <span class="level-item">6675. 度度熊与排列</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -423,8 +422,14 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#方法：双指针（快慢指针）">
-        <span>方法：双指针（快慢指针）</span>
+        <a class="is-flex" href="#方法一：java-util-Arrays的sort方法">
+        <span>方法一：java.util.Arrays的sort方法</span>
+        </a></li><li>
+        <a class="is-flex" href="#方法二：堆排序（大顶堆）">
+        <span>方法二：堆排序（大顶堆）</span>
+        </a></li><li>
+        <a class="is-flex" href="#方法三：快速排序（快速选择）">
+        <span>方法三：快速排序（快速选择）</span>
         </a></li></ul>
             </div>
         </div>
@@ -448,7 +453,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/head.jpg" alt="88. 合并两个有序数组" height="28">
+                    <img src="/images/head.jpg" alt="215. 数组中的第K个最大元素" height="28">
                 
                 </a>
                 <p class="is-size-7">
