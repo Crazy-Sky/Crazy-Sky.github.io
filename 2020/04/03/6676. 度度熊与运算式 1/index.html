@@ -7,23 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>633. 平方数之和 - Crazy-Sky</title>
+<title>6676. 度度熊与运算式 1 - Crazy-Sky</title>
 
 
-    <meta name="description" content="leetcode 633. 平方数之和">
+    <meta name="description" content="HDOJ 6676. 度度熊与运算式 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="633. 平方数之和">
-<meta property="og:url" content="http://crazy-sky.github.io/2020/03/16/633.%20%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C/index.html">
+<meta property="og:title" content="6676. 度度熊与运算式 1">
+<meta property="og:url" content="http://crazy-sky.github.io/2020/04/03/6676.%20%E5%BA%A6%E5%BA%A6%E7%86%8A%E4%B8%8E%E8%BF%90%E7%AE%97%E5%BC%8F%201/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
-<meta property="og:description" content="leetcode 633. 平方数之和">
+<meta property="og:description" content="HDOJ 6676. 度度熊与运算式 1">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
-<meta property="article:published_time" content="2020-03-16T06:46:00.000Z">
-<meta property="article:modified_time" content="2020-06-23T11:40:42.449Z">
+<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/HDOJ/hdoj.png">
+<meta property="article:published_time" content="2020-04-03T06:32:00.000Z">
+<meta property="article:modified_time" content="2020-06-24T15:33:50.350Z">
 <meta property="article:author" content="Crazy-Sky">
-<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="2019 年百度之星·程序设计大赛 - 初赛二">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
+<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/HDOJ/hdoj.png">
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/head.jpg" alt="633. 平方数之和" height="28">
+                <img src="/images/head.jpg" alt="6676. 度度熊与运算式 1" height="28">
             
             </a>
         </div>
@@ -140,30 +140,30 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="633. 平方数之和">
+            <img class="thumbnail" src="/thumbnails/HDOJ/hdoj.png" alt="6676. 度度熊与运算式 1">
         </span>
     </div>
     
     <div class="card-content article ">
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                633. 平方数之和
+                6676. 度度熊与运算式 1
             
         </h1>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-03-16T06:46:00.000Z">2020-03-16</time>
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-04-03T06:32:00.000Z">2020-04-03</time>
                 
                 <div class="level-item">
 				<i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                <a class="has-link-grey -link" href="/categories/HDOJ/">HDOJ</a>
                 </div>
                 
 				
                 <div class="level-item">
 				<i class="fas fa-tags has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a>
+                <a class="has-link-grey -link" href="/tags/2019-%E5%B9%B4%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%C2%B7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B-%E5%88%9D%E8%B5%9B%E4%BA%8C/" rel="tag">2019 年百度之星·程序设计大赛 - 初赛二</a>
                 </div>
                 
                 
@@ -171,7 +171,7 @@
 					<i class="far fa-clock"></i>&nbsp;
                     
                     
-                    5 分钟 读完 (大约 793 个字)
+                    6 分钟 读完 (大约 926 个字)
                 </span>
                 
                 
@@ -184,47 +184,55 @@
         </div>
         
         <div class="content">
-            <p>leetcode 633. 平方数之和</p>
+            <p>HDOJ 6676. 度度熊与运算式 1</p>
 <a id="more"></a>
 
 <hr>
-<p><strong>题目：633. 平方数之和</strong></p>
-<p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a^2 + b^2 = c。</p>
-<p><strong>示例1:</strong></p>
+<p><strong>题目：6676. 度度熊与运算式 1</strong></p>
+<p><strong>问题描述：</strong></p>
+<p>某天度熊发现了一个由 n+1 个数字 1 组成的运算式如下：</p>
+<p>1 op1 1 op2 1 … 1 opn 1</p>
+<p>其中 opi 可能是 ⊕ (按位异或运算) 或是 ? (问号)。</p>
+<p>例如当 n=5 时，式子可能长成这样：1⊕1 ? 1⊕1 ? 1 ? 1</p>
+<p>现在，度熊想把所有的 ‘?’ 取代为 + 或 ⊕。</p>
+<p>(贴心提示： 加法运算的优先级比按位异或运算还高)</p>
+<p>请问取代完后此运算式可能的最大运算结果为何？</p>
+<p><strong>输入：</strong></p>
 <blockquote>
-<p>输入: 5<br>输出: True<br>解释: 1 * 1 + 2 * 2 = 5</p>
+<p>有多组询问，第一行包含一个正整数 T 代表有几组询问，接着每组测试数据占一行，包含一个长度为 n 的字符串，仅由 ‘^’和 ‘?’组成，第 i 个字符若是 ‘^’ 就代表 opi=⊕，否则 opi 就是问号。(n 的值不会在数据中出现，请由字符串长度来判断。)<br>1≤n≤2^21−2<br> 所有询问的 n 的总和不超过 2×10^7</p>
 </blockquote>
-<p><strong>示例2:</strong></p>
+<p><strong>输出：</strong></p>
 <blockquote>
-<p>输入: 3<br>输出: False</p>
+<p>对于每一个询问输出一行包含一个整数代表答案，也就是该算式的问号被取代后可能的最大运算结果。</p>
 </blockquote>
-<h2 id="方法一：双指针（对撞指针）"><a href="#方法一：双指针（对撞指针）" class="headerlink" title="方法一：双指针（对撞指针）"></a>方法一：双指针（对撞指针）</h2><p><strong>思路：</strong>由题意可得a^2、b^2的最小值为0，最大值不能大于c。由于是平方和，且只需判断是否存在，因此负整数对结果没影响 ；由于负整数的平方值跟他对应的正整数的平方值相等，所以只需考虑非负整数即可；综上所述，可使用双指针一个指针指向值较小的元素，一个指针指向值较大的元素。指向较小元素的指针从头向尾遍历，指向较大元素的指针从尾向头遍历。</p>
-<p><strong>运行数据：</strong>执行用时：2 ms，内存消耗：36.2 MB</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// i标识头指针位置，j标识尾指针位置，通过sqrt确定尾指针最大值，在确定头指针最小值</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = (<span class="keyword">int</span>)Math.sqrt(c), sum = <span class="number">0</span>;</span><br><span class="line">    i = (<span class="keyword">int</span>)Math.sqrt(c - j * j);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 双指针（对撞指针）算法</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= j) &#123;</span><br><span class="line">        sum = i * i + j * j;</span><br><span class="line">        <span class="keyword">if</span> (sum == c) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; c) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="方法二：直接使用sqrt"><a href="#方法二：直接使用sqrt" class="headerlink" title="方法二：直接使用sqrt"></a>方法二：直接使用sqrt</h2><p><strong>思路：</strong>直接使用sqrt函数确定a的最大值，并对其进行枚举，通过b^2=c-a^2得出b平方的值，最后通过sqrt判断b平方开方取整是否等于b。</p>
-<p><strong>运行数据：</strong>执行用时：4 ms，内存消耗：36.4 MB</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">long</span> a = <span class="number">0</span>; a * a &lt;= c; a++) &#123;</span><br><span class="line">        <span class="keyword">double</span> b = Math.sqrt(c - a * a);</span><br><span class="line">        <span class="keyword">if</span> (b == (<span class="keyword">int</span>) b) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="方法三：费马平方和定理"><a href="#方法三：费马平方和定理" class="headerlink" title="方法三：费马平方和定理"></a>方法三：费马平方和定理</h2><p><strong>思路：</strong>根据费马平方和定理得出的：一个非负整数 c 能够表示为两个整数的平方和，当且仅当 c 的所有形如 4k+3 的质因子的幂次均为偶数。证明方法可以见 <a href="http://wstein.org/edu/124/lectures/lecture21/lecture21/node2.html">这里</a>。</p>
-<p><strong>运行数据：</strong>执行用时：0 ms，内存消耗：36 MB</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 判断因子c是否满足条件，因为c是c自己的因数，幂次是奇数（幂次只能为1），若C为4k+3的形式，将不满足推论</span></span><br><span class="line">    <span class="keyword">if</span> ((c &amp; <span class="number">3</span>) == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断在2到c开平方之间的因子是否满足条件</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= c; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (c % i == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (c % i == <span class="number">0</span>) &#123;</span><br><span class="line">                count++;</span><br><span class="line">                c /= i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> ((i &amp; <span class="number">3</span>) == <span class="number">3</span> &amp;&amp; count % <span class="number">2</span> != <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断1和在c开平方到c之间的因子是否满足条件</span></span><br><span class="line">    <span class="keyword">return</span> (c &amp; <span class="number">3</span>) != <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>样本输入：</strong></p>
+<blockquote>
+<p>4<br>?<br>??<br>^^<br>^^^</p>
+</blockquote>
+<p> <strong>样本输出：</strong></p>
+<blockquote>
+<p>2<br>3<br>1<br>0</p>
+</blockquote>
+<p><strong>注意：</strong></p>
+<p>样例的第一组询问算式为：<code>1?1</code>。取代后有 2种可能 1+1和 1^1，其中 1+1=2、1^1=0，所以最大的可能值是 2。</p>
+<p>样例的第二组询问算式为：<code>1?1?1</code>。取代后有 4 种可能 1+1+1,1+1^1,1^1+1和 1^1^1，</p>
+<p>样例的第三组询问算式为：1^1^1。并不包含问号，只有唯一的运算结果 1。</p>
+<p>样例的第四组询问算式为：1^1^1^1。并不包含问号，只有唯一的运算结果 0。</p>
+<h2 id="方法：异或原理"><a href="#方法：异或原理" class="headerlink" title="方法：异或原理"></a>方法：异或原理</h2><p><strong>思路：</strong>将字符串按^分成多个小段，把每个小段整理成为2的i次幂（幂次i不能相同， i &gt; 0）的段，从而使得不同幂次间的小段执行^时最大，再处理其他整理之后剩余的不满足2的i次幂（幂次i不能相同， i &gt; 0）的段，这些剩余的小段要么不能分解为2的i次幂（小段的值是1），要么能分解但幂次与之前分解的小段相同(若分解，合并执行^时，会相互抵消，使得最后的值变小，所以这样的小段只能将小段中的？变为^，从而使得小段的值最小，执行^时相互抵消最小)</p>
+<p><strong>运行数据：</strong>执行用时：1014MS，内存消耗：15832K</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> t = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span> (t-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			String s = sc.next();</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 记录1的个数</span></span><br><span class="line">			<span class="keyword">int</span> numLen = s.length() + <span class="number">1</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 用split方法分段</span></span><br><span class="line">			String[] sections = s.split(<span class="string">"\\^"</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 分段数</span></span><br><span class="line">			<span class="keyword">int</span> sectionLen = sections.length;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 如果分段数为0，说明源字符串s全为^</span></span><br><span class="line">			<span class="keyword">if</span> (sectionLen == <span class="number">0</span>) &#123;</span><br><span class="line">				System.out.println(numLen % <span class="number">2</span>);</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 将每一段整理分成多个2的i次幂（幂次i不能相同， i &gt; 0）段并执行^，余下不为2的i次幂（幂次i不能相同， i &gt; 0）的段不处理</span></span><br><span class="line">			<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span> (String section : sections) &#123;</span><br><span class="line">				<span class="keyword">int</span> len = section.length() + <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = Integer.toBinaryString(len).length() - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">					<span class="keyword">if</span> ((sum &amp; (<span class="number">1</span> &lt;&lt; i)) &gt; <span class="number">0</span> || len &lt; (<span class="number">1</span> &lt;&lt; i)) <span class="keyword">continue</span>;</span><br><span class="line">					len -= (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">					sum ^= (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 判断余下不为2的i次幂（幂次i不能相同， i &gt; 0）的段的和是否为奇数</span></span><br><span class="line">			<span class="keyword">if</span> ((numLen - sum) % <span class="number">2</span> &gt; <span class="number">0</span>) sum ^= <span class="number">1</span>;</span><br><span class="line">			</span><br><span class="line">			System.out.println(sum);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p><strong>相关链接：</strong></p>
-<ul>
-<li><a href="https://crazy-sky.github.io/2020/03/14/双指针/">双指针算法思想</a></li>
-</ul>
 <p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
 <p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
 
         </div>
 		
         <ul class="post-copyright">
-			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/03/16/633.%20%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C/">633. 平方数之和</a></li>
+			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/04/03/6676.%20%E5%BA%A6%E5%BA%A6%E7%86%8A%E4%B8%8E%E8%BF%90%E7%AE%97%E5%BC%8F%201/">6676. 度度熊与运算式 1</a></li>
 			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
-			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/03/16/633.%20%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C/">http://crazy-sky.github.io/2020/03/16/633.%20%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C/</a></li>
-			<li><strong>发布时间：</strong>2020-03-16</li>
+			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/04/03/6676.%20%E5%BA%A6%E5%BA%A6%E7%86%8A%E4%B8%8E%E8%BF%90%E7%AE%97%E5%BC%8F%201/">http://crazy-sky.github.io/2020/04/03/6676.%20%E5%BA%A6%E5%BA%A6%E7%86%8A%E4%B8%8E%E8%BF%90%E7%AE%97%E5%BC%8F%201/</a></li>
+			<li><strong>发布时间：</strong>2020-04-03</li>
 			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
         </ul>
     	
@@ -234,7 +242,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a>
+                    <a class="has-link-grey -link" href="/tags/2019-%E5%B9%B4%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%C2%B7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B-%E5%88%9D%E8%B5%9B%E4%BA%8C/" rel="tag">2019 年百度之星·程序设计大赛 - 初赛二</a>
                 </div>
             </div>
         </div>
@@ -284,17 +292,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/18/345.%20%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">345. 反转字符串中的元音字母</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/14/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                <span class="level-item">双指针</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/01/215.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0/">
+                <span class="level-item">215. 数组中的第K个最大元素</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -431,14 +432,8 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#方法一：双指针（对撞指针）">
-        <span>方法一：双指针（对撞指针）</span>
-        </a></li><li>
-        <a class="is-flex" href="#方法二：直接使用sqrt">
-        <span>方法二：直接使用sqrt</span>
-        </a></li><li>
-        <a class="is-flex" href="#方法三：费马平方和定理">
-        <span>方法三：费马平方和定理</span>
+        <a class="is-flex" href="#方法：异或原理">
+        <span>方法：异或原理</span>
         </a></li></ul>
             </div>
         </div>
@@ -462,7 +457,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/head.jpg" alt="633. 平方数之和" height="28">
+                    <img src="/images/head.jpg" alt="6676. 度度熊与运算式 1" height="28">
                 
                 </a>
                 <p class="is-size-7">
