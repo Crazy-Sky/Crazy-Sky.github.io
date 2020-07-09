@@ -7,23 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>第二部分 结构化分析与设计方法（一） - Crazy-Sky</title>
+<title>435. 无重叠区间 - Crazy-Sky</title>
 
 
-    <meta name="description" content="郑人杰 《软件工程概论》（第2版）第二部分 结构化分析与设计方法（一） 课后习题题解">
+    <meta name="description" content="leetcode 435. 无重叠区间">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第二部分 结构化分析与设计方法（一）">
-<meta property="og:url" content="http://crazy-sky.github.io/2020/03/05/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:title" content="435. 无重叠区间">
+<meta property="og:url" content="http://crazy-sky.github.io/2020/04/13/435.%20%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
-<meta property="og:description" content="郑人杰 《软件工程概论》（第2版）第二部分 结构化分析与设计方法（一） 课后习题题解">
+<meta property="og:description" content="leetcode 435. 无重叠区间">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/d009b3de9c82d158e8ea11eb870a19d8bc3e427b.jpg">
-<meta property="article:published_time" content="2020-03-05T12:55:00.000Z">
-<meta property="article:modified_time" content="2020-05-24T10:02:15.981Z">
+<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
+<meta property="article:published_time" content="2020-04-13T08:28:00.000Z">
+<meta property="article:modified_time" content="2020-07-09T08:36:19.975Z">
 <meta property="article:author" content="Crazy-Sky">
-<meta property="article:tag" content="软件工程">
+<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/d009b3de9c82d158e8ea11eb870a19d8bc3e427b.jpg">
+<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
 
 
 
@@ -82,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/head.jpg" alt="第二部分 结构化分析与设计方法（一）" height="28">
+                <img src="/images/head.jpg" alt="435. 无重叠区间" height="28">
             
             </a>
         </div>
@@ -140,30 +141,30 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/d009b3de9c82d158e8ea11eb870a19d8bc3e427b.jpg" alt="第二部分 结构化分析与设计方法（一）">
+            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="435. 无重叠区间">
         </span>
     </div>
     
     <div class="card-content article ">
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                第二部分 结构化分析与设计方法（一）
+                435. 无重叠区间
             
         </h1>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-03-05T12:55:00.000Z">2020-03-05</time>
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-04-13T08:28:00.000Z">2020-04-13</time>
                 
                 <div class="level-item">
 				<i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
                 </div>
                 
 				
                 <div class="level-item">
 				<i class="fas fa-tags has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="tag">软件工程</a>
+                <a class="has-link-grey -link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a>, <a class="has-link-grey -link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a>
                 </div>
                 
                 
@@ -171,7 +172,7 @@
 					<i class="far fa-clock"></i>&nbsp;
                     
                     
-                    12 分钟 读完 (大约 1804 个字)
+                    6 分钟 读完 (大约 911 个字)
                 </span>
                 
                 
@@ -184,65 +185,45 @@
         </div>
         
         <div class="content">
-            <p>郑人杰 《软件工程概论》（第2版）第二部分 结构化分析与设计方法（一） 课后习题题解</p>
+            <p>leetcode 435. 无重叠区间</p>
 <a id="more"></a>
 
 <hr>
-<h2 id="第三章-软件需求获取与结构化分析方法"><a href="#第三章-软件需求获取与结构化分析方法" class="headerlink" title="第三章 软件需求获取与结构化分析方法"></a>第三章 软件需求获取与结构化分析方法</h2><h3 id="1、顶层数据流图（或称环境图）的作用是什么？"><a href="#1、顶层数据流图（或称环境图）的作用是什么？" class="headerlink" title="1、顶层数据流图（或称环境图）的作用是什么？"></a>1、顶层数据流图（或称环境图）的作用是什么？</h3><blockquote>
-<p>顶层数据流图（或称环境图）仅包括一个数据处理过程，也就是要开发的目标系统。其作用如下：</p>
-<ul>
-<li>确定系统在其环境中的位置，与系统有联系的外部实体（包括硬件、软件、组织机构及人）有哪些。</li>
-<li>通过确定系统的输入和输出与外部实体的关系确定系统的边界，也就是要确定哪些功能或处理属于系统范围之内，哪些属于系统范围之外，需要由其他系统处理或人工处理。</li>
-</ul>
-</blockquote>
-<h3 id="2、简述使用数据流图进行需求分析的过程。"><a href="#2、简述使用数据流图进行需求分析的过程。" class="headerlink" title="2、简述使用数据流图进行需求分析的过程。"></a>2、简述使用数据流图进行需求分析的过程。</h3><blockquote>
-<p>（1）确定系统的输入输出<br>由于系统究竟包括哪些功能可能一时难于弄清楚，可使范围尽量大一些，把可能有的内容全部都包括进去。此时，应该向用户了解“系统从外界接受什么数据”、“系统向外界送出什么数据”等信息，然后，根据用户的答复画出数据流图的外围。<br>（2）由外向里画系统的顶层数据流图<br>首先，将系统的输入数据和输出数据用一连串的加工连接起来。在数据流的值发生变化的地方就是一个加工。接着，给各个加工命名。然后，给加工之间的数据命名。最后，给文件命名。<br>（3）自顶向下逐层分解，绘出分层数据流图<br>对于大型的系统，为了控制复杂性，便于理解，需要采用自顶向下逐层分解的方法进行，即用分层的方法将一个数据流图分解成几个数据流图来分别表示 [1]  。</p>
-</blockquote>
-<h3 id="3、在对数据流图进行分解时需要注意哪些问题？"><a href="#3、在对数据流图进行分解时需要注意哪些问题？" class="headerlink" title="3、在对数据流图进行分解时需要注意哪些问题？"></a>3、在对数据流图进行分解时需要注意哪些问题？</h3><blockquote>
-<p>在对数据流图进行分解时，需要注意以下两个问题：</p>
-<ul>
-<li>当对数据流图分层细化时必须保持信息连续性，也就是说，当把一个处理分解为一系列处理时，分解前和分解后的输入/输出数据流必须相同。</li>
-<li>注意分层细化时对编号的处理方法。</li>
-</ul>
-</blockquote>
-<h3 id="4、请根据以下描述画出某库存管理系统的数据流图。该系统的数据流描述如下："><a href="#4、请根据以下描述画出某库存管理系统的数据流图。该系统的数据流描述如下：" class="headerlink" title="4、请根据以下描述画出某库存管理系统的数据流图。该系统的数据流描述如下："></a>4、请根据以下描述画出某库存管理系统的数据流图。该系统的数据流描述如下：</h3><p>（1）根据计划部门转来的收货通知单和已存在的物资编码文件，建立物资采购单流水账。<br>（2）根据技术部门的物资验收报告和物资采购单流水账，更新物资台账文件。<br>（3）对物资台账分类汇总，将结果存储于物资总账文件中。<br>（4）物资出库，物资使用部门填写物资出库单，包括物资编号、物资名称、物资数量、物资使用部分、负责人、经手人。系统根据物资总账文件的库存情况判断是否能够出库，如果能够出库，则记录出库单，并更新物资总账文件。</p>
+<p><strong>题目：435. 无重叠区间</strong></p>
+<p>给定一个区间的集合，找到需要移除区间的最小数量，使剩余区间互不重叠。</p>
+<p><strong>注意:</strong></p>
+<p>1.可以认为区间的终点总是大于它的起点。</p>
+<p>2.区间 [1,2] 和 [2,3] 的边界相互“接触”，但没有相互重叠。</p>
+<p><strong>示例1:</strong></p>
 <blockquote>
-<p><img src="/2020/03/05/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/01.png" alt></p>
+<p>输入: [ [1,2], [2,3], [3,4], [1,3] ]<br>输出: 1<br>解释: 移除 [1,3] 后，剩下的区间没有重叠。</p>
 </blockquote>
-<h3 id="5、分析院系、专业、班级、课程、教师、学生、成绩之间的数据关系，画出ER图。"><a href="#5、分析院系、专业、班级、课程、教师、学生、成绩之间的数据关系，画出ER图。" class="headerlink" title="5、分析院系、专业、班级、课程、教师、学生、成绩之间的数据关系，画出ER图。"></a>5、分析院系、专业、班级、课程、教师、学生、成绩之间的数据关系，画出ER图。</h3><blockquote>
-<p>若以选课系统为基础，可做如下分析：</p>
-<ul>
-<li>一个院系设置多个专业</li>
-<li>一个院系拥有多个教师</li>
-<li>一个专业由多个班级组成</li>
-<li>一个专业开设多门课程，一门课程可由多个专业开设</li>
-<li>一个教师教授多门课程，一门课程可由多个教师教授</li>
-<li>一个学生选修多门课程，一门课程可让多个学生选修，每个学生选修的每一门课程都会产生一个成绩</li>
-<li>一个班级属于多个学生</li>
-</ul>
-</blockquote>
+<p><strong>示例2:</strong></p>
 <blockquote>
-<p>依据上述分析得出如下ER图：<br><img src="/2020/03/05/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/02.png" alt></p>
+<p>输入: [ [1,2], [1,2], [1,2] ]<br>输出: 2<br>解释: 你需要移除两个 [1,2] 来使剩下的区间没有重叠。</p>
 </blockquote>
-<h3 id="6、一家书店计划开发图书管理系统对书店的业务进行管理，以提高管理人员及书店工作人员的工作效率，并方便顾客对图书进行检索，书店管理系统的基本功能需求如下："><a href="#6、一家书店计划开发图书管理系统对书店的业务进行管理，以提高管理人员及书店工作人员的工作效率，并方便顾客对图书进行检索，书店管理系统的基本功能需求如下：" class="headerlink" title="6、一家书店计划开发图书管理系统对书店的业务进行管理，以提高管理人员及书店工作人员的工作效率，并方便顾客对图书进行检索，书店管理系统的基本功能需求如下："></a>6、一家书店计划开发图书管理系统对书店的业务进行管理，以提高管理人员及书店工作人员的工作效率，并方便顾客对图书进行检索，书店管理系统的基本功能需求如下：</h3><p>（1）采购管理：实现与供货商的图书采购、退货及结算管理，提供月统计报表及任意时间段的统计报表。<br>（2）图书信息管理：记录每种图书的信息（包括ISBN号、书名、作者、出版社、出版日期、单价、版次、印次等）、折扣及库存量，并提供简单的图书查询功能。<br>（3）销售管理：实现图书销售功能，记录顾客购买的图书种类、数量，计算总价，打印销售小票，并付款。提供日/月统计报表及任意时间段的统计报表。<br>（4）用户管理：提供用户组（角色）及用户管理功能。<br>针对上面的需求建立需求分析模型，包括数据流图（至少画出两层）和ER图。</p>
-<h3 id="7、试题库管理系统的相关人员包括题库维护人员、教师及学生。系统的基本功能需求描述如下："><a href="#7、试题库管理系统的相关人员包括题库维护人员、教师及学生。系统的基本功能需求描述如下：" class="headerlink" title="7、试题库管理系统的相关人员包括题库维护人员、教师及学生。系统的基本功能需求描述如下："></a>7、试题库管理系统的相关人员包括题库维护人员、教师及学生。系统的基本功能需求描述如下：</h3><p>（1）题库维护人员负责试题的添加、修改、删除工作。试题信息包括试题编号、试题内容、试题类型、参考答案、分值等。其中，试题类型包括选择题、判断题、填空题、应用题。<br>（2）给教师提供自动组卷、手动组卷及打印试卷功能，教师可以指定试卷分值，并选择是否保存试卷。<br>（3）给学生提供随机组卷，在线练习、在线评价功能。<br>针对上面的需求建立需求分析模型，包括数据流图、ER图。针对为学生提供的功能，画出系统的状态图。</p>
+<p><strong>示例3:</strong></p>
 <blockquote>
-<p><img src="/2020/03/05/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/06.png" alt="数据流图"></p>
+<p>输入: [ [1,2], [2,3] ]<br>输出: 0<br>解释: 你不需要移除任何区间，因为它们已经是无重叠的了。</p>
 </blockquote>
-<blockquote>
-<p><img src="/2020/03/05/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/07.png" alt="ER图"></p>
-</blockquote>
-<hr>
+<h2 id="方法一：贪心"><a href="#方法一：贪心" class="headerlink" title="方法一：贪心"></a>方法一：贪心</h2><p><strong>思路：</strong>先使用贪心计算最多能组成的不重叠区间个数，然后用区间总个数减去不重叠区间的个数。在每次选择中，区间的结尾最为重要，选择的区间结尾越小，留给后面的区间的空间越大，那么后面能够选择的区间个数也就越大。按区间的结尾进行排序，每次选择结尾最小，并且和前一个区间不重叠的区间。</p>
+<p><strong>运行数据：</strong>执行用时：4 ms，内存消耗：39.5 MB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">eraseOverlapIntervals</span><span class="params">(<span class="keyword">int</span>[][] intervals)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 如果区间为空，则直接返回0</span></span><br><span class="line">    <span class="keyword">int</span> count = intervals.length;</span><br><span class="line">    <span class="keyword">if</span> (count == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据区间结尾排序从小到大排序</span></span><br><span class="line">    Arrays.sort(intervals, <span class="keyword">new</span> Comparator&lt;<span class="keyword">int</span>[]&gt;() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span>[] o1, <span class="keyword">int</span>[] o2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> o1[<span class="number">1</span>] - o2[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 选择结尾最小，并且和前一个区间不重叠的区间</span></span><br><span class="line">    <span class="keyword">int</span> number = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; count; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (intervals[index][<span class="number">1</span>] &lt;= intervals[i][<span class="number">0</span>]) &#123;</span><br><span class="line">            number++;</span><br><span class="line">            index = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 总个数减去最大不重叠区间的个数</span></span><br><span class="line">    <span class="keyword">return</span> count - number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法二：动态规划"><a href="#方法二：动态规划" class="headerlink" title="方法二：动态规划"></a>方法二：动态规划</h2><p><strong>思路：</strong>使用动态规划计算最多能组成的不重叠区间个数，然后用区间总个数减去不重叠区间的个数。对区间按区间结尾从小到大排序，方便使用动态规划时判断是否重叠， <strong><em>动态转移方程为：dp[i]=max(dp[i], dp[j] + 1)</em></strong> 其中dp[i]表示从第0个区间到第i个区间的最大不重叠区间的个数，dp[j]表示从第0个区间到第j个区间的最大不重叠区间的个数，0 &lt;= j &lt; i。</p>
+<p><strong>运行数据：</strong>执行用时：224 ms，内存消耗：40 MB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">eraseOverlapIntervals</span><span class="params">(<span class="keyword">int</span>[][] intervals)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 如果区间为空，则直接返回0</span></span><br><span class="line">    <span class="keyword">int</span> count = intervals.length;</span><br><span class="line">    <span class="keyword">if</span> (count == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据区间结尾排序从小到大排序</span></span><br><span class="line">    Arrays.sort(intervals, <span class="keyword">new</span> Comparator&lt;<span class="keyword">int</span>[]&gt;() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span>[] o1, <span class="keyword">int</span>[] o2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> o1[<span class="number">1</span>] - o2[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 动态规划</span></span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[count];</span><br><span class="line">    <span class="keyword">int</span> number = <span class="number">1</span>;</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 求出dp</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; count; i++) &#123;</span><br><span class="line">        <span class="comment">// 遍历第个i区间前的dp，判断是否能与第i个区间不重叠，通过遍历得出能与第i个区间不重叠的拥有最大不重叠区间个数的dp，将其加上第i个区间，则为dp[i]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="comment">// 判断第i个区间是否与第j个区间重叠</span></span><br><span class="line">            <span class="keyword">if</span> (intervals[i][<span class="number">0</span>] &gt;= intervals[j][<span class="number">1</span>])  &#123;</span><br><span class="line">                dp[i] = Math.max(dp[i], dp[j] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 记录当前的最大不重叠区间的个数</span></span><br><span class="line">        number = Math.max(number, dp[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 总个数减去最大不重叠区间的个数</span></span><br><span class="line">    <span class="keyword">return</span> count - number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
 <p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
 
         </div>
 		
         <ul class="post-copyright">
-			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/03/05/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/">第二部分 结构化分析与设计方法（一）</a></li>
+			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/04/13/435.%20%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/">435. 无重叠区间</a></li>
 			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
-			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/03/05/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/">http://crazy-sky.github.io/2020/03/05/%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%20%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89/</a></li>
-			<li><strong>发布时间：</strong>2020-03-05</li>
+			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/04/13/435.%20%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/">http://crazy-sky.github.io/2020/04/13/435.%20%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4/</a></li>
+			<li><strong>发布时间：</strong>2020-04-13</li>
 			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
         </ul>
     	
@@ -252,7 +233,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="tag">软件工程</a>
+                    <a class="has-link-grey -link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a>,&nbsp;<a class="has-link-grey -link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a>
                 </div>
             </div>
         </div>
@@ -302,17 +283,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/09/%E7%AC%AC%E4%B8%80%E7%AB%A0%20Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">第一章 Java语言概述</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/04/%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
-                <span class="level-item">第一部分 软件工程概述（二）</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/11/455.%20%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2/">
+                <span class="level-item">455. 分发饼干</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -449,30 +423,12 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#第三章-软件需求获取与结构化分析方法">
-        <span>第三章 软件需求获取与结构化分析方法</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#1、顶层数据流图（或称环境图）的作用是什么？">
-        <span>1、顶层数据流图（或称环境图）的作用是什么？</span>
+        <a class="is-flex" href="#方法一：贪心">
+        <span>方法一：贪心</span>
         </a></li><li>
-        <a class="is-flex" href="#2、简述使用数据流图进行需求分析的过程。">
-        <span>2、简述使用数据流图进行需求分析的过程。</span>
-        </a></li><li>
-        <a class="is-flex" href="#3、在对数据流图进行分解时需要注意哪些问题？">
-        <span>3、在对数据流图进行分解时需要注意哪些问题？</span>
-        </a></li><li>
-        <a class="is-flex" href="#4、请根据以下描述画出某库存管理系统的数据流图。该系统的数据流描述如下：">
-        <span>4、请根据以下描述画出某库存管理系统的数据流图。该系统的数据流描述如下：</span>
-        </a></li><li>
-        <a class="is-flex" href="#5、分析院系、专业、班级、课程、教师、学生、成绩之间的数据关系，画出ER图。">
-        <span>5、分析院系、专业、班级、课程、教师、学生、成绩之间的数据关系，画出ER图。</span>
-        </a></li><li>
-        <a class="is-flex" href="#6、一家书店计划开发图书管理系统对书店的业务进行管理，以提高管理人员及书店工作人员的工作效率，并方便顾客对图书进行检索，书店管理系统的基本功能需求如下：">
-        <span>6、一家书店计划开发图书管理系统对书店的业务进行管理，以提高管理人员及书店工作人员的工作效率，并方便顾客对图书进行检索，书店管理系统的基本功能需求如下：</span>
-        </a></li><li>
-        <a class="is-flex" href="#7、试题库管理系统的相关人员包括题库维护人员、教师及学生。系统的基本功能需求描述如下：">
-        <span>7、试题库管理系统的相关人员包括题库维护人员、教师及学生。系统的基本功能需求描述如下：</span>
-        </a></li></ul></li></ul>
+        <a class="is-flex" href="#方法二：动态规划">
+        <span>方法二：动态规划</span>
+        </a></li></ul>
             </div>
         </div>
     </div>
@@ -495,7 +451,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/head.jpg" alt="第二部分 结构化分析与设计方法（一）" height="28">
+                    <img src="/images/head.jpg" alt="435. 无重叠区间" height="28">
                 
                 </a>
                 <p class="is-size-7">
