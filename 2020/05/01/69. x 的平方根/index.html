@@ -7,21 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>167. 两数之和 II - 输入有序数组 - Crazy-Sky</title>
+<title>69. x 的平方根 - Crazy-Sky</title>
 
 
-    <meta name="description" content="leetcode 167. 两数之和 II - 输入有序数组">
+    <meta name="description" content="leetcode 69. x 的平方根">
 <meta property="og:type" content="article">
-<meta property="og:title" content="167. 两数之和 II - 输入有序数组">
-<meta property="og:url" content="http://crazy-sky.github.io/2020/03/12/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:title" content="69. x 的平方根">
+<meta property="og:url" content="http://crazy-sky.github.io/2020/05/01/69.%20x%20%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
-<meta property="og:description" content="leetcode 167. 两数之和 II - 输入有序数组">
+<meta property="og:description" content="leetcode 69. x 的平方根">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
-<meta property="article:published_time" content="2020-03-12T08:34:00.000Z">
-<meta property="article:modified_time" content="2020-06-23T11:39:40.068Z">
+<meta property="article:published_time" content="2020-05-01T08:06:00.000Z">
+<meta property="article:modified_time" content="2020-07-20T15:24:35.222Z">
 <meta property="article:author" content="Crazy-Sky">
-<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="二分查找">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/head.jpg" alt="167. 两数之和 II - 输入有序数组" height="28">
+                <img src="/images/head.jpg" alt="69. x 的平方根" height="28">
             
             </a>
         </div>
@@ -140,20 +140,20 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="167. 两数之和 II - 输入有序数组">
+            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="69. x 的平方根">
         </span>
     </div>
     
     <div class="card-content article ">
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                167. 两数之和 II - 输入有序数组
+                69. x 的平方根
             
         </h1>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-03-12T08:34:00.000Z">2020-03-12</time>
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-05-01T08:06:00.000Z">2020-05-01</time>
                 
                 <div class="level-item">
 				<i class="far fa-folder-open has-text-grey"></i>&nbsp;
@@ -163,7 +163,7 @@
 				
                 <div class="level-item">
 				<i class="fas fa-tags has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a>
+                <a class="has-link-grey -link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a>
                 </div>
                 
                 
@@ -171,7 +171,7 @@
 					<i class="far fa-clock"></i>&nbsp;
                     
                     
-                    6 分钟 读完 (大约 899 个字)
+                    2 分钟 读完 (大约 262 个字)
                 </span>
                 
                 
@@ -184,49 +184,36 @@
         </div>
         
         <div class="content">
-            <p>leetcode 167. 两数之和 II - 输入有序数组</p>
+            <p>leetcode 69. x 的平方根</p>
 <a id="more"></a>
 
 <hr>
-<p><strong>题目：167. 两数之和 II - 输入有序数组</strong></p>
-<p>给定一个已按照升序排列的有序数组，找到两个数使得它们相加之和等于目标数。</p>
-<p>函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。</p>
-<p><strong>说明:</strong></p>
-<ul>
-<li>返回的下标值（index1 和 index2）不是从零开始的。</li>
-<li>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。</li>
-</ul>
-<p><strong>示例:</strong></p>
+<p><strong>题目：69. x 的平方根</strong></p>
+<p>实现 int sqrt(int x) 函数。</p>
+<p>计算并返回 x 的平方根，其中 x 是非负整数。</p>
+<p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
+<p><strong>示例1:</strong></p>
 <blockquote>
-<p>输入: numbers = [2, 7, 11, 15], target = 9<br>输出: [1,2]<br>解释: 2 与 7 之和等于目标数 9。因此 index1 = 1, index2 = 2 。</p>
+<p>输入: 4<br>输出: 2</p>
 </blockquote>
-<h2 id="方法一：数学组合"><a href="#方法一：数学组合" class="headerlink" title="方法一：数学组合"></a>方法一：数学组合</h2><p><strong>思路：</strong>数学组合 C(numbers.length,2)，遍历所有组合，找出符合条件的组合。</p>
-<p><strong>运行数据：</strong>执行用时：376 ms，内存消耗：40MB</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 用于存储结果</span></span><br><span class="line">	<span class="keyword">int</span> result[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 遍历所有组合</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numbers.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; numbers.length; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (numbers[i] + numbers[j] == target) &#123;</span><br><span class="line">				result[<span class="number">0</span>] = i + <span class="number">1</span>;</span><br><span class="line">				result[<span class="number">1</span>] = j + <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>示例2:</strong></p>
+<blockquote>
+<p>输入: 8<br>输出: 2<br>说明: 8 的平方根是 2.82842…, 由于返回类型是整数，小数部分将被舍去。</p>
+</blockquote>
+<h2 id="方法：二分查找"><a href="#方法：二分查找" class="headerlink" title="方法：二分查找"></a>方法：二分查找</h2><p><strong>思路：</strong>通过二分查找寻找寻找小于x的平方根的最大正整数。</p>
+<p><strong>运行数据：</strong>执行用时：2 ms，内存消耗：38.2 MB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> r = x;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> ((<span class="keyword">long</span>)mid * mid &gt; x) &#123;</span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result = mid;</span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="方法二：双指针-（对撞指针）"><a href="#方法二：双指针-（对撞指针）" class="headerlink" title="方法二：双指针 （对撞指针）"></a>方法二：双指针 （对撞指针）</h2><p><strong>思路：</strong>输入数组为有序数组，从题中可以看出数组是从小到大排列，所以使用双指针（对撞指针），一个指针指向值较小的元素，一个指针指向值较大的元素。指向较小元素的指针从头向尾遍历，指向较大元素的指针从尾向头遍历。如果两元素之和等于target，则得出结果。如果两元素之和大于target，则指向较小元素的指针右移；否则相反。</p>
-<p><strong>运行数据：</strong>执行用时：1 ms，内存消耗：40MB</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// i标识头指针位置，j标识尾指针位置</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = numbers.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 双指针（对撞指针）算法</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="keyword">int</span> sum = numbers[i] + numbers[j];</span><br><span class="line">        <span class="keyword">if</span> (sum == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i + <span class="number">1</span>, j + <span class="number">1</span> &#125;;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; target) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="方法三：双指针（对撞指针）-折半查找"><a href="#方法三：双指针（对撞指针）-折半查找" class="headerlink" title="方法三：双指针（对撞指针）+折半查找"></a>方法三：双指针（对撞指针）+折半查找</h2><p><strong>思路：</strong>在思路二的基础上，判断最小数组元素是否为非负整数，是则说明数组全为非负整数，此时可用折半查找确定双指针（对撞指针）遍历的右侧指针的初始位置，从而减少遍历次数。另外判断数组最大值是否大于target，否则没必要使用折半查找。</p>
-<p><strong>运行数据：</strong>执行用时：0 ms，内存消耗：39.4MB</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// i标识头指针位置，j标识尾指针位置</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = numbers.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断数组是否全为非负整数，判断数组最大值是否大于目标数，都满足则进行折半查找</span></span><br><span class="line">    <span class="keyword">if</span> (numbers[i] &gt;= <span class="number">0</span> &amp;&amp; numbers[j] &gt; target) &#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, mid = <span class="number">0</span>, right = j;</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            mid = (left + right) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (target == numbers[mid]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; numbers[mid]) &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        j = mid;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 双指针（对撞指针）算法</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="keyword">int</span> sum = numbers[i] + numbers[j];</span><br><span class="line">        <span class="keyword">if</span> (sum == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i + <span class="number">1</span>, j + <span class="number">1</span> &#125;;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; target) &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><strong>相关链接：</strong></p>
-<ul>
-<li><a href="https://crazy-sky.github.io/2020/03/14/双指针/">双指针算法思想</a></li>
-</ul>
 <p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
 <p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
 
         </div>
 		
         <ul class="post-copyright">
-			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/03/12/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">167. 两数之和 II - 输入有序数组</a></li>
+			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/05/01/69.%20x%20%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9/">69. x 的平方根</a></li>
 			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
-			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/03/12/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">http://crazy-sky.github.io/2020/03/12/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</a></li>
-			<li><strong>发布时间：</strong>2020-03-12</li>
+			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/05/01/69.%20x%20%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9/">http://crazy-sky.github.io/2020/05/01/69.%20x%20%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9/</a></li>
+			<li><strong>发布时间：</strong>2020-05-01</li>
 			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
         </ul>
     	
@@ -236,7 +223,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a>
+                    <a class="has-link-grey -link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a>
                 </div>
             </div>
         </div>
@@ -286,17 +273,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/14/%E5%8F%8C%E6%8C%87%E9%92%88/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">双指针</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/09/%E7%AC%AC%E4%B8%80%E7%AB%A0%20Java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0/">
-                <span class="level-item">第一章 Java语言概述</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/30/763.%20%E5%88%92%E5%88%86%E5%AD%97%E6%AF%8D%E5%8C%BA%E9%97%B4/">
+                <span class="level-item">763. 划分字母区间</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -433,14 +413,8 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#方法一：数学组合">
-        <span>方法一：数学组合</span>
-        </a></li><li>
-        <a class="is-flex" href="#方法二：双指针-（对撞指针）">
-        <span>方法二：双指针 （对撞指针）</span>
-        </a></li><li>
-        <a class="is-flex" href="#方法三：双指针（对撞指针）-折半查找">
-        <span>方法三：双指针（对撞指针）+折半查找</span>
+        <a class="is-flex" href="#方法：二分查找">
+        <span>方法：二分查找</span>
         </a></li></ul>
             </div>
         </div>
@@ -464,7 +438,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/head.jpg" alt="167. 两数之和 II - 输入有序数组" height="28">
+                    <img src="/images/head.jpg" alt="69. x 的平方根" height="28">
                 
                 </a>
                 <p class="is-size-7">
