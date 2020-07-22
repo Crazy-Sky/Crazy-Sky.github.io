@@ -7,21 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>665. 非递减数列 - Crazy-Sky</title>
+<title>540. 有序数组中的单一元素 - Crazy-Sky</title>
 
 
-    <meta name="description" content="leetcode 665. 非递减数列">
+    <meta name="description" content="leetcode 540. 有序数组中的单一元素">
 <meta property="og:type" content="article">
-<meta property="og:title" content="665. 非递减数列">
-<meta property="og:url" content="http://crazy-sky.github.io/2020/04/27/665.%20%E9%9D%9E%E9%80%92%E5%87%8F%E6%95%B0%E5%88%97/index.html">
+<meta property="og:title" content="540. 有序数组中的单一元素">
+<meta property="og:url" content="http://crazy-sky.github.io/2020/05/05/540.%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
-<meta property="og:description" content="leetcode 665. 非递减数列">
+<meta property="og:description" content="leetcode 540. 有序数组中的单一元素">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
-<meta property="article:published_time" content="2020-04-27T07:31:00.000Z">
-<meta property="article:modified_time" content="2020-07-16T09:17:53.684Z">
+<meta property="article:published_time" content="2020-05-05T06:51:00.000Z">
+<meta property="article:modified_time" content="2020-07-22T13:35:44.965Z">
 <meta property="article:author" content="Crazy-Sky">
-<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="二分查找">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/head.jpg" alt="665. 非递减数列" height="28">
+                <img src="/images/head.jpg" alt="540. 有序数组中的单一元素" height="28">
             
             </a>
         </div>
@@ -140,20 +140,20 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="665. 非递减数列">
+            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="540. 有序数组中的单一元素">
         </span>
     </div>
     
     <div class="card-content article ">
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                665. 非递减数列
+                540. 有序数组中的单一元素
             
         </h1>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-04-27T07:31:00.000Z">2020-04-27</time>
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-05-05T06:51:00.000Z">2020-05-05</time>
                 
                 <div class="level-item">
 				<i class="far fa-folder-open has-text-grey"></i>&nbsp;
@@ -163,7 +163,7 @@
 				
                 <div class="level-item">
 				<i class="fas fa-tags has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a>
+                <a class="has-link-grey -link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a>
                 </div>
                 
                 
@@ -171,7 +171,7 @@
 					<i class="far fa-clock"></i>&nbsp;
                     
                     
-                    4 分钟 读完 (大约 672 个字)
+                    3 分钟 读完 (大约 410 个字)
                 </span>
                 
                 
@@ -184,29 +184,25 @@
         </div>
         
         <div class="content">
-            <p>leetcode 665. 非递减数列</p>
+            <p>leetcode 540. 有序数组中的单一元素</p>
 <a id="more"></a>
 
 <hr>
-<p><strong>题目：665. 非递减数列</strong></p>
-<p>给你一个长度为 n 的整数数组，请你判断在 最多 改变 1 个元素的情况下，该数组能否变成一个非递减数列。</p>
-<p>我们是这样定义一个非递减数列的： 对于数组中所有的 i (0 &lt;= i &lt;= n-2)，总满足 nums[i] &lt;= nums[i + 1]。</p>
+<p><strong>题目：540. 有序数组中的单一元素</strong></p>
+<p>给定一个只包含整数的有序数组，每个元素都会出现两次，唯有一个数只会出现一次，找出这个数。</p>
 <p><strong>示例1:</strong></p>
 <blockquote>
-<p>输入: nums = [4,2,3]<br>输出: true<br>解释: 你可以通过把第一个4变成1来使得它成为一个非递减数列。</p>
+<p>输入: [1,1,2,3,3,4,4,8,8]<br>输出: 2</p>
 </blockquote>
 <p><strong>示例2:</strong></p>
 <blockquote>
-<p>输入: nums = [4,2,1]<br>输出: false<br>解释: 你不能在只改变一个元素的情况下将其变为非递减数列。</p>
+<p>输入: [3,3,7,7,10,11,11]<br>输出: 10</p>
 </blockquote>
-<p><strong>说明:</strong></p>
-<ul>
-<li>1 &lt;= n &lt;= 10 ^ 4</li>
-<li>-10 ^ 5 &lt;= nums[i] &lt;= 10 ^ 5</li>
-</ul>
-<h2 id="方法：贪心"><a href="#方法：贪心" class="headerlink" title="方法：贪心"></a>方法：贪心</h2><p><strong>思路：</strong>遍历数组，如遇到当前值比后一个值大时，根据当前的值的前后值做相应修改，以保证为非递减数列，当出现两次，当前值比后一个值大时直接返回false，如果遍历完之后只出现一次或者零次当前值比后一个值大的情况则返回true。修改时应尽可能往小了修改，从而保证能够得到非递减数列。</p>
-<p><strong>运行数据：</strong>执行用时：1 ms，内存消耗：41 MB</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkPossibility</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">    <span class="keyword">int</span> len = nums.length;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 当前值比后一个值小时跳过，当前值比后一个值大时做相应修改</span></span><br><span class="line">        <span class="keyword">if</span> (nums[i] &lt;= nums[i + <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 当出现两次，当前值比后一个值大时直接返回false</span></span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">if</span> (count &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 当前一个值比后一个值大时，此时隐含着当前值比后一个大值（循环中第一个if没进去的隐含条件），前一个值比当前值小（已遍历的数据必会满足这一点），为了尽可能是被修改的值小且满足非递减数组，应将当前值赋值给后一个值</span></span><br><span class="line">        <span class="comment">// 否则时，此时隐含着前一个值比后一个值小或者相等（否则时的条件），当前值比后一个大值，前一个值比当前值小，为了尽可能是被修改的值小且满足非递减数组，应将后一个值赋值给当前值</span></span><br><span class="line">        <span class="keyword">if</span> (i != <span class="number">0</span> &amp;&amp; nums[i - <span class="number">1</span>] &gt; nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">            nums[i + <span class="number">1</span>] = nums[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            nums[i] = nums[i + <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意:</strong></p>
+<p>您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。</p>
+<h2 id="方法：二分查找"><a href="#方法：二分查找" class="headerlink" title="方法：二分查找"></a>方法：二分查找</h2><p><strong>思路：</strong>通过二分查找缩小区间查找，维持mid为奇数，保证0 ~ mid共包含偶数个元素，判断nums[mid]与nums[mid - 1]是否相等，相等则说明前半区间不包含只出现一次的数，将区间往后半区间缩，否则相反，当区间只包含一个元素时，即为结果。</p>
+<p><strong>运行数据：</strong>执行用时：0 ms，内存消耗：39.4 MB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">singleNonDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 左右区间范围</span></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> r = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 二分查找</span></span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123; </span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 中间位置</span></span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 确保mid为奇数，保证0 ~ mid共包含偶数个元素</span></span><br><span class="line">        <span class="keyword">if</span> (mid % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            mid--;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断nums[mid]与nums[mid - 1]是否相等，相等则说明前半区间不包含只出现一次的数，将区间往后半区间缩，否则相反</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == nums[mid - <span class="number">1</span>]) &#123;</span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> nums[l];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
 <p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
@@ -214,10 +210,10 @@
         </div>
 		
         <ul class="post-copyright">
-			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/04/27/665.%20%E9%9D%9E%E9%80%92%E5%87%8F%E6%95%B0%E5%88%97/">665. 非递减数列</a></li>
+			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/05/05/540.%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/">540. 有序数组中的单一元素</a></li>
 			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
-			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/04/27/665.%20%E9%9D%9E%E9%80%92%E5%87%8F%E6%95%B0%E5%88%97/">http://crazy-sky.github.io/2020/04/27/665.%20%E9%9D%9E%E9%80%92%E5%87%8F%E6%95%B0%E5%88%97/</a></li>
-			<li><strong>发布时间：</strong>2020-04-27</li>
+			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/05/05/540.%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/">http://crazy-sky.github.io/2020/05/05/540.%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0/</a></li>
+			<li><strong>发布时间：</strong>2020-05-05</li>
 			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
         </ul>
     	
@@ -227,7 +223,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag">贪心</a>
+                    <a class="has-link-grey -link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a>
                 </div>
             </div>
         </div>
@@ -277,17 +273,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/04/29/53.%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">53. 最大子序和</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/25/392.%20%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
-                <span class="level-item">392. 判断子序列</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/05/03/744.%20%E5%AF%BB%E6%89%BE%E6%AF%94%E7%9B%AE%E6%A0%87%E5%AD%97%E6%AF%8D%E5%A4%A7%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%97%E6%AF%8D/">
+                <span class="level-item">744. 寻找比目标字母大的最小字母</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -424,8 +413,8 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#方法：贪心">
-        <span>方法：贪心</span>
+        <a class="is-flex" href="#方法：二分查找">
+        <span>方法：二分查找</span>
         </a></li></ul>
             </div>
         </div>
@@ -449,7 +438,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/head.jpg" alt="665. 非递减数列" height="28">
+                    <img src="/images/head.jpg" alt="540. 有序数组中的单一元素" height="28">
                 
                 </a>
                 <p class="is-size-7">
