@@ -17,14 +17,14 @@
 <meta property="og:site_name" content="Crazy-Sky">
 <meta property="og:description" content="HDOJ 6785. Permutation">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/HDOJ/2020%20%E5%B9%B4%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%C2%B7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B.png">
+<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/HDOJ/2020%E5%B9%B4%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%C2%B7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B.png">
 <meta property="article:published_time" content="2020-07-27T06:48:00.000Z">
-<meta property="article:modified_time" content="2020-07-27T14:48:44.062Z">
+<meta property="article:modified_time" content="2020-07-27T15:11:40.015Z">
 <meta property="article:author" content="Crazy-Sky">
 <meta property="article:tag" content="2020 年百度之星·程序设计大赛 - 初赛三">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/HDOJ/2020%20%E5%B9%B4%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%C2%B7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B.png">
+<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/HDOJ/2020%E5%B9%B4%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%C2%B7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B.png">
 
 
 
@@ -141,7 +141,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/HDOJ/2020%20%E5%B9%B4%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%C2%B7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B.png" alt="6785. Permutation">
+            <img class="thumbnail" src="/thumbnails/HDOJ/2020%E5%B9%B4%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F%C2%B7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B.png" alt="6785. Permutation">
         </span>
     </div>
     
@@ -192,10 +192,10 @@
 <blockquote>
 <p><strong>2020 年百度之星·程序设计大赛 - 初赛三</strong></p>
 <ul>
-<li>[6783. Discount](<a href="https://crazy-sky.github.io/2020/07/27/6783">https://crazy-sky.github.io/2020/07/27/6783</a>. Discount/)</li>
-<li>[6784. Game](<a href="https://crazy-sky.github.io/2020/07/27/6784">https://crazy-sky.github.io/2020/07/27/6784</a>. Game/)</li>
-<li>[6785. Permutation](<a href="https://crazy-sky.github.io/2020/07/27/6785">https://crazy-sky.github.io/2020/07/27/6785</a>. Permutation/)</li>
-<li>[6786. Intersection](<a href="https://crazy-sky.github.io/2020/07/27/6786">https://crazy-sky.github.io/2020/07/27/6786</a>. Intersection/)</li>
+<li><a href="https://crazy-sky.github.io/2020/07/27/6783.%20Discount/">6783. Discount</a></li>
+<li><a href="https://crazy-sky.github.io/2020/07/27/6784.%20Game/">6784. Game</a></li>
+<li><a href="https://crazy-sky.github.io/2020/07/27/6785.%20Permutation/">6785. Permutation</a></li>
+<li><a href="https://crazy-sky.github.io/2020/07/27/6786.%20Intersection/">6786. Intersection</a></li>
 </ul>
 </blockquote>
 <p><strong>题目：6785. Permutation</strong></p>
@@ -221,7 +221,7 @@
 <h2 id="方法：数学"><a href="#方法：数学" class="headerlink" title="方法：数学"></a>方法：数学</h2><p><strong>思路：</strong>根据题目寻找规律，可以发现按照第一个元素跟最后一个交换、第二个元素跟倒数第二个交换这样的规律交换即可使得逆序对数目最大，巧妙利用等差数列求和公式可尽快得出结果。当交换次数m &gt;= n/2时，可实现将原来的序列全部逆序（如原序列1、2、3、4、5、6，当m &gt;= n/2时，可使得原序列变为6、5、4、3、2、1），此个序列拥有最大逆序对，可用(n - 1) * n/ 2得出逆序对数目。</p>
 <p>当交换次数m &lt; n/2时,此时不能将原序列全部逆序（如原序列1、2、3、4、5、6，当m == 2时交换后为6、5、3、4、1、2，当m == 1时交换后为6、2、3、4、5、1，当m == 0时交换后为1、2、3、4、5、6），这时可用((n - 1) + (n - m)) * m / 2计算与前部分组合时的逆序对数（以上前面例子来说明，当m == 2时，交换后序列为6、5、3、4、2、1，前部分指的就是6、5），可用(n - 2 * m) * m计算与中间部分组合时的逆序对数（以上前面例子来说明，当m == 2时，交换后序列为6、5、3、4、2、1，中间部分指的就是3、4），可用((m - 1) + 0) * m / 2计算与后部分组合时的逆序对数（以上前面例子来说明，当m == 2时，交换后序列为6、5、3、4、2、1，后部分指的就是2、1），计算全部的逆序对数只需将前、中、后的逆序相加即可，整理可得(2 * n - m - 1) * m / 2 + (n - 2 * m) * m + (m - 1) * m / 2。</p>
 <p><strong>运行数据：</strong>执行用时：1294MS，内存消耗：13792K</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> test = sc.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (test-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">long</span> n = sc.nextLong();</span><br><span class="line">            <span class="keyword">long</span> m = sc.nextLong();</span><br><span class="line">            <span class="keyword">long</span> result = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (n / <span class="number">2</span> &lt;= m) &#123;</span><br><span class="line">            	result = (n - <span class="number">1</span>) * n / <span class="number">2</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            	result = (<span class="number">2</span> * n - m - <span class="number">1</span>) * m / <span class="number">2</span> + (n - <span class="number">2</span> * m) * m + (m - <span class="number">1</span>) * m / <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(result);</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> test = sc.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (test-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">long</span> n = sc.nextLong();</span><br><span class="line">            <span class="keyword">long</span> m = sc.nextLong();</span><br><span class="line">            <span class="keyword">long</span> result = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (n / <span class="number">2</span> &lt;= m) &#123;</span><br><span class="line">                result = (n - <span class="number">1</span>) * n / <span class="number">2</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                result = (<span class="number">2</span> * n - m - <span class="number">1</span>) * m / <span class="number">2</span> + (n - <span class="number">2</span> * m) * m + (m - <span class="number">1</span>) * m / <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(result);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
 <p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
