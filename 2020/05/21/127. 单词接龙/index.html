@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>127. 单词接龙 - Crazy-Sky</title>
+
+
+    <meta name="description" content="leetcode 127. 单词接龙">
+<meta property="og:type" content="article">
+<meta property="og:title" content="127. 单词接龙">
+<meta property="og:url" content="http://crazy-sky.github.io/2020/05/21/127.%20%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/index.html">
+<meta property="og:site_name" content="Crazy-Sky">
+<meta property="og:description" content="leetcode 127. 单词接龙">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
+<meta property="article:published_time" content="2020-05-21T08:25:00.000Z">
+<meta property="article:modified_time" content="2020-08-05T13:28:45.374Z">
+<meta property="article:author" content="Crazy-Sky">
+<meta property="article:tag" content="搜索">
+<meta property="article:tag" content="BFS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/head.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<!-- <body class="is-2-column"> -->
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/head.jpg" alt="127. 单词接龙" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Crazy-Sky">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="127. 单词接龙">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                127. 单词接龙
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-05-21T08:25:00.000Z">2020-05-21</time>
+                
+                <div class="level-item">
+				<i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                </div>
+                
+				
+                <div class="level-item">
+				<i class="fas fa-tags has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/tags/BFS/" rel="tag">BFS</a>, <a class="has-link-grey -link" href="/tags/%E6%90%9C%E7%B4%A2/" rel="tag">搜索</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+					<i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    11 分钟 读完 (大约 1649 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>&nbsp;
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>leetcode 127. 单词接龙</p>
+<a id="more"></a>
+
+<hr>
+<p><strong>127. 单词接龙</strong></p>
+<p>给定两个单词（beginWord 和 endWord）和一个字典，找到从 beginWord 到 endWord 的最短转换序列的长度。转换需遵循如下规则：</p>
+<ol>
+<li>每次转换只能改变一个字母。</li>
+<li>转换过程中的中间单词必须是字典中的单词。</li>
+</ol>
+<p><strong>说明:</strong></p>
+<ul>
+<li>如果不存在这样的转换序列，返回 0。</li>
+<li>所有单词具有相同的长度。</li>
+<li>所有单词只由小写字母组成。</li>
+<li>字典中不存在重复的单词。</li>
+<li>你可以假设 beginWord 和 endWord 是非空的，且二者不相同。</li>
+</ul>
+<blockquote>
+<p>输入:<br>beginWord = “hit”,<br>endWord = “cog”,<br>wordList = [“hot”,”dot”,”dog”,”lot”,”log”,”cog”]<br>输出: 5<br>解释: 一个最短转换序列是 “hit” -&gt; “hot” -&gt; “dot” -&gt; “dog” -&gt; “cog”,返回它的长度 5。</p>
+</blockquote>
+<p><strong>示例1:</strong></p>
+<blockquote>
+<p>输入:<br>beginWord = “hit”,<br>endWord = “cog”,<br>wordList = [“hot”,”dot”,”dog”,”lot”,”log”,”cog”]<br>输出: 5<br>解释: 一个最短转换序列是 “hit” -&gt; “hot” -&gt; “dot” -&gt; “dog” -&gt; “cog”,返回它的长度 5。</p>
+</blockquote>
+<p><strong>示例2:</strong></p>
+<blockquote>
+<p>输入:<br>beginWord = “hit”,<br>endWord = “cog”,<br>wordList = [“hot”,”dot”,”dog”,”lot”,”log”]<br>输出: 0<br>解释: endWord “cog” 不在字典中，所以无法进行转换。</p>
+</blockquote>
+<h2 id="方法一：BFS（广度优先搜索）"><a href="#方法一：BFS（广度优先搜索）" class="headerlink" title="方法一：BFS（广度优先搜索）"></a>方法一：BFS（广度优先搜索）</h2><p><strong>思路：</strong>BFS（广度优先搜索），将当前单词只改变一个字母的所有单词都视为可扩展搜索的方向，通过判断改变的单词是否在词库中，选择是否将其扩展入队（在词库中则入队）。直至扩展到endWord（此时说明已搜索到目标数），或者队列为空（此时说明无法搜索到目标数），则搜索结束。Set检索元素效率低下，删除和插入效率高；List查找元素效率高，插入删除元素效率低。但是若用contains方法查询对象元素，Set集合应该比List效率要高，所以将词库wordList转成Set，以提高效率。</p>
+<p><strong>运行数据：</strong>执行用时：64 ms，内存消耗：41.6 MB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">ladderLength</span><span class="params">(String beginWord, String endWord, List&lt;String&gt; wordList)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// 记录结果</span></span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将词库wordList转成Set，以提高效率</span></span><br><span class="line">    HashSet&lt;String&gt; words = <span class="keyword">new</span> HashSet&lt;&gt;(wordList); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 用于BFS的队列</span></span><br><span class="line">    Queue&lt;String&gt; queue = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将起点单词入队</span></span><br><span class="line">    queue.offer(beginWord);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 记录当前队列的长度，当队列为空时，BFS全部搜索结束（用以代替 queue.isEmpty() 增加每次循环判断时的效率）</span></span><br><span class="line">    <span class="keyword">int</span> queueLen = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// BFS</span></span><br><span class="line">    <span class="keyword">while</span> (queueLen &gt; <span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 记录当前扩展轮的单词的个数</span></span><br><span class="line">        <span class="keyword">int</span> currentQueueLen = queueLen;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 更新结果</span></span><br><span class="line">        result++;</span><br><span class="line"></span><br><span class="line">        words.removeAll(queue);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 扩展当前轮次的单词</span></span><br><span class="line">        <span class="keyword">while</span> (currentQueueLen-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将队列中第一个单词出队</span></span><br><span class="line">            String currentString = queue.poll();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 更新当前队列长度</span></span><br><span class="line">            queueLen--;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将单词转换成字符数组以便使用</span></span><br><span class="line">            <span class="keyword">char</span>[] chars = currentString.toCharArray();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 当前单词只改变一个字母的所有单词都视为可扩展搜索的方向，以下两个循环均用于遍历可扩展单词</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chars.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 记录当前字母</span></span><br><span class="line">                <span class="keyword">char</span> temp = chars[i];</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">char</span> j = <span class="string">'a'</span>; j &lt;= <span class="string">'z'</span>; j++) &#123;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 改变当前字母</span></span><br><span class="line">                    chars[i] = j;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 改变一个字母之后的单词</span></span><br><span class="line">                    String word = <span class="keyword">new</span> String(chars);</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 判断改变的单词是否在词库中</span></span><br><span class="line">                    <span class="keyword">if</span> (words.contains(word)) &#123;</span><br><span class="line"></span><br><span class="line">                        <span class="comment">// 扩展到endWord，此时说明已搜索到目标单词，返回结果</span></span><br><span class="line">                        <span class="keyword">if</span> (word.equals(endWord)) &#123;</span><br><span class="line">                            <span class="keyword">return</span> result + <span class="number">1</span>;</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        <span class="comment">// 将扩展单词入队</span></span><br><span class="line">                        queue.offer(word);</span><br><span class="line"></span><br><span class="line">                        <span class="comment">// 更新当前队列长度</span></span><br><span class="line">                        queueLen++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 将以改变的字母恢复原来的值，以便下一次改变单词字母</span></span><br><span class="line">                chars[i] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法二：双向BFS（广度优先搜索）"><a href="#方法二：双向BFS（广度优先搜索）" class="headerlink" title="方法二：双向BFS（广度优先搜索）"></a>方法二：双向BFS（广度优先搜索）</h2><p><strong>思路：</strong>双向BFS（广度优先搜索），在上述基本BFS的基础上，进行该进。endWord为起点endWord为终点，用start、end分别记录从起点端向终点端的扩展单词和从终点向起点扩展的单词，一开始从起点向终点扩展，扩展一轮后如果当前的扩展单词数大于另一个方向的扩展单词数则改变方向，从终点往起点开始扩展。依次类推，根据这个规则改变搜索方向，直至当前方向的搜索搜索到另一个方向的扩展单词（此时说明已收索到目标数），或者当前搜索方向的扩展单词为空（此时说明无法搜索到目标数），则搜索结束。</p>
+<p><strong>运行数据：</strong>执行用时：11 ms，内存消耗：40.7 MB</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">ladderLength</span><span class="params">(String beginWord, String endWord, List&lt;String&gt; wordList)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 初始化两个方向记录扩展的集合</span></span><br><span class="line">    HashSet&lt;String&gt; start = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    start.add(beginWord);</span><br><span class="line">    HashSet&lt;String&gt; end = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    end.add(endWord);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将词库类型转成Set</span></span><br><span class="line">    HashSet&lt;String&gt; words = <span class="keyword">new</span> HashSet&lt;&gt;(wordList); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果终点单词不在词库中，则无法到达终点，直接返回0</span></span><br><span class="line">    <span class="keyword">if</span> (!words.contains(endWord)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> bothwayBfs(start,end,words,<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 双向BFS</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">bothwayBfs</span><span class="params">(HashSet&lt;String&gt; start, HashSet&lt;String&gt; end, HashSet&lt;String&gt; words, <span class="keyword">int</span> depth)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前的扩展单词数大于另一个方向的扩展单词数则改变方向</span></span><br><span class="line">    <span class="keyword">if</span> (start.size() &gt; end.size()) &#123;</span><br><span class="line">        <span class="keyword">return</span> bothwayBfs(end, start, words, depth);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 清除词库中已被搜索过的单词，防止重复搜索</span></span><br><span class="line">    words.removeAll(start);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 记录当前轮的扩展单词</span></span><br><span class="line">    HashSet&lt;String&gt; next = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对上一轮扩展的单词，进行搜索扩展</span></span><br><span class="line">    <span class="keyword">for</span> (String str : start) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将单词转换成字符数组以便使用</span></span><br><span class="line">        <span class="keyword">char</span>[] chars = str.toCharArray();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 当前单词只改变一个字母的所有单词都视为可扩展搜索的方向，以下两个循环均用于遍历可扩展单词</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chars.length; i++) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 记录当前字母</span></span><br><span class="line">            <span class="keyword">char</span> temp = chars[i];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">char</span> j = <span class="string">'a'</span>; j &lt;= <span class="string">'z'</span>; j++) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 改变当前字母</span></span><br><span class="line">                chars[i] = j;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 改变一个字母之后的单词</span></span><br><span class="line">                String word = <span class="keyword">new</span> String(chars);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 判断改变的单词是否在词库中</span></span><br><span class="line">                <span class="keyword">if</span> (words.contains(word)) &#123;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 当前方向的搜索搜索到另一个方向的扩展单词，此时说明已收索到目标数，返回扩展次数</span></span><br><span class="line">                    <span class="keyword">if</span> (end.contains(word)) &#123;</span><br><span class="line">                        <span class="keyword">return</span> depth;</span><br><span class="line">                    &#125; </span><br><span class="line">                    next.add(word);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将以改变的字母恢复原来的值，以便下一次改变单词字母</span></span><br><span class="line">            chars[i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前搜索方向的扩展单词为空，此时说明无法搜索到目标数，直接返回0</span></span><br><span class="line">    <span class="keyword">if</span> (start.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 进行下一轮搜索扩展</span></span><br><span class="line">    <span class="keyword">return</span> bothwayBfs(next, end, words, depth + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
+<p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
+
+        </div>
+		
+        <ul class="post-copyright">
+			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/05/21/127.%20%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/">127. 单词接龙</a></li>
+			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
+			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/05/21/127.%20%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/">http://crazy-sky.github.io/2020/05/21/127.%20%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/</a></li>
+			<li><strong>发布时间：</strong>2020-05-21</li>
+			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+        </ul>
+    	
+        
+		<hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/BFS/" rel="tag">BFS</a>,&nbsp;<a class="has-link-grey -link" href="/tags/%E6%90%9C%E7%B4%A2/" rel="tag">搜索</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay_pay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat_pay.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/05/22/695.%20%E5%B2%9B%E5%B1%BF%E7%9A%84%E6%9C%80%E5%A4%A7%E9%9D%A2%E7%A7%AF/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">695. 岛屿的最大面积</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/05/19/279.%20%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0/">
+                <span class="level-item">279. 完全平方数</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/head.jpg" alt="Crazy-Sky">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Crazy-Sky
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Crazy-Sky
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Hunan, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            47
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            4
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            22
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Crazy-Sky" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/Crazy-Sky">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1426627870&amp;site=qq&amp;menu=yes">
+                
+                <i class="fab fa-qq"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Wechat" href="/images/wechat.png">
+                
+                <i class="fab fa-weixin"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Mail" href="mailto: 1426627870@qq.com">
+                
+                <i class="fa fa-envelope-square"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <!-- <div class="card widget" id="toc"> -->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content" style="max-height:calc(100vh - 22px);overflow:scroll">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#方法一：BFS（广度优先搜索）">
+        <span>方法一：BFS（广度优先搜索）</span>
+        </a></li><li>
+        <a class="is-flex" href="#方法二：双向BFS（广度优先搜索）">
+        <span>方法二：双向BFS（广度优先搜索）</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/head.jpg" alt="127. 单词接龙" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Crazy-Sky&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://crazy-sky.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
