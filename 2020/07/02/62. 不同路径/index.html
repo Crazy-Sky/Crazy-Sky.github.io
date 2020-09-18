@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>62. 不同路径 - Crazy-Sky</title>
+
+
+    <meta name="description" content="leetcode 62. 不同路径">
+<meta property="og:type" content="article">
+<meta property="og:title" content="62. 不同路径">
+<meta property="og:url" content="http://crazy-sky.github.io/2020/07/02/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/index.html">
+<meta property="og:site_name" content="Crazy-Sky">
+<meta property="og:description" content="leetcode 62. 不同路径">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
+<meta property="article:published_time" content="2020-07-02T06:37:00.000Z">
+<meta property="article:modified_time" content="2020-09-18T04:02:37.789Z">
+<meta property="article:author" content="Crazy-Sky">
+<meta property="article:tag" content="动态规划">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/head.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<!-- <body class="is-2-column"> -->
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/head.jpg" alt="62. 不同路径" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Crazy-Sky">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="62. 不同路径">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                62. 不同路径
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-07-02T06:37:00.000Z">2020-07-02</time>
+                
+                <div class="level-item">
+				<i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                </div>
+                
+				
+                <div class="level-item">
+				<i class="fas fa-tags has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+					<i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    4 分钟 读完 (大约 537 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>&nbsp;
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>leetcode 62. 不同路径</p>
+<a id="more"></a>
+
+<hr>
+<p><strong>题目：<a href="https://leetcode-cn.com/problems/unique-paths/">62. 不同路径</a></strong></p>
+<p>一个机器人位于一个 m x n 网格的左上角。</p>
+<p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角。</p>
+<p>问总共有多少条不同的路径？</p>
+<p><strong>示例1:</strong></p>
+<blockquote>
+<p>输入: m = 3, n = 2<br>输出: 3<br>解释:<br>从左上角开始，总共有 3 条路径可以到达右下角。</p>
+<ol>
+<li>向右 -&gt; 向右 -&gt; 向下</li>
+<li>向右 -&gt; 向下 -&gt; 向右</li>
+<li>向下 -&gt; 向右 -&gt; 向右</li>
+</ol>
+</blockquote>
+<p><strong>示例2:</strong></p>
+<blockquote>
+<p>输入: m = 7, n = 3<br>输出: 28</p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li>1 &lt;= m, n &lt;= 100</li>
+<li>题目数据保证答案小于等于 2 * 10 ^ 9</li>
+</ul>
+<h2 id="方法一：动态规划"><a href="#方法一：动态规划" class="headerlink" title="方法一：动态规划"></a>方法一：动态规划</h2><p><strong>思路：</strong>动态规划，状态转移方程为：dp[i][j] = dp[i][j - 1] + dp[i - 1][j]，dp[i][j]表示到达i，j位置的不同路径数。<br><strong>运行数据：</strong>执行用时：0 ms，内存消耗：35.6 MB</p>
+<p><strong>复杂度分析：</strong></p>
+<ul>
+<li>时间复杂度：O(m * n)。</li>
+<li>空间复杂度：O(m * n)。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法 </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        dp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        dp[<span class="number">0</span>][i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">            dp[i][j] = dp[i][j - <span class="number">1</span>] + dp[i - <span class="number">1</span>][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法二：动态规划-优化空间复杂度"><a href="#方法二：动态规划-优化空间复杂度" class="headerlink" title="方法二：动态规划(优化空间复杂度)"></a>方法二：动态规划(优化空间复杂度)</h2><p><strong>思路：</strong>在思路一的基础上将记录动态规划的二维数组压缩成一维数组，状态转移方程为：dp[j] = dp[j - 1] + dp[j]，dp[j]表示到达第j列的不同路径数。<br><strong>运行数据：</strong>执行用时：0 ms，内存消耗：35.6 MB</p>
+<p><strong>复杂度分析：</strong></p>
+<ul>
+<li>时间复杂度：O(m * n)。</li>
+<li>空间复杂度：O(n)。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法 </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line"></span><br><span class="line">    Arrays.fill(dp, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">            dp[j] = dp[j - <span class="number">1</span>] + dp[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
+<p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
+
+        </div>
+		
+        <ul class="post-copyright">
+			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/07/02/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/">62. 不同路径</a></li>
+			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
+			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/07/02/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/">http://crazy-sky.github.io/2020/07/02/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/</a></li>
+			<li><strong>发布时间：</strong>2020-07-02</li>
+			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+        </ul>
+    	
+        
+		<hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay_pay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat_pay.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/07/03/303.%20%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2%20-%20%E6%95%B0%E7%BB%84%E4%B8%8D%E5%8F%AF%E5%8F%98/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">303. 区域和检索 - 数组不可变</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/07/01/64.%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
+                <span class="level-item">64. 最小路径和</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/head.jpg" alt="Crazy-Sky">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Crazy-Sky
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Crazy-Sky
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Hunan, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            74
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            4
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            27
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Crazy-Sky" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/Crazy-Sky">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1426627870&amp;site=qq&amp;menu=yes">
+                
+                <i class="fab fa-qq"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Wechat" href="/images/wechat.png">
+                
+                <i class="fab fa-weixin"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Mail" href="mailto: 1426627870@qq.com">
+                
+                <i class="fa fa-envelope-square"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <!-- <div class="card widget" id="toc"> -->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content" style="max-height:calc(100vh - 22px);overflow:scroll">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#方法一：动态规划">
+        <span>方法一：动态规划</span>
+        </a></li><li>
+        <a class="is-flex" href="#方法二：动态规划-优化空间复杂度">
+        <span>方法二：动态规划(优化空间复杂度)</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/head.jpg" alt="62. 不同路径" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Crazy-Sky&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://crazy-sky.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
