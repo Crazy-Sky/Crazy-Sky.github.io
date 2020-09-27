@@ -7,24 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>79. 单词搜索 - Crazy-Sky</title>
+<title>5. 找出旋转有序数列的中间值 - Crazy-Sky</title>
 
 
-    <meta name="description" content="leetcode 79. 单词搜索">
+    <meta name="description" content="XMOJ  5. 找出旋转有序数列的中间值">
 <meta property="og:type" content="article">
-<meta property="og:title" content="79. 单词搜索">
-<meta property="og:url" content="http://crazy-sky.github.io/2020/06/06/79.%20%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2/index.html">
+<meta property="og:title" content="5. 找出旋转有序数列的中间值">
+<meta property="og:url" content="http://crazy-sky.github.io/2020/09/05/5.%20%E6%89%BE%E5%87%BA%E6%97%8B%E8%BD%AC%E6%9C%89%E5%BA%8F%E6%95%B0%E5%88%97%E7%9A%84%E4%B8%AD%E9%97%B4%E5%80%BC/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
-<meta property="og:description" content="leetcode 79. 单词搜索">
+<meta property="og:description" content="XMOJ  5. 找出旋转有序数列的中间值">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
-<meta property="article:published_time" content="2020-06-06T06:52:00.000Z">
-<meta property="article:modified_time" content="2020-09-05T08:38:24.504Z">
+<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/XMOJ/xmoj.jpg">
+<meta property="article:published_time" content="2020-09-05T06:25:00.000Z">
+<meta property="article:modified_time" content="2020-09-27T14:46:59.922Z">
 <meta property="article:author" content="Crazy-Sky">
-<meta property="article:tag" content="搜索">
-<meta property="article:tag" content="回溯">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/LeetCode/leetcode.png">
+<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/XMOJ/xmoj.jpg">
 
 
 
@@ -83,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/head.jpg" alt="79. 单词搜索" height="28">
+                <img src="/images/head.jpg" alt="5. 找出旋转有序数列的中间值" height="28">
             
             </a>
         </div>
@@ -141,30 +140,30 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/LeetCode/leetcode.png" alt="79. 单词搜索">
+            <img class="thumbnail" src="/thumbnails/XMOJ/xmoj.jpg" alt="5. 找出旋转有序数列的中间值">
         </span>
     </div>
     
     <div class="card-content article ">
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                79. 单词搜索
+                5. 找出旋转有序数列的中间值
             
         </h1>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-06-06T06:52:00.000Z">2020-06-06</time>
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-09-05T06:25:00.000Z">2020-09-05</time>
                 
                 <div class="level-item">
 				<i class="far fa-folder-open has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/categories/LeetCode/">LeetCode</a>
+                <a class="has-link-grey -link" href="/categories/XMOJ/">XMOJ</a>
                 </div>
                 
 				
                 <div class="level-item">
 				<i class="fas fa-tags has-text-grey"></i>&nbsp;
-                <a class="has-link-grey -link" href="/tags/%E5%9B%9E%E6%BA%AF/" rel="tag">回溯</a>, <a class="has-link-grey -link" href="/tags/%E6%90%9C%E7%B4%A2/" rel="tag">搜索</a>
+                <a class="has-link-grey -link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>
                 </div>
                 
                 
@@ -172,7 +171,7 @@
 					<i class="far fa-clock"></i>&nbsp;
                     
                     
-                    5 分钟 读完 (大约 821 个字)
+                    3 分钟 读完 (大约 442 个字)
                 </span>
                 
                 
@@ -185,33 +184,34 @@
         </div>
         
         <div class="content">
-            <p>leetcode 79. 单词搜索</p>
+            <p>XMOJ  5. 找出旋转有序数列的中间值</p>
 <a id="more"></a>
 
 <hr>
-<p><strong>题目：<a href="https://leetcode-cn.com/problems/word-search/">79. 单词搜索</a></strong></p>
-<p>给定一个二维网格和一个单词，找出该单词是否存在于网格中。</p>
-<p>单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。</p>
-<p><strong>示例:</strong></p>
+<p><strong>题目：<a href="https://code.mi.com/problem/list/view?id=5">5. 找出旋转有序数列的中间值</a></strong></p>
+<p><strong>描述:</strong></p>
+<p>给出一个有序数列随机旋转之后的数列，如原有序数列为：[0,1,2,4,5,6,7] ，旋转之后为[4,5,6,7,0,1,2]。 假定数列中无重复元素，且数列长度为奇数。 求出旋转数列的中间值。如数列[4,5,6,7,0,1,2]的中间值为4。</p>
+<p><strong>输入:</strong></p>
+<p>4,5,6,7,0,1,2</p>
+<p><strong>输出:</strong></p>
+<p>4</p>
+<p><strong>输入样例:</strong></p>
 <blockquote>
-<p>board =<br>[<br>    [‘A’,’B’,’C’,’E’],<br>    [‘S’,’F’,’C’,’S’],<br>    [‘A’,’D’,’E’,’E’]<br>]</p>
-<p>给定 word = “ABCCED”, 返回 true<br>给定 word = “SEE”, 返回 true<br>给定 word = “ABCB”, 返回 false</p>
+<p>1<br>1,2,3<br>4,5,6,7,0,1,2<br>12,13,14,5,6,7,8,9,10</p>
 </blockquote>
-<p><strong>提示:</strong></p>
-<ul>
-<li>board 和 word 中只包含大写和小写英文字母。</li>
-<li>1 &lt;= board.length &lt;= 200</li>
-<li>1 &lt;= board[i].length &lt;= 200</li>
-<li>1 &lt;= word.length &lt;= 10^3</li>
-</ul>
-<h2 id="方法：Backtracking（回溯）"><a href="#方法：Backtracking（回溯）" class="headerlink" title="方法：Backtracking（回溯）"></a>方法：Backtracking（回溯）</h2><p><strong>思路：</strong>Backtracking（回溯），用flag标记位置是否被搜索，通过遍历board找到第一个word字母位置开始向4个方向搜索，当搜索到边界或者已被搜索过的位置或者该位置的字母不是word对应位置的字母则回退到上一步，继续搜索其他方向，当word包含的所有字母都被搜索到时，返回true，停止递归回溯。</p>
-<p><strong>运行数据：</strong>执行用时：8 ms，内存消耗：41.9 MB</p>
+<p><strong>输出样例:</strong></p>
+<blockquote>
+<p>1<br>2<br>4<br>9</p>
+</blockquote>
+<h2 id="方法：数学"><a href="#方法：数学" class="headerlink" title="方法：数学"></a>方法：数学</h2><p><strong>思路：</strong>通过一次循环找到数列中最大数字的索引maxIndex，通过以下公式即可得到中间值的索引：(maxIndex + n / 2 + 1) % n，n为数列的长度。</p>
+<p><strong>运行数据：</strong>最大执行时间：87.20 ms，最大内存开销：17356 KiB</p>
 <p><strong>复杂度分析：</strong></p>
+<p>由于输入数据组数无法确定，时间复杂度和空间复杂度只考虑一组数据。</p>
 <ul>
-<li>时间复杂度：O((m * n)^2)，m为board行数，n为board的列数，最坏情况时word在二维网格board中蛇形排列，长度等于board的元素个数，此时递归层次为m * n,每次递归会拓展出4中情况，所以递归搜索的时间复杂度为O(4 * m * n) = O(m * n)， 在主函数中遍历board，以不同位置为搜索入口时的时间复杂度为O(m * n)，所以总时间复杂度为O((m * n)^2)。</li>
-<li>空间复杂度：O(m * n)，空间消耗主要集中于递归时栈的开销，最坏情况时为O(m * n)。</li>
+<li>时间复杂度：O(n)，n为一组输入数据的个数，循环一次输入数据。</li>
+<li>空间复杂度：O(n)，n为一组输入数据的个数，主要为保存拆分字符串的字符串数组的空间消耗。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法 </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">exist</span><span class="params">(<span class="keyword">char</span>[][] board, String word)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">    <span class="keyword">int</span> m = board.length;</span><br><span class="line">    <span class="keyword">int</span> n = board[<span class="number">0</span>].length;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span>[][] flag = <span class="keyword">new</span> <span class="keyword">boolean</span>[m][n];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(wordSearch(board, word, flag, i, j, <span class="number">0</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span>[][] direction = &#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;-<span class="number">1</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在二维网格board中搜索word单词，a、b记录当前搜索位置，t记录当前已搜索到的单词字母数量</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">wordSearch</span><span class="params">(<span class="keyword">char</span>[][] board, String word, <span class="keyword">boolean</span>[][] flag, <span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> t)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当单词字母全部被搜索到时，返回true</span></span><br><span class="line">    <span class="keyword">if</span> (word.length() == t) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当搜索到边界或者已被搜索过的位置或者该位置的字母不是word对应位置的字母时，返回false</span></span><br><span class="line">    <span class="keyword">if</span> (a &lt; <span class="number">0</span> || b &lt; <span class="number">0</span> || a &gt;= board.length || b &gt;= board[<span class="number">0</span>].length || flag[a][b] || board[a][b] != word.charAt(t)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 标记已搜索到的位置</span></span><br><span class="line">    flag[a][b] = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] d : direction) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 当单词已被搜索完时，不在继续搜索，停止递归回溯</span></span><br><span class="line">        <span class="keyword">if</span> (wordSearch(board, word, flag, a + d[<span class="number">0</span>], b + d[<span class="number">1</span>], t + <span class="number">1</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 复原标记</span></span><br><span class="line">    flag[a][b] = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        String line;</span><br><span class="line">        <span class="keyword">while</span> (scan.hasNextLine()) &#123;</span><br><span class="line">            line = scan.nextLine().trim();</span><br><span class="line">            String[] strs = line.split(<span class="string">","</span>);</span><br><span class="line">            <span class="keyword">int</span> n = strs.length;</span><br><span class="line">            <span class="keyword">int</span> pre = Integer.MIN_VALUE;</span><br><span class="line">            <span class="keyword">int</span> maxIndex = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">                <span class="keyword">int</span> current = Integer.valueOf(strs[i]);</span><br><span class="line">                <span class="keyword">if</span> (current &lt; pre) &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                pre = current;</span><br><span class="line">                maxIndex = i;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(strs[(maxIndex + n / <span class="number">2</span> + <span class="number">1</span>) % n]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
 <p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
@@ -219,10 +219,10 @@
         </div>
 		
         <ul class="post-copyright">
-			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/06/06/79.%20%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2/">79. 单词搜索</a></li>
+			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/09/05/5.%20%E6%89%BE%E5%87%BA%E6%97%8B%E8%BD%AC%E6%9C%89%E5%BA%8F%E6%95%B0%E5%88%97%E7%9A%84%E4%B8%AD%E9%97%B4%E5%80%BC/">5. 找出旋转有序数列的中间值</a></li>
 			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
-			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/06/06/79.%20%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2/">http://crazy-sky.github.io/2020/06/06/79.%20%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2/</a></li>
-			<li><strong>发布时间：</strong>2020-06-06</li>
+			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/09/05/5.%20%E6%89%BE%E5%87%BA%E6%97%8B%E8%BD%AC%E6%9C%89%E5%BA%8F%E6%95%B0%E5%88%97%E7%9A%84%E4%B8%AD%E9%97%B4%E5%80%BC/">http://crazy-sky.github.io/2020/09/05/5.%20%E6%89%BE%E5%87%BA%E6%97%8B%E8%BD%AC%E6%9C%89%E5%BA%8F%E6%95%B0%E5%88%97%E7%9A%84%E4%B8%AD%E9%97%B4%E5%80%BC/</a></li>
+			<li><strong>发布时间：</strong>2020-09-05</li>
 			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
         </ul>
     	
@@ -232,7 +232,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                    <a class="has-link-grey -link" href="/tags/%E5%9B%9E%E6%BA%AF/" rel="tag">回溯</a>,&nbsp;<a class="has-link-grey -link" href="/tags/%E6%90%9C%E7%B4%A2/" rel="tag">搜索</a>
+                    <a class="has-link-grey -link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>
                 </div>
             </div>
         </div>
@@ -282,17 +282,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/06/08/257.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%89%80%E6%9C%89%E8%B7%AF%E5%BE%84/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">257. 二叉树的所有路径</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/06/04/93.%20%E5%A4%8D%E5%8E%9FIP%E5%9C%B0%E5%9D%80/">
-                <span class="level-item">93. 复原IP地址</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/09/04/4.%20%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E6%95%B0%E5%88%97/">
+                <span class="level-item">4. 最长连续数列</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -429,8 +422,8 @@
                     目录
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#方法：Backtracking（回溯）">
-        <span>方法：Backtracking（回溯）</span>
+        <a class="is-flex" href="#方法：数学">
+        <span>方法：数学</span>
         </a></li></ul>
             </div>
         </div>
@@ -454,7 +447,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/head.jpg" alt="79. 单词搜索" height="28">
+                    <img src="/images/head.jpg" alt="5. 找出旋转有序数列的中间值" height="28">
                 
                 </a>
                 <p class="is-size-7">
