@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>单例模式 - Crazy-Sky</title>
+
+
+    <meta name="description" content="设计模式之单例模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单例模式">
+<meta property="og:url" content="http://crazy-sky.github.io/2020/10/03/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Crazy-Sky">
+<meta property="og:description" content="设计模式之单例模式">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://crazy-sky.github.io/thumbnails/DesignPattern/SingletonPattern.png">
+<meta property="article:published_time" content="2020-10-03T07:26:00.000Z">
+<meta property="article:modified_time" content="2020-10-29T10:39:16.513Z">
+<meta property="article:author" content="Crazy-Sky">
+<meta property="article:tag" content="单例模式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://crazy-sky.github.io/thumbnails/DesignPattern/SingletonPattern.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/head.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<!-- <body class="is-2-column"> -->
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/head.jpg" alt="单例模式" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Crazy-Sky">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/thumbnails/DesignPattern/SingletonPattern.png" alt="单例模式">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                单例模式
+            
+        </h1>
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <i class="far fa-calendar-check"></i>&nbsp;<time class="level-item has-text-grey" datetime="2020-10-03T07:26:00.000Z">2020-10-03</time>
+                
+                <div class="level-item">
+				<i class="far fa-folder-open has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                </div>
+                
+				
+                <div class="level-item">
+				<i class="fas fa-tags has-text-grey"></i>&nbsp;
+                <a class="has-link-grey -link" href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" rel="tag">单例模式</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+					<i class="far fa-clock"></i>&nbsp;
+                    
+                    
+                    16 分钟 读完 (大约 2328 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>&nbsp;
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>设计模式之单例模式</p>
+<a id="more"></a>
+
+<hr>
+<p><strong>定义</strong>：指一个类只有一个实例，且该类能自行创建这个实例的一种模式。</p>
+<p><strong>核心作用</strong>：保证一个类只有一个实例，并且提供一个访问该实例的全局访问点。</p>
+<p><strong>优点</strong>：</p>
+<blockquote>
+<ul>
+<li>单例模式可以保证内存里只有一个实例，减少了内存的开销。</li>
+<li>可以避免对资源的多重占用。</li>
+<li>单例模式设置全局访问点，可以优化和共享资源的访问。</li>
+</ul>
+</blockquote>
+<p><strong>缺点</strong>：</p>
+<blockquote>
+<ul>
+<li>单例模式一般没有接口，扩展困难。如果要扩展，则除了修改原来的代码，没有第二种途径，违背开闭原则。</li>
+<li>在并发测试中，单例模式不利于代码调试。在调试过程中，如果单例中的代码没有执行完，也不能模拟生成一个新的对象。</li>
+<li>单例模式的功能代码通常写在一个类中，如果功能设计不合理，则很容易违背单一职责原则。</li>
+</ul>
+</blockquote>
+<p><strong>常见的五种单例模式实现方式</strong>：</p>
+<blockquote>
+<ul>
+<li>主要：<ul>
+<li><strong>饿汉式</strong>（线程安全，调用效率高。但是，不能延迟加载。）</li>
+<li><strong>懒汉式</strong>（线程安全，调用效率不高。但是，可以延迟加载。）</li>
+</ul>
+</li>
+<li>其他：<ul>
+<li><strong>双重检测锁式</strong>（由于JVM底层内部模式原因，偶尔会出问题。不建议使用。）</li>
+<li><strong>静态内部类式</strong>（线程安全，调用效率高。但是，可以延迟加载。）</li>
+<li><strong>枚举单例</strong>（线程安全，调用效率高，不能延迟加载）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>模式的结构与实现</strong></p>
+<blockquote>
+<ul>
+<li><strong>单例类</strong>：包含一个实例且能自行创建这个实例的类。（如下图“SingletonTest1”）</li>
+<li>访问类：使用单例的类。（如下图“Test”）</li>
+</ul>
+</blockquote>
+<p><img src="/2020/10/03/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/singleton.png" alt></p>
+<h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 饿汉式单例模式(线程安全、调用效率高、不可延迟加载) </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonTest1</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 类初始化时，立即创建对象（没有延迟加载的优势）。加载类时，天然的是线程安全的。</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingletonTest1 instance = <span class="keyword">new</span> SingletonTest1();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 私有化构造器</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonTest1</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 方法不需要同步，调用效率高。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonTest1 <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 懒汉式单例模式(线程安全、调用效率低、可延迟加载)    </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonTest2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 类初始化时，不立即创建对象（延迟加载，真正用的时候再创建）。</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingletonTest2 instance;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 私有化构造器</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonTest2</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 方法需要同步，调用效率低。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> SingletonTest2 <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> SingletonTest2();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="双重检测锁式"><a href="#双重检测锁式" class="headerlink" title="双重检测锁式"></a>双重检测锁式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 双重检测锁式单例模式（懒汉式的升级版本，但由于指令重排问题，可能会出现问题，不建议使用）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonTest3</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 类初始化时，不立即创建对象（延迟加载，真正用的时候再创建）。</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingletonTest3 instance;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 私有化构造器</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonTest3</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 方法不一定需要同步，调用相比懒汉式平均效率高。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonTest3 <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//首先判断是否为空</span></span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">//可能多个线程同时进入到这一步进行阻塞等待    </span></span><br><span class="line">            <span class="keyword">synchronized</span> (SingletonTest3<span class="class">.<span class="keyword">class</span>) </span>&#123;</span><br><span class="line">                <span class="comment">//第一个线程拿到锁，判断不为空进入下一步</span></span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">/**</span></span><br><span class="line"><span class="comment">                     * 由于编译器的优化、JVM的优化、操作系统处理器的优化，可能会导致指令重排（happen-before规则下的指令重排，执行结果不变，指令顺序优化排列）</span></span><br><span class="line"><span class="comment">                     * new Singleton3()这条语句大致会有这三个步骤：</span></span><br><span class="line"><span class="comment">                     * 1.在堆中开辟对象所需空间，分配内存地址</span></span><br><span class="line"><span class="comment">                     * 2.根据类加载的初始化顺序进行初始化</span></span><br><span class="line"><span class="comment">                     * 3.将内存地址返回给栈中的引用变量</span></span><br><span class="line"><span class="comment">                     * </span></span><br><span class="line"><span class="comment">                     * 但是由于指令重排的出现，这三条指令执行顺序会被打乱，可能导致3的顺序和2调换</span></span><br><span class="line"><span class="comment">                     */</span></span><br><span class="line">                    instance = <span class="keyword">new</span> SingletonTest3();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 　由于指令重排导致3，2的顺序调换以及处于多线程场景，会导致以下问题的出现首先第一个线程执行到了3号指令(instance变量被分配了地址，不为null了)，但对象未初始化。此时！第一个或者第二个if语句进行判断时结果为true，自然而然在使用instance时会出错。</span></span><br><span class="line"><span class="comment">     * 解决的方法便是在instance变量上加上volatile关键字，加上volatile关键字后会禁止该变量的指令重排，从而达到线程安全。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="静态内部类式"><a href="#静态内部类式" class="headerlink" title="静态内部类式"></a>静态内部类式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 静态内部类式单例模式(线程安全、调用效率高、可延迟加载)    </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonTest4</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonClassInstance</span> </span>&#123;</span><br><span class="line">        <span class="comment">// final可加可不加，加载类时，天然的是线程安全的。</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> SingletonTest4 INSTANCE = <span class="keyword">new</span> SingletonTest4();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 私有化构造器</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonTest4</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 方法不需要同步，调用效率高。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonTest4 <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SingletonClassInstance.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="枚举式"><a href="#枚举式" class="headerlink" title="枚举式"></a>枚举式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 枚举式单例模式 (线程安全、调用效率高、不可延迟加载)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> SingletonTest5 &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 可避免反射和反序列漏洞破坏单例特性</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这个枚举元素，本身就是单例对象</span></span><br><span class="line">    INSTANCE;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 添加自己需要的操作</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">singletonOperation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 序列化可能会破坏单例模式，比较每次反序列化一个序列化的对象实例时都会创建一个新的实例,枚举类单例可以解决该问题。</span></span><br><span class="line"><span class="comment">     * 枚举序列化是由jvm保证的，每一个枚举类型和定义的枚举变量在JVM中都是唯一的，在枚举类型的序列化和反序列化上，Java做了特殊的规定：在序列化时Java仅仅是将枚举对象的name属性输出到结果中，反序列化的时候则是通过java.lang.Enum的valueOf()方法来根据名字查找枚举对象。同时，编译器是不允许任何对这种序列化机制的定制的并禁用了writeObject、readObject、readObjectNoData、writeReplace和readResolve等方法，从而保证了枚举实例的唯一性.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"><span class="comment">//        // 测试通过反射创建对象</span></span><br><span class="line"><span class="comment">//        Class clazz = Class.forName("com.crazysky.pattern.singleton.SingletonTest5");</span></span><br><span class="line"><span class="comment">//        // 通过反射调用newInstance方法创建实例时，会判断该类是否为枚举类，是枚举类则会抛出如下异常</span></span><br><span class="line"><span class="comment">//        //java.lang.IllegalArgumentException: Cannot reflectively create enum objects</span></span><br><span class="line"><span class="comment">//        Object obj = clazz.getDeclaredConstructor(String.class,int.class).newInstance("LBJ",23);</span></span><br><span class="line"><span class="comment">//        System.out.println(obj == INSTANCE);</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 测试通过反序列化创建对象</span></span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">"test.txt"</span>);</span><br><span class="line">        ObjectOutputStream oos = <span class="keyword">new</span> ObjectOutputStream(<span class="keyword">new</span> BufferedOutputStream(<span class="keyword">new</span> FileOutputStream(file)));</span><br><span class="line">        oos.writeObject(INSTANCE);</span><br><span class="line">        oos.flush();</span><br><span class="line">        ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(<span class="keyword">new</span> BufferedInputStream(<span class="keyword">new</span> FileInputStream(file)));</span><br><span class="line">        System.out.println(ois.readObject() == INSTANCE); <span class="comment">// true</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="除枚举式外其他方式如何防止通过反射和反序列化创建对象，破坏单例性"><a href="#除枚举式外其他方式如何防止通过反射和反序列化创建对象，破坏单例性" class="headerlink" title="除枚举式外其他方式如何防止通过反射和反序列化创建对象，破坏单例性"></a>除枚举式外其他方式如何防止通过反射和反序列化创建对象，破坏单例性</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以饿汉式单例模式为例</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonTest6</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingletonTest6 instance = <span class="keyword">new</span> SingletonTest6();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonTest6</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 防止反射漏洞通过再次调用私有构造方法实例化新的instance</span></span><br><span class="line">        <span class="keyword">if</span> (instance != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"禁止破坏单例性"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonTest6 <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 从I/O流读取对象时会调用readResolve接口，在readResolve接口中直接返回instance对象，避免反序列化时重新实例化对象</span></span><br><span class="line">    <span class="comment">// 因为反序列化创建对象的时候，调用的是离反序列化类最近的没有序列化的超类的无参构造函数，所以虽然在当前类中的构造方法中进行了异常抛出，还是可以创建对象</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Object <span class="title">readResolve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"><span class="comment">//        // 测试通过反射创建对象</span></span><br><span class="line"><span class="comment">//        Class clazz = Class.forName("com.crazysky.pattern.singleton.SingletonTest6");</span></span><br><span class="line"><span class="comment">//        // java.lang.RuntimeException: 禁止破坏单例性</span></span><br><span class="line"><span class="comment">//        Object obj = clazz.getDeclaredConstructor(null).newInstance(null);</span></span><br><span class="line"><span class="comment">//        System.out.println(obj == getInstance());</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 测试通过反序列化创建对象</span></span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">"test.txt"</span>);</span><br><span class="line">        ObjectOutputStream oos = <span class="keyword">new</span> ObjectOutputStream(<span class="keyword">new</span> BufferedOutputStream(<span class="keyword">new</span> FileOutputStream(file)));</span><br><span class="line">        oos.writeObject(getInstance());</span><br><span class="line">        oos.flush();</span><br><span class="line">        ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(<span class="keyword">new</span> BufferedInputStream(<span class="keyword">new</span> FileInputStream(file)));</span><br><span class="line">        System.out.println(ois.readObject() == getInstance()); <span class="comment">// true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="五种实现单例模式的效率对比"><a href="#五种实现单例模式的效率对比" class="headerlink" title="五种实现单例模式的效率对比"></a>五种实现单例模式的效率对比</h3><table>
+<thead>
+<tr>
+<th>实现方式</th>
+<th>耗时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>饿汉式</td>
+<td>41ms</td>
+</tr>
+<tr>
+<td>懒汉式</td>
+<td>223ms</td>
+</tr>
+<tr>
+<td>双重检测锁式</td>
+<td>44ms</td>
+</tr>
+<tr>
+<td>静态内部类式</td>
+<td>40ms</td>
+</tr>
+<tr>
+<td>枚举式</td>
+<td>35ms</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 五种实现单例模式的效率测试</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonTest7</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">int</span> threadNum = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">final</span> CountDownLatch countDownLatch = <span class="keyword">new</span> CountDownLatch(threadNum);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; threadNum; i++) &#123;</span><br><span class="line">            <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">100000</span>; j++) &#123;</span><br><span class="line"><span class="comment">//                    Object obj = SingletonTest1.getInstance(); // 饿汉式 41ms</span></span><br><span class="line"><span class="comment">//                    Object obj = SingletonTest2.getInstance(); // 懒汉式 223ms</span></span><br><span class="line"><span class="comment">//                    Object obj = SingletonTest3.getInstance(); // 双重检测锁式 44ms</span></span><br><span class="line"><span class="comment">//                    Object obj = SingletonTest4.getInstance(); // 静态内部类式 40ms</span></span><br><span class="line">                    Object obj = SingletonTest5.INSTANCE; <span class="comment">// 枚举式 35ms</span></span><br><span class="line">                &#125;</span><br><span class="line">                countDownLatch.countDown();</span><br><span class="line">            &#125;).start();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        countDownLatch.await(); <span class="comment">// main 线程阻塞，直到计数器变为0，才会往下执行</span></span><br><span class="line">        <span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">"耗时（ms）："</span> + (end - start));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>相关链接：</strong></p>
+<ul>
+<li><a href="https://crazy-sky.github.io/2020/10/01/设计模式/">设计模式</a></li>
+</ul>
+<p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
+<p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
+
+        </div>
+		
+        <ul class="post-copyright">
+			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2020/10/03/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">单例模式</a></li>
+			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
+			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2020/10/03/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">http://crazy-sky.github.io/2020/10/03/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</a></li>
+			<li><strong>发布时间：</strong>2020-10-03</li>
+			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+        </ul>
+    	
+        
+		<hr style="height:1px;margin:1rem 0"/>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <a class="has-link-grey -link" href="/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" rel="tag">单例模式</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay_pay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat_pay.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/10/05/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">工厂模式</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/10/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                <span class="level-item">23种设计模式——GOF（Group of four）</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/head.jpg" alt="Crazy-Sky">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Crazy-Sky
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Crazy-Sky
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Hunan, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            98
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            9
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            34
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Crazy-Sky" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/Crazy-Sky">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1426627870&amp;site=qq&amp;menu=yes">
+                
+                <i class="fab fa-qq"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Wechat" href="/images/wechat.png">
+                
+                <i class="fab fa-weixin"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Mail" href="mailto: 1426627870@qq.com">
+                
+                <i class="fa fa-envelope-square"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <!-- <div class="card widget" id="toc"> -->
+    <div class="card widget column-left is-sticky" id="toc">
+        <div class="card-content" style="max-height:calc(100vh - 22px);overflow:scroll">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#饿汉式">
+        <span>饿汉式</span>
+        </a></li><li>
+        <a class="is-flex" href="#懒汉式">
+        <span>懒汉式</span>
+        </a></li><li>
+        <a class="is-flex" href="#双重检测锁式">
+        <span>双重检测锁式</span>
+        </a></li><li>
+        <a class="is-flex" href="#静态内部类式">
+        <span>静态内部类式</span>
+        </a></li><li>
+        <a class="is-flex" href="#枚举式">
+        <span>枚举式</span>
+        </a></li><li>
+        <a class="is-flex" href="#除枚举式外其他方式如何防止通过反射和反序列化创建对象，破坏单例性">
+        <span>除枚举式外其他方式如何防止通过反射和反序列化创建对象，破坏单例性</span>
+        </a></li><li>
+        <a class="is-flex" href="#五种实现单例模式的效率对比">
+        <span>五种实现单例模式的效率对比</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/head.jpg" alt="单例模式" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Crazy-Sky&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://crazy-sky.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
