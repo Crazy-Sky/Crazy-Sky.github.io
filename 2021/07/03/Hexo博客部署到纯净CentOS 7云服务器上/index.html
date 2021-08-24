@@ -13,13 +13,13 @@
     <meta name="description" content="Hexo博客部署腾讯云的CVM云服务器上，纯净的CentOS 7.5 64位版本，以Nginx作为Web服务器，网站实现自动发布">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客部署到纯净CentOS 7云服务器上">
-<meta property="og:url" content="http://crazy-sky.github.io/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/index.html">
+<meta property="og:url" content="http://www.crazy-sky.top/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
 <meta property="og:description" content="Hexo博客部署腾讯云的CVM云服务器上，纯净的CentOS 7.5 64位版本，以Nginx作为Web服务器，网站实现自动发布">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic2.zhimg.com/v2-f9654b817205f6af3e472af284ecc2b2_1200x500.jpg">
 <meta property="article:published_time" content="2021-07-03T03:22:00.000Z">
-<meta property="article:modified_time" content="2021-08-16T07:52:41.563Z">
+<meta property="article:modified_time" content="2021-08-24T01:29:47.817Z">
 <meta property="article:author" content="Crazy-Sky">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -171,7 +171,7 @@
 					<i class="far fa-clock"></i>&nbsp;
                     
                     
-                    2 分钟 读完 (大约 355 个字)
+                    8 分钟 读完 (大约 1145 个字)
                 </span>
                 
                 
@@ -190,27 +190,58 @@
 <h2 id="博客自动发布架构"><a href="#博客自动发布架构" class="headerlink" title="博客自动发布架构"></a>博客自动发布架构</h2><p><strong>前提条件</strong>：</p>
 <ul>
 <li>本地Hexo博客环境搭建完毕</li>
-<li>云服务器上已部署好Git，并初始化一个用于存储Hexo的Git裸库</li>
 <li>云服务器上已部署好Nginx</li>
+<li>云服务器上已部署好Git，并初始化一个用于存储Hexo的Git裸库</li>
 <li>配置git-hooks，自动将Hexo仓库checkout到Nginx配置的网站根目录</li>
 </ul>
 <p><strong>发布流程</strong>：</p>
 <p>本地编辑完博客之后，通过<code>hexo clean</code>、<code>hexo g -d</code>将本地生成的博客静态资源提交至云服务器上的Git裸库，git-hooks自动将更新的Git库内容同步至Nginx的网站目录，用户通过访问Nginx配置的网站地址即可访问博客网站。</p>
 <p><img src="/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/1.webp" alt="博客自动发布架构"></p>
 <h2 id="本地环境配置"><a href="#本地环境配置" class="headerlink" title="本地环境配置"></a>本地环境配置</h2><p>可参考B站up主<strong>CodeSheep</strong>的<a href="https://www.bilibili.com/video/BV1Yb411a7ty">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a></p>
-<h2 id="云服务器环境配置"><a href="#云服务器环境配置" class="headerlink" title="云服务器环境配置"></a>云服务器环境配置</h2><h3 id="Git环境配置"><a href="#Git环境配置" class="headerlink" title="Git环境配置"></a>Git环境配置</h3><p>安装Git</p>
+<h2 id="云服务器环境配置"><a href="#云服务器环境配置" class="headerlink" title="云服务器环境配置"></a>云服务器环境配置</h2><h3 id="基础环境配置"><a href="#基础环境配置" class="headerlink" title="基础环境配置"></a>基础环境配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装编译环境</span></span><br><span class="line">yum -y install gcc gcc-c++</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装vim编辑器</span></span><br><span class="line">yum -y install vim*</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装pcre软件包（使nginx支持http rewrite模块，用于支持解析正则表达式）</span></span><br><span class="line">yum install -y pcre pcre-devel</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装openssl-devel（使nginx支持ssl，用于网站加密通讯）</span></span><br><span class="line">yum install -y openssl openssl-devel</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装zlib（用于对数据进行解压缩。网站之间通信时，数据先压缩再传输，通过消耗CPU的方式来节省网络带宽。）</span></span><br><span class="line">yum install -y zlib zlib-devel</span><br></pre></td></tr></table></figure>
+
+<h3 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h3><p>安装Nginx</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载Nginx</span></span><br><span class="line">wget http://nginx.org/download/nginx-1.16.0.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压到/usr/local/</span></span><br><span class="line">tar xzf nginx-1.16.0.tar.gz -C /usr/<span class="built_in">local</span>/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入Nginx</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/nginx-1.16.0/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行配置文件configure</span></span><br><span class="line">./configure</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译并安装</span></span><br><span class="line">make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开放linux的80端口</span></span><br><span class="line">/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动Nginx</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/nginx/sbin</span><br><span class="line">./nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试Nginx启动是否成功（或浏览器输入IP+端口，进入nginx的欢迎页面）</span></span><br><span class="line">wget http://127.0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>为Hexo博客网站配置Nginx服务器路由</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建网站目录</span></span><br><span class="line">mkdir /home/hexo</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改权限</span></span><br><span class="line">chown git:git -R /home/hexo</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编辑nginx的配置文件nginx.conf</span></span><br><span class="line">vim /usr/local/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> localhost修改为公网IP</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/2.png" alt="Nginx配置"></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改/home/hexo权限</span></span><br><span class="line">chown -R 755 /home/hexo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新启动Nginx（停止./nginx -s stop）</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/nginx/sbin </span><br><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><p>安装Git</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y git</span><br></pre></td></tr></table></figure>
 
 <p>配置Git的环境变量</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 编辑文件</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加环境变量</span></span><br><span class="line">PATH=$PATH:/usr/local/git/bin</span><br><span class="line">export PATH</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 保存退出后，刷新环境变量</span></span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
 
+<p>添加Git用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建git用户</span></span><br><span class="line">adduser git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改git用户权限</span></span><br><span class="line">chmod 740 /etc/sudoers</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编辑sudoers文件</span></span><br><span class="line">vim /etc/sudoers</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在“root    ALL=(ALL)       ALL”下添加</span></span><br><span class="line">git     ALL=(ALL)       ALL</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 保存退出后，修改回原来的权限</span></span><br><span class="line">chmod 400 /etc/sudoers</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置git用户的密码</span></span><br><span class="line">sudo passwd git</span><br></pre></td></tr></table></figure>
+
+<p>给git用户配置ssh免密公钥登录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 将当前用户从root用户切换到git用户</span></span><br><span class="line">su git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建.ssh文件夹</span></span><br><span class="line">mkdir ~/.ssh</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在.ssh文件夹下创建秘钥文件</span></span><br><span class="line">vim ~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 将本地的 id_rsa.pub 文件全部复制进去，退出保存后，修改文件权限（可百度ssh密钥）</span></span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 测试配置是否成功，如ssh git@127.0.0.1</span></span><br><span class="line">ssh git@host_name</span><br></pre></td></tr></table></figure>
+
+<p>创建git仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 将当前用户从git用户切换到root用户</span></span><br><span class="line">su root</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建hexo.git仓库</span></span><br><span class="line">git init --bare /home/git/hexo.git </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改权限</span></span><br><span class="line">chown git:git -R /home/git/hexo.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置git-hooks"><a href="#配置git-hooks" class="headerlink" title="配置git-hooks"></a>配置git-hooks</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在该仓库中创建钩子文件夹post-receive</span></span><br><span class="line">vim /home/git/hexo.git/hooks/post-receive </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 填入</span></span><br><span class="line">git --work-tree=/home/hexo --git-dir=/home/git/hexo.git checkout -f</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 保存退出后，修改权限让其可执行</span></span><br><span class="line">chmod +x /home/git/hexo.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地环境配置-1"><a href="#本地环境配置-1" class="headerlink" title="本地环境配置"></a>本地环境配置</h3><p>修改hexo本地站点配置文件_config.yml，hostname改为服务器IP</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">      <span class="string">git@hostname:/home/git/hexo.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="博客发布"><a href="#博客发布" class="headerlink" title="博客发布"></a>博客发布</h2><p>本地hexo博客目录下执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 清理静态文件</span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 生成静态文件</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 发布</span></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
+<p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
 
         </div>
 		
         <ul class="post-copyright">
-			<li><strong>本文标题：</strong><a href="http://crazy-sky.github.io/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">Hexo博客部署到纯净CentOS 7云服务器上</a></li>
-			<li><strong>本文作者：</strong><a href="http://crazy-sky.github.io">Crazy-Sky</a></li>
-			<li><strong>本文链接：</strong><a href="http://crazy-sky.github.io/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">http://crazy-sky.github.io/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/</a></li>
+			<li><strong>本文标题：</strong><a href="http://www.crazy-sky.top/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">Hexo博客部署到纯净CentOS 7云服务器上</a></li>
+			<li><strong>本文作者：</strong><a href="http://www.crazy-sky.top">Crazy-Sky</a></li>
+			<li><strong>本文链接：</strong><a href="http://www.crazy-sky.top/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">http://www.crazy-sky.top/2021/07/03/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E7%BA%AF%E5%87%80CentOS%207%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/</a></li>
 			<li><strong>发布时间：</strong>2021-07-03</li>
 			<li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
         </ul>
@@ -420,9 +451,24 @@
         <a class="is-flex" href="#云服务器环境配置">
         <span>云服务器环境配置</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Git环境配置">
-        <span>Git环境配置</span>
-        </a></li></ul></li></ul>
+        <a class="is-flex" href="#基础环境配置">
+        <span>基础环境配置</span>
+        </a></li><li>
+        <a class="is-flex" href="#Nginx配置">
+        <span>Nginx配置</span>
+        </a></li><li>
+        <a class="is-flex" href="#Git配置">
+        <span>Git配置</span>
+        </a></li><li>
+        <a class="is-flex" href="#配置git-hooks">
+        <span>配置git-hooks</span>
+        </a></li><li>
+        <a class="is-flex" href="#本地环境配置-1">
+        <span>本地环境配置</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#博客发布">
+        <span>博客发布</span>
+        </a></li></ul>
             </div>
         </div>
     </div>
@@ -502,7 +548,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'http://crazy-sky.github.io',
+        url: 'http://www.crazy-sky.top',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {
