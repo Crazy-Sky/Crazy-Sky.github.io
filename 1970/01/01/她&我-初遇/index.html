@@ -700,7 +700,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (pass == '0724' ) {
             document.getElementById('ceng').style.display = 'none';
             if (load) {
-                alert("ceng");
                 document.getElementById('doc-content').style.display = 'block';
                 play();
                 return ;
@@ -708,14 +707,11 @@ document.addEventListener('DOMContentLoaded', function () {
             pass = true;
         }
     }
-    completeLoading();
     document.onreadystatechange = completeLoading;
     function completeLoading() {
-    alert(document.readyState)
         if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
             if (pass) {
-                alert("loading");
                 document.getElementById('doc-content').style.display = 'block';
                 play();
                 return ;
