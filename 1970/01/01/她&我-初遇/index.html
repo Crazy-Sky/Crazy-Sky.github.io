@@ -702,8 +702,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (pass == '0724' ) {
             document.getElementById('ceng').style.display = 'none';
             if (load) {
+                alert("ceng");
                 document.getElementById('doc-content').style.display = 'block';
                 play();
+                return ;
             }
             pass = true;
         }
@@ -712,8 +714,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
             if (pass) {
+                alert("loading");
                 document.getElementById('doc-content').style.display = 'block';
                 play();
+                return ;
             }
             load = true;
         }

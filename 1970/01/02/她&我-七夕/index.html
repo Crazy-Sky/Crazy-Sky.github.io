@@ -687,6 +687,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (load) {
                 document.getElementById('doc-content').style.display = 'block';
                 play();
+                return ;
             }
             pass = true;
         }
@@ -697,6 +698,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (pass) {
                 document.getElementById('doc-content').style.display = 'block';
                 play();
+                return ;
             }
             load = true;
         }
