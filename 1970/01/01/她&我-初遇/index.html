@@ -710,7 +710,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     function completeLoading() {
-        alert(document.readyState + isPass);
         if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
             if (isPass) {
