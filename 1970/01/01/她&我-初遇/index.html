@@ -688,6 +688,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 <script type="text/javascript">
 
+    var isPass = false;
+
     function play () {
         var myAuto = document.getElementById('audio');  
         myAuto.play();      
@@ -696,14 +698,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var pass = document.getElementById("pass").value;
         if (pass == '0724' ) {
             document.getElementById('ceng').style.display = 'none';
-            play();
+            isPass = true;
         }
     }
     document.onreadystatechange = completeLoading;
     function completeLoading() {
-        if (document.readyState == "interactive") {
+        if (document.readyState == "interactive" && isPass) {
             document.getElementById('loading').style.display = 'none';
             document.getElementById('doc-content').style.display = 'block';
+            play();
         }
     }
 </script>
