@@ -77,6 +77,7 @@
 </head>
 <!-- <body class="is-2-column"> -->
 <body class="is-3-column">
+<div id="doc-content" style="display: none">
     <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
@@ -531,6 +532,7 @@
         </div>
     </div>
 </footer>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
 <script>moment.locale("zh-CN");</script>
@@ -672,30 +674,28 @@ document.addEventListener('DOMContentLoaded', function () {
     var pass = false; // 密码通过
     var load = false; // 页面加载完成
 
+    document.onreadystatechange = completeLoading;
+
     function play () {
         var myAuto = document.getElementById('audio');  
         myAuto.play();      
     }
-    function closeCeng() {
-        document.getElementById('ceng').style.display = 'none';
-        return false;
-         
-    }
     function submitPass() {
         var pass = document.getElementById("pass").value;
         if (pass == '0724' ) {
-            closeCeng();
+            document.getElementById('ceng').style.display = 'none';
             if (load) {
+                document.getElementById('doc-content').style.display = 'block';
                 play();
             }
             pass = true;
         }
     }
-    document.onreadystatechange = completeLoading;
     function completeLoading() {
         if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
             if (pass) {
+                document.getElementById('doc-content').style.display = 'block';
                 play();
             }
             load = true;
