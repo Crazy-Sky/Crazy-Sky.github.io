@@ -701,7 +701,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     document.onreadystatechange = completeLoading;
     function completeLoading() {
-        if (document.readyState == "complete") {
+        if (document.readyState == "interactive") {
             document.getElementById('loading').style.display = 'none';
             document.getElementById('doc-content').style.display = 'block';
         }
