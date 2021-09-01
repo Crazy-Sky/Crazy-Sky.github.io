@@ -688,9 +688,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 <script type="text/javascript">
 
-    var pass = false; // 密码通过
-    var load = false; // 页面加载完成
-
     function play () {
         var myAuto = document.getElementById('audio');  
         myAuto.play();      
@@ -699,25 +696,14 @@ document.addEventListener('DOMContentLoaded', function () {
         var pass = document.getElementById("pass").value;
         if (pass == '0724' ) {
             document.getElementById('ceng').style.display = 'none';
-            if (load) {
-                document.getElementById('doc-content').style.display = 'block';
-                play();
-                return ;
-            }
-            pass = true;
+            play();
         }
     }
     document.onreadystatechange = completeLoading;
     function completeLoading() {
-        alert(document.readyState + pass)
         if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
-            if (pass) {
-                document.getElementById('doc-content').style.display = 'block';
-                play();
-                return ;
-            }
-            load = true;
+            document.getElementById('doc-content').style.display = 'block';
         }
     }
 </script>
