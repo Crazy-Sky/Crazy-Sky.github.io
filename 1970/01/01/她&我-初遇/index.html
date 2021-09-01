@@ -688,7 +688,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 <script type="text/javascript">
 
-    var isPass = false;
+    var isPass = false; // 密码通过
+    var isLoad = false; // 页面加载完成
+
+    document.onreadystatechange = completeLoading;
 
     function play () {
         var myAuto = document.getElementById('audio');  
@@ -698,15 +701,24 @@ document.addEventListener('DOMContentLoaded', function () {
         var pass = document.getElementById("pass").value;
         if (pass == '0724' ) {
             document.getElementById('ceng').style.display = 'none';
+            if (isLoad) {
+                document.getElementById('doc-content').style.display = 'block';
+                play();
+                return ;
+            }
             isPass = true;
         }
     }
-    document.onreadystatechange = completeLoading;
     function completeLoading() {
-        if (document.readyState == "interactive" && isPass) {
+        alert(document.readyState + isPass);
+        if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
-            document.getElementById('doc-content').style.display = 'block';
-            play();
+            if (isPass) {
+                document.getElementById('doc-content').style.display = 'block';
+                play();
+                return ;
+            }
+            isLoad = true;
         }
     }
 </script>
