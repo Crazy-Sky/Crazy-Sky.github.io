@@ -709,7 +709,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     document.onreadystatechange = completeLoading;
     function completeLoading() {
-        alert(document.readyState)
+        alert(document.readyState + pass)
         if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
             if (pass) {
