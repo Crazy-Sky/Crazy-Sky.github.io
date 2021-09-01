@@ -709,6 +709,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
    document.onreadystatechange = function() {
+    alert(document.readyState)
         if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
             if (pass) {
