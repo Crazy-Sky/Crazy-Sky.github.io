@@ -708,7 +708,9 @@ document.addEventListener('DOMContentLoaded', function () {
             pass = true;
         }
     }
-   document.onreadystatechange = function() {
+    completeLoading();
+    document.onreadystatechange = completeLoading;
+    function completeLoading() {
     alert(document.readyState)
         if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
