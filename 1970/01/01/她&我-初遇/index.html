@@ -691,8 +691,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var pass = false; // 密码通过
     var load = false; // 页面加载完成
 
-    document.onreadystatechange = completeLoading;
-
     function play () {
         var myAuto = document.getElementById('audio');  
         myAuto.play();      
@@ -710,7 +708,7 @@ document.addEventListener('DOMContentLoaded', function () {
             pass = true;
         }
     }
-    function completeLoading() {
+   document.onreadystatechange = function() {
         if (document.readyState == "complete") {
             document.getElementById('loading').style.display = 'none';
             if (pass) {
