@@ -77,7 +77,6 @@
 </head>
 <!-- <body class="is-2-column"> -->
 <body class="is-3-column">
-<div id="doc-content" style="display: none">
     <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
@@ -369,7 +368,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            113
+                            114
                         </p>
                     </a>
                 </div>
@@ -393,7 +392,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            44
+                            45
                         </p>
                     </a>
                 </div>
@@ -487,7 +486,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2021 Crazy-Sky&nbsp;
+                &copy; 2022 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 
@@ -532,7 +531,6 @@
         </div>
     </div>
 </footer>
-</div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
 <script>moment.locale("zh-CN");</script>
@@ -662,47 +660,6 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="/js/insight.js" defer></script>
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
-<div id="loading" style="position:fixed;z-index:100;left:0;top:0;right:0;filter:alpha(opacity=50);margin:1px 1px;display:block;width:100%;height:100%;text-align:center;background-color: #eee;">
-    <div style="margin-top: 250px;">宝，对你的爱正在加速生成中，请稍等一会哦……</div>
-</div>
-<audio id="audio" src="./music.mp3" style="opacity:0" preload="auto" controls loop hidden="true"></audio>  
-<div id="ceng" style="position:fixed;z-index:200;left:0;top:0;right:0;filter:alpha(opacity=50);margin:1px 1px;display:block;width:100%;height:100%;text-align:center;background-color: #eee;">
-    <input type="password" id="pass" style="margin-top: 250px;" oninput="submitPass()">
-</div>
-<script type="text/javascript">
-
-    var isPass = false; // 密码通过
-    var isLoad = false; // 页面加载完成
-
-    document.onreadystatechange = completeLoading;
-
-    function play () {
-        var myAuto = document.getElementById('audio');  
-        myAuto.play();      
-    }
-    function submitPass() {
-        var pass = document.getElementById("pass").value;
-        if (pass == '0724' ) {
-            document.getElementById('ceng').style.display = 'none';
-            if (isLoad) {
-                document.getElementById('doc-content').style.display = 'block';
-                play();
-                return ;
-            }
-            isPass = true;
-        }
-    }
-    function completeLoading() {
-        if (document.readyState == "complete") {
-            document.getElementById('loading').style.display = 'none';
-            if (isPass) {
-                document.getElementById('doc-content').style.display = 'block';
-                play();
-                return ;
-            }
-            isLoad = true;
-        }
-    }
-</script>
+    
 </body>
 </html>
