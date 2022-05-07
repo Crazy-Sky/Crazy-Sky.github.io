@@ -660,6 +660,27 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="/js/insight.js" defer></script>
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
-    
+<audio id="audio" src="./music.mp3" style="opacity:0" preload="auto" controls loop hidden="true"></audio>  
+<div id="ceng" style="position:fixed;z-index:100;left:0;top:0;right:0;filter:alpha(opacity=50);margin:1px 1px;display:block;width:100%;height:100%;text-align:center;background-color: #eee;">
+    <input type="password" id="pass" style="margin-top: 150px;" oninput="submitPass()">
+</div>
+<script type="text/javascript">
+    function play () {
+        var myAuto = document.getElementById('audio');  
+        myAuto.play();      
+    }
+    function closeCeng() {
+        document.getElementById('ceng').style.display = 'none';
+        return false;
+         
+    }
+    function submitPass() {
+        var pass = document.getElementById("pass").value;
+        if (pass == '0724' ) {
+            closeCeng();
+            play();
+        }
+    }
+</script>
 </body>
 </html>
