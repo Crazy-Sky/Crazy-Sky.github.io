@@ -194,13 +194,13 @@
 <hr>
 <p><strong>题目：图的最短路径问题</strong></p>
 <p>求解双子峰到金门大桥的最短路径（可认为两点之间的距离都为1）。</p>
-<p><img src="/2021/03/18/%E5%9B%BE%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/1.png" alt></p>
+<p><img src="/2021/03/18/%E5%9B%BE%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/1.png"></p>
 <p><strong>根据题目分析，构建出邻接表：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代表无穷大，当两点之间没有直接可达路径时，两点距离为无穷大</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> INF = <span class="number">0xFFFF</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接表</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span>[][] map = &#123;</span><br><span class="line">				&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,INF,INF,INF,INF&#125;,</span><br><span class="line">				&#123;INF,<span class="number">0</span>,INF,INF,<span class="number">1</span>,INF,INF&#125;,</span><br><span class="line">				&#123;INF,INF,<span class="number">0</span>,<span class="number">1</span>,INF,<span class="number">1</span>,INF&#125;,</span><br><span class="line">				&#123;INF,INF,INF,<span class="number">0</span>,<span class="number">1</span>,INF,INF&#125;,</span><br><span class="line">				&#123;INF,INF,INF,INF,<span class="number">0</span>,INF,<span class="number">1</span>&#125;,</span><br><span class="line">				&#123;INF,INF,INF,INF,<span class="number">1</span>,<span class="number">0</span>,INF&#125;,</span><br><span class="line">				&#123;INF,INF,INF,INF,INF,INF,<span class="number">0</span>&#125;</span><br><span class="line">		&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="方法一：动态规划"><a href="#方法一：动态规划" class="headerlink" title="方法一：动态规划"></a>方法一：动态规划</h2><p><strong>思路：</strong>动态规划，状态转移方程为：shortDistance[j] = min(shortDistance[j], shortDistance[i] + map[i][j])，表示到j点的最短距离等于当前到j点的最短距离与到i点的最短距离加上i点到j点的距离的最小值。</p>
+<h2 id="方法一：动态规划"><a href="#方法一：动态规划" class="headerlink" title="方法一：动态规划"></a>方法一：动态规划</h2><p><strong>思路：</strong>动态规划，状态转移方程为：shortDistance[j] &#x3D; min(shortDistance[j], shortDistance[i] + map[i][j])，表示到j点的最短距离等于当前到j点的最短距离与到i点的最短距离加上i点到j点的距离的最小值。</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
 <li>时间复杂度：O(n^2)，n为顶点数。</li>
@@ -498,7 +498,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

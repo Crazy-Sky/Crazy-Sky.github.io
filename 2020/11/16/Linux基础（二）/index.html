@@ -10,12 +10,12 @@
 <title>Linux基础（二） - Crazy-Sky</title>
 
 
-    <meta name="description" content="Linux基础（二）    4、vim编辑器    5、运行级别    6、用户与用户组管理">
+    <meta name="description" content="Linux基础（二）	4、vim编辑器	5、运行级别	6、用户与用户组管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux基础（二）">
 <meta property="og:url" content="http://www.crazy-sky.top/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
-<meta property="og:description" content="Linux基础（二）    4、vim编辑器    5、运行级别    6、用户与用户组管理">
+<meta property="og:description" content="Linux基础（二）	4、vim编辑器	5、运行级别	6、用户与用户组管理">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.crazy-sky.top/thumbnails/Linux/Linux.jpg">
 <meta property="article:published_time" content="2020-11-16T12:09:00.000Z">
@@ -184,20 +184,20 @@
         </div>
         
         <div class="content">
-            <p>Linux基础（二）    4、vim编辑器    5、运行级别    6、用户与用户组管理</p>
+            <p>Linux基础（二）	4、vim编辑器	5、运行级别	6、用户与用户组管理</p>
 <a id="more"></a>
 
 <hr>
 <blockquote>
 <p>Linux基础</p>
-<p>一、<a href="/2020/09/27/Linux基础（一）/">Linux基础（一）</a></p>
-<p>​    1、linux简介</p>
-<p>​    2、Linux基本目录结构</p>
-<p>​    3、Linux基本指令</p>
-<p>二、<a href="/2020/11/16/Linux基础（二）/">Linux基础（二）</a></p>
-<p>​    4、vim编辑器</p>
-<p>​    5、运行级别</p>
-<p>​    6、用户与用户组管理</p>
+<p>一、<a href="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Linux基础（一）</a></p>
+<p>​	1、linux简介</p>
+<p>​	2、Linux基本目录结构</p>
+<p>​	3、Linux基本指令</p>
+<p>二、<a href="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Linux基础（二）</a></p>
+<p>​	4、vim编辑器</p>
+<p>​	5、运行级别</p>
+<p>​	6、用户与用户组管理</p>
 </blockquote>
 <h1 id="4、vim编辑器"><a href="#4、vim编辑器" class="headerlink" title="4、vim编辑器"></a>4、vim编辑器</h1><p><strong>vim简介</strong></p>
 <p>vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。</p>
@@ -205,11 +205,11 @@
 <ul>
 <li><p>在文件打开的时候在末行模式下输入的配置（临时的）</p>
 </li>
-<li><p>个人配置文件（~/.vimrc，如果没有可以自行新建）</p>
+<li><p>个人配置文件（~&#x2F;.vimrc，如果没有可以自行新建）</p>
 </li>
-<li><p>全局配置文件（vim自带，/etc/vimrc）</p>
+<li><p>全局配置文件（vim自带，&#x2F;etc&#x2F;vimrc）</p>
 <p>配置文件配置如下，后续打开文件将默认显示行号</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/vim%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/vim%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png"></p>
 <p>如果针对同一个配置项，个人配置文件中存在，则以个人配置文件为准，如果个人配置文件中不存在这一项，则以全局配置文件为准</p>
 </li>
 </ul>
@@ -222,12 +222,12 @@
 <p>实际上还有一种模式称之为<strong>可视化模式</strong>，可由命令模式进入（Ctrl + V进入可视块模式，单独V进入可视行模式，单独v进入可视模式，Esc可退回命令模式）</p>
 </blockquote>
 <p><strong>三种模式间的切换</strong></p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/vim%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/vim%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2.png"></p>
 <p><strong>vim打开文件的方式</strong></p>
 <ul>
 <li><strong>vim 路径</strong>：打开指定路径的文件，文件默认维持原来的状态（包括光标位置、高亮字符等）。</li>
 <li><strong>vim +数字 路径</strong>：打开指定路径的文件，并且将光标移动到指定数字行。</li>
-<li><strong>vim +/字符 路径</strong>：打开指定路径的文件，并且高亮显示指定字符。</li>
+<li><strong>vim +&#x2F;字符 路径</strong>：打开指定路径的文件，并且高亮显示指定字符。</li>
 <li><strong>vim 路径1 路径2</strong>：同时打开多个指定路径的文件。</li>
 </ul>
 <p><strong>vim退出文件的方式（末行模式）</strong></p>
@@ -236,19 +236,19 @@
 </li>
 <li><p><strong>:w 路径</strong>：将修改另外保存到指定路径文件中，不退出vim。</p>
 </li>
-<li><p><strong>:w!</strong>：强制保存，不推出vim。</p>
+<li><p>**:w!**：强制保存，不推出vim。</p>
 </li>
 <li><p><strong>:x</strong>：保存文件并退出vim，如果文件没有被修改，文件修改时间不会被更新。</p>
 </li>
 <li><p><strong>:wq</strong>：保存文件并退出vim，如果文件没有被修改，文件修改时间会被更新。</p>
 </li>
-<li><p><strong>:wq!</strong>：强制保存文件，并退出vim。</p>
+<li><p>**:wq!**：强制保存文件，并退出vim。</p>
 </li>
 <li><p><strong>:q</strong>：不保存文件，退出vim。</p>
 </li>
-<li><p><strong>:q!</strong>：不保存文件，强制退出vim。</p>
+<li><p>**:q!**：不保存文件，强制退出vim。</p>
 </li>
-<li><p><strong>:e!</strong>：放弃所有修改，从上次保存文件开始再编辑。</p>
+<li><p>**:e!**：放弃所有修改，从上次保存文件开始再编辑。</p>
 </li>
 </ul>
 <h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ul>
@@ -269,11 +269,11 @@
 <li><p>快速将光标移动到指定行</p>
 <p>按键：数字G（先按数字指定行数再按G）</p>
 </li>
-<li><p>以当前光标为准向上/向下移动n行</p>
+<li><p>以当前光标为准向上&#x2F;向下移动n行</p>
 <p>按键：数字↑（先按数字指定行数再按方向键↑指定向上移动）</p>
 <p>按键：数字↓（先按数字指定行数再按方向键↓指定向下移动）</p>
 </li>
-<li><p>以当前光标为准向左/向右移动n字符</p>
+<li><p>以当前光标为准向左&#x2F;向右移动n字符</p>
 <p>按键：数字←（先按数字指定字符数再按方向键←指定向左移动）</p>
 <p>按键：数字→（先按数字指定字符数再按方向键→指定向右移动）</p>
 </li>
@@ -296,27 +296,27 @@
 </li>
 <li><p>可视化复制（可视化模式命令）</p>
 <p>按键：Ctrl + V（进入可视块模式，单独V进入可视行模式，单独v进入可视模式） ，然后按下↑↓←→方向键来选中，配合y键复制</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E5%8F%AF%E8%A7%86%E5%8C%96.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E5%8F%AF%E8%A7%86%E5%8C%96.png"></p>
 </li>
 </ul>
 </li>
-<li><p>剪切/删除</p>
+<li><p>剪切&#x2F;删除</p>
 <ul>
-<li><p>剪切/删除光标所在行</p>
+<li><p>剪切&#x2F;删除光标所在行</p>
 <p>按键：dd（删除之后下一行上移，严格意义上说是剪切命令，但是如果剪切了不粘贴就是删除的效果）</p>
 </li>
-<li><p>剪切/删除光标所在行为准（包含当前行），向下剪切/删除指定的行</p>
+<li><p>剪切&#x2F;删除光标所在行为准（包含当前行），向下剪切&#x2F;删除指定的行</p>
 <p>按键：数字dd（删除之后下一行上移，先按数字指定行数再按dd）</p>
 </li>
-<li><p>剪切/删除光标所在的当前行之后的内容，但是删除之后下一行不上移</p>
+<li><p>剪切&#x2F;删除光标所在的当前行之后的内容，但是删除之后下一行不上移</p>
 <p>按键：D（删除之后当前行会变成空白行）</p>
 </li>
 <li><p>可视化删除（可视化模式命令）</p>
-<p>按键：Ctrl + V（快捷键） ，然后按下↑↓←→方向键来选中，配合y键剪切/删除</p>
+<p>按键：Ctrl + V（快捷键） ，然后按下↑↓←→方向键来选中，配合y键剪切&#x2F;删除</p>
 </li>
 </ul>
 </li>
-<li><p>撤销/恢复</p>
+<li><p>撤销&#x2F;恢复</p>
 <ul>
 <li><p>撤销</p>
 <p>按键u</p>
@@ -336,11 +336,11 @@
 <p>输入：:u</p>
 </li>
 <li><p>调用外部命令</p>
-<p>输入：:!外部命令（如“:!ls -a /”，列出“/”目录下的所有文件）</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8F%E8%B0%83%E7%94%A8%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4.png" alt></p>
+<p>输入：:!外部命令（如“:!ls -a &#x2F;”，列出“&#x2F;”目录下的所有文件）</p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8F%E8%B0%83%E7%94%A8%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4.png"></p>
 </li>
-<li><p>搜索/查找</p>
-<p>输入：/关键词（关键词将高亮显示，通过按键N/n切换上/下一个结果）</p>
+<li><p>搜索&#x2F;查找</p>
+<p>输入：&#x2F;关键词（关键词将高亮显示，通过按键N&#x2F;n切换上&#x2F;下一个结果）</p>
 </li>
 <li><p>关闭高亮</p>
 <p>输入：:nohl</p>
@@ -356,27 +356,27 @@
 <li><p>替换</p>
 <ul>
 <li><p>替换光标所在行的第一处符合条件的内容</p>
-<p>输入：:s/搜索的关键词/替换的内容</p>
+<p>输入：:s&#x2F;搜索的关键词&#x2F;替换的内容</p>
 </li>
 <li><p>替换光标所在行的全部符合条件的内容</p>
-<p>输入：:s/搜索的关键词/替换的内容/g</p>
+<p>输入：:s&#x2F;搜索的关键词&#x2F;替换的内容&#x2F;g</p>
 </li>
 <li><p>替换整个文档中每行第一个符合条件的内容</p>
-<p>:%s/搜索的关键词/替换的内容</p>
+<p>:%s&#x2F;搜索的关键词&#x2F;替换的内容</p>
 </li>
 <li><p>替换整个文档的符合条件的内容</p>
-<p>:%s/搜索的关键词/新的内容/g</p>
+<p>:%s&#x2F;搜索的关键词&#x2F;新的内容&#x2F;g</p>
 </li>
 </ul>
 </li>
 <li><p>查看当前已经打开的文件名称</p>
 <p>输入：:files（“%a”标识正在打开的文件；“#”标识上一个打开的文件）</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8Ffiles.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8Ffiles.png"></p>
 </li>
 <li><p>切换已打开的文件</p>
 <p>输入：:open 文件名称</p>
 </li>
-<li><p>切换上一个文件/下一个文件</p>
+<li><p>切换上一个文件&#x2F;下一个文件</p>
 <p>输入：:bn（切换到下一个文件）</p>
 <p>输入：:bp（切换到上一个文件）</p>
 </li>
@@ -392,13 +392,13 @@
 <p>按键：S（删除光标所在行并开始插入）</p>
 </li>
 <li><p>调用计算器</p>
-<p>按键：Ctrl + R + =（先按Ctrl + R，再按等号，输入需要计算的信息后按回车返回结果）</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E8%AE%A1%E7%AE%97%E5%99%A8.png" alt></p>
+<p>按键：Ctrl + R + &#x3D;（先按Ctrl + R，再按等号，输入需要计算的信息后按回车返回结果）</p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E8%AE%A1%E7%AE%97%E5%99%A8.png"></p>
 </li>
 </ul>
 <h1 id="5、运行级别"><a href="#5、运行级别" class="headerlink" title="5、运行级别"></a>5、运行级别</h1><p><strong>管理机制</strong></p>
 <p>CentOS 6 的服务管理机制是 systemv，采用 service 命令来管理所有的服务。</p>
-<p>从 CentOS 7 开始，服务从原来的由 systemv 管理机制升级到了systemd，统一采用 systemctl 命令来管理所有的服务。因此以前运行级别（runlevel）的概念被新的运行目标（target）所取代，target的命名类似于“multi-user.target”这种形式，比如原来的运行级别3（runlevel3）对应于新的多用户目标“multi-user.target”，运行级别5（runlevel5）对应于“graphical-user.target”。因为 systemd 机制不再使用 runlevel 的概念，所以 /etc/inittab 也不再被系统使用。</p>
+<p>从 CentOS 7 开始，服务从原来的由 systemv 管理机制升级到了systemd，统一采用 systemctl 命令来管理所有的服务。因此以前运行级别（runlevel）的概念被新的运行目标（target）所取代，target的命名类似于“multi-user.target”这种形式，比如原来的运行级别3（runlevel3）对应于新的多用户目标“multi-user.target”，运行级别5（runlevel5）对应于“graphical-user.target”。因为 systemd 机制不再使用 runlevel 的概念，所以 &#x2F;etc&#x2F;inittab 也不再被系统使用。</p>
 <table>
 <thead>
 <tr>
@@ -453,7 +453,7 @@
 <p><strong>init 6</strong>：重启</p>
 <p><strong>runlevel</strong>：查看当前运行级别</p>
 </blockquote>
-<p>  <strong>注意：init指令需要超级管理员的权限，普通用户无法执行。且只能临时切换运行级别，重启失效，如需持久改变运行级别，需将/etc/inittab文件中的initdefault值设置成3（或者其他运行级别），然后重启操作系统。</strong></p>
+<p>  <strong>注意：init指令需要超级管理员的权限，普通用户无法执行。且只能临时切换运行级别，重启失效，如需持久改变运行级别，需将&#x2F;etc&#x2F;inittab文件中的initdefault值设置成3（或者其他运行级别），然后重启操作系统。</strong></p>
 </li>
 <li><p>CenOS7</p>
 <p>第一个启动的进程：<code>systemd</code>，进程id为1</p>
@@ -463,17 +463,17 @@
 <p><strong>systemctl set-default multi-user.target</strong>：设置默认运行级别，持久有效</p>
 </blockquote>
 <p><strong>注意：CentOS7中<code>init</code>仍有效，但配置文件无效</strong></p>
-<p>CentOS 6 的服务管理机制是 systemv，采用 service 命令来管理所有的服务。</p>
 </li>
 </ul>
+<p> CentOS 6 的服务管理机制是 systemv，采用 service 命令来管理所有的服务。</p>
 <h1 id="6、用户与用户组管理"><a href="#6、用户与用户组管理" class="headerlink" title="6、用户与用户组管理"></a>6、用户与用户组管理</h1><p>Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
-<p>用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。每个用户账号都拥有一个唯一的用户名。用户在登录时键入正确的用户名和密码后，就能够进入系统和自己的主目录。用户的管理涉及用户的添加、删除和修改以及用户密码的设置。用户的增加、删除和修改实际上就是对/etc/passwd文件的更新，用户名的设置实际上就是对/etc/shadow文件的更新。</p>
-<p>每个用户都有一个用户组，系统可以对一个用户组中的所有用户进行集中管理。不同Linux 系统对用户组的规定有所不同，如Linux下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建。用户组的管理涉及用户组的添加、删除和修改。组的增加、删除和修改实际上就是对/etc/group文件的更新。</p>
+<p>用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。每个用户账号都拥有一个唯一的用户名。用户在登录时键入正确的用户名和密码后，就能够进入系统和自己的主目录。用户的管理涉及用户的添加、删除和修改以及用户密码的设置。用户的增加、删除和修改实际上就是对&#x2F;etc&#x2F;passwd文件的更新，用户名的设置实际上就是对&#x2F;etc&#x2F;shadow文件的更新。</p>
+<p>每个用户都有一个用户组，系统可以对一个用户组中的所有用户进行集中管理。不同Linux 系统对用户组的规定有所不同，如Linux下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建。用户组的管理涉及用户组的添加、删除和修改。组的增加、删除和修改实际上就是对&#x2F;etc&#x2F;group文件的更新。</p>
 <p>三个主要配置文件。</p>
 <ol>
-<li><p><strong>/etc/passwd</strong>：配置用户的关键信息</p>
+<li><p><strong>&#x2F;etc&#x2F;passwd</strong>：配置用户的关键信息</p>
 <blockquote>
-<p> <img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/passwd%E6%96%87%E4%BB%B6.png" alt><br> <strong>存储格式</strong>：用户名:用户密码:用户ID:用户组ID:注释:家目录:解释器shell</p>
+<p> <img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/passwd%E6%96%87%E4%BB%B6.png"><br> <strong>存储格式</strong>：用户名:用户密码:用户ID:用户组ID:注释:家目录:解释器shell</p>
 <ul>
 <li>用户名：创建新用户名称，后期登录的时候需要输入</li>
 <li>用户密码：此密码位置一般情况都是“x”，表示密码的占位</li>
@@ -485,9 +485,9 @@
 </ul>
 </blockquote>
 </li>
-<li><p><strong>/etc/group</strong>：配置用户组的关键信息</p>
+<li><p><strong>&#x2F;etc&#x2F;group</strong>：配置用户组的关键信息</p>
 <blockquote>
-<p> <img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/group%E6%96%87%E4%BB%B6.png" alt><br> <strong>存储格式</strong>：用户组名:用户组密码:用户组ID</p>
+<p> <img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/group%E6%96%87%E4%BB%B6.png"><br> <strong>存储格式</strong>：用户组名:用户组密码:用户组ID</p>
 <ul>
 <li><p>用户组名：用户组的名称，有字母或数字构成</p>
 </li>
@@ -500,9 +500,9 @@
 </ul>
 </blockquote>
 </li>
-<li><p><strong>/etc/shadow</strong>：配置用户的密码信息</p>
+<li><p><strong>&#x2F;etc&#x2F;shadow</strong>：配置用户的密码信息</p>
 <blockquote>
-<p> <img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/shadow%E6%96%87%E4%BB%B6.png" alt><br> <strong>存储格式</strong>：用户名:加密密码:最后一次修改时间:最小修改时间间隔:密码有效期:密码需要变更前的警告天数:密码过期后的宽限时间:账号失效时间:保留字段</p>
+<p> <img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/shadow%E6%96%87%E4%BB%B6.png"><br> <strong>存储格式</strong>：用户名:加密密码:最后一次修改时间:最小修改时间间隔:密码有效期:密码需要变更前的警告天数:密码过期后的宽限时间:账号失效时间:保留字段</p>
 <ul>
 <li>用户名：创建新用户名称，后期登录的时候需要输入</li>
 <li>加密密码：这里保存的是真正加密的密码。目前 Linux 的密码采用的是 SHA512 散列加密算法，原来采用的是 MD5 或 DES 加密算法（所有伪用户的密码都是 “!!” 或 “*”，代表没有密码是不能登录的。当然，新创建的用户如果不设定密码，那么它的密码项也是 “!!”，代表这个用户没有密码，不能登录。）</li>
@@ -519,27 +519,27 @@
 </ol>
 <p><strong>忘记密码怎么办？</strong></p>
 <p>对于普通账户的密码遗失，可以通过 root 账户解决，它会重新给你配置好指定账户的密码，而不需知道你原有的密码（利用 root 的身份使用 passwd 命令即可）。</p>
-<p>如果 root 账号的密码遗失，则需要重新启动进入单用户模式，系统会提供 root 权限的 bash 接口，此时可以用 passwd 命令修改账户密码；也可以通过挂载根目录，修改 /etc/shadow，将账户的 root 密码清空的方法，此方式可使用 root 无法密码即可登陆，建议登陆后使用 passwd 命令配置 root 密码。</p>
+<p>如果 root 账号的密码遗失，则需要重新启动进入单用户模式，系统会提供 root 权限的 bash 接口，此时可以用 passwd 命令修改账户密码；也可以通过挂载根目录，修改 &#x2F;etc&#x2F;shadow，将账户的 root 密码清空的方法，此方式可使用 root 无法密码即可登陆，建议登陆后使用 passwd 命令配置 root 密码。</p>
 <h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul>
 <li><p><strong>useradd</strong>：添加用户。</p>
 <blockquote>
 <ul>
 <li><p><strong>useradd 用户名</strong>：不加任何选项，创建一个用户，创建同名的家目录，创建同名的用户组。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_1.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_1.png"></p>
 </li>
 <li><p><strong>useradd 选项 选项值 用户名</strong>：根据选项创建一个用户。</p>
 <ul>
-<li><p><strong>useradd -g 用户组ID/用户组名 用户名</strong>：创建用户时指定用户的用户主组，选项的值可以是用户组的id，也可以是组名。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_2.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_3.png" alt>)指定用户主组，将不会额外创建跟用户同名的用户组。<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_4.png" alt></p>
+<li><p><strong>useradd -g 用户组ID&#x2F;用户组名 用户名</strong>：创建用户时指定用户的用户主组，选项的值可以是用户组的id，也可以是组名。</p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_2.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_3.png">指定用户主组，将不会额外创建跟用户同名的用户组。<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_4.png"></p>
 </li>
-<li><p><strong>useradd -G 用户组ID/用户组名 用户名</strong>：创建用户时指定用户的用户附加组，选项的值可以是用户组的id，也可以是组名。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_5.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_6.png" alt>)指定用户附加组，将会额外创建跟用户同名的用户组。<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_7.png" alt></p>
+<li><p><strong>useradd -G 用户组ID&#x2F;用户组名 用户名</strong>：创建用户时指定用户的用户附加组，选项的值可以是用户组的id，也可以是组名。</p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_5.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_6.png">指定用户附加组，将会额外创建跟用户同名的用户组。<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_7.png"></p>
 </li>
 <li><p><strong>useradd -u 用户ID 用户名</strong>：创建用户时指定用户的用户ID。系统默认会从500之后按顺序分配用户ID，如果不想使用系统分配的，可以通过该选项自定义。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_8.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_9.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_8.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_9.png"></p>
 </li>
 <li><p><strong>useradd -c 注释 用户名</strong>：创建用户时指定注释。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_10.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_11.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_10.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4useradd_11.png"></p>
 </li>
 </ul>
 </li>
@@ -550,20 +550,20 @@
 <blockquote>
 <p><strong>usermod 选项 选项值 用户名</strong>：根据选项修改一个用户。</p>
 <ul>
-<li><p><strong>usermod -g 用户组ID/用户组名 用户名</strong>：修改用户的用户主组，选项的值可以是用户组的id，也可以是组名。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_1.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_2.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_3.png" alt></p>
+<li><p><strong>usermod -g 用户组ID&#x2F;用户组名 用户名</strong>：修改用户的用户主组，选项的值可以是用户组的id，也可以是组名。</p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_1.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_2.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_3.png"></p>
 </li>
-<li><p><strong>usermod -G 用户组ID/用户组名 用户名</strong>：修改用户的用户附加组，选项的值可以是用户组的id，也可以是组名。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_4.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_5.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_6.png" alt></p>
+<li><p><strong>usermod -G 用户组ID&#x2F;用户组名 用户名</strong>：修改用户的用户附加组，选项的值可以是用户组的id，也可以是组名。</p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_4.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_5.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_6.png"></p>
 </li>
 <li><p><strong>usermod -u 用户ID 用户名</strong>：修改用户的用户ID。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_7.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_8.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_9.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_7.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_8.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_9.png"></p>
 </li>
 <li><p><strong>usermod -c 注释 用户名</strong>：修改用户的注释。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_10.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_11.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_12.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_10.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_11.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_12.png"></p>
 </li>
 <li><p><strong>usermod -l 新用户名 用户名</strong>：修改用户的用户名。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_13.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_14.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_15.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_13.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_14.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4usermod_15.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -572,12 +572,12 @@
 <blockquote>
 <ul>
 <li><p><strong>userdel 用户名</strong>：不加任何选项，删除用户，如果同名用户主组下没有其他用户将会同时删除同名用户主组。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_1.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_2.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_3.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_1.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_2.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_3.png"></p>
 </li>
 <li><p><strong>userdel 选项 用户名</strong>：根据选项删除用户。</p>
 <ul>
 <li><p><strong>userdel -r 用户名</strong>：删除用户的同时，删除其家目录。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_4.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_5.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_6.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_4.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_5.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4userdel_6.png"></p>
 </li>
 </ul>
 </li>
@@ -587,7 +587,7 @@
 <li><p><strong>passwd</strong>：设置用户密码。</p>
 <blockquote>
 <p><strong>passwd 用户名</strong>：设置用户密码。Linux不允许没有密码的用户登录到系统，因此前面创建的用户目前都处于锁定状态，需要设置密码之后才能登录计算机。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4passwd_1.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4passwd_2.png" alt>)<img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4passwd_3.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4passwd_1.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4passwd_2.png"><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4passwd_3.png"></p>
 </blockquote>
 </li>
 </ul>
@@ -596,11 +596,11 @@
 <blockquote>
 <ul>
 <li><p><strong>groupadd 用户组名</strong>：不加任何选项，创建一个用户组。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupadd_1.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupadd_1.png"></p>
 </li>
 <li><p><strong>groupadd 选项 用户组名</strong>：根据选项创建一个用户组。</p>
 <p><strong>groupadd -g 用户组ID 用户组名</strong>：创建用户组时指定用户组的用户组ID。如果自己不指定，则默认从500之后递增。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupadd_2.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupadd_2.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -610,10 +610,10 @@
 <p><strong>groupmod 选项 选项值 用户组名</strong>：根据选项修改一个用户组。</p>
 <ul>
 <li><p><strong>groupmod -g 用户组ID 用户组名</strong>：修改用户组的用户组ID。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupmod_1.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupmod_1.png"></p>
 </li>
 <li><p><strong>groupmod -n 新用户组名 用户组名</strong>：修改用户组的用户组名。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupmod_2.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupmod_2.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -621,8 +621,8 @@
 <li><p><strong>groupdel</strong>：删除用户组。</p>
 <blockquote>
 <p><strong>groupdel 用户组名</strong>：不加任何选项，删除用户组，如果用户组是用户的用户主组，则需先将用户移除用户组再删除。</p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupdel_1.png" alt></p>
-<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupdel_2.png" alt></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupdel_1.png"></p>
+<p><img src="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E6%8C%87%E4%BB%A4groupdel_2.png"></p>
 </blockquote>
 </li>
 </ul>
@@ -896,7 +896,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

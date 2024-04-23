@@ -184,13 +184,13 @@
         </div>
         
         <div class="content">
-            <p>leetcode 6058. 统计打字方案数    </p>
+            <p>leetcode 6058. 统计打字方案数	</p>
 <a id="more"></a>
 
 <hr>
 <p><strong>题目：<a href="https://leetcode-cn.com/problems/count-number-of-texts/">6058. 统计打字方案数</a></strong></p>
 <p>Alice 在给 Bob 用手机打字。数字到字母的 对应 如下图所示。</p>
-<p><img src="/2022/05/08/6058.%20%E7%BB%9F%E8%AE%A1%E6%89%93%E5%AD%97%E6%96%B9%E6%A1%88%E6%95%B0/1.png" alt></p>
+<p><img src="/2022/05/08/6058.%20%E7%BB%9F%E8%AE%A1%E6%89%93%E5%AD%97%E6%96%B9%E6%A1%88%E6%95%B0/1.png"></p>
 <p>为了 打出 一个字母，Alice 需要 按 对应字母 i 次，i 是该字母在这个按键上所处的位置。</p>
 <ul>
 <li>比方说，为了按出字母 ‘s’ ，Alice 需要按 ‘7’ 四次。类似的， Alice 需要按 ‘5’ 两次得到字母  ‘k’ 。</li>
@@ -204,30 +204,30 @@
 <p>由于答案可能很大，将它对 109 + 7 取余 后返回。</p>
 <p><strong>示例1:</strong></p>
 <blockquote>
-<p>输入: pressedKeys = “22233”<br>输出: 8<br>解释: Alice 可能发出的文字信息包括：”aaadd”, “abdd”, “badd”, “cdd”, “aaae”, “abe”, “bae” 和 “ce” 。由于总共有 8 种可能的信息，所以我们返回 8 。</p>
+<p>输入: pressedKeys &#x3D; “22233”<br>输出: 8<br>解释: Alice 可能发出的文字信息包括：”aaadd”, “abdd”, “badd”, “cdd”, “aaae”, “abe”, “bae” 和 “ce” 。由于总共有 8 种可能的信息，所以我们返回 8 。</p>
 </blockquote>
 <p><strong>示例2:</strong></p>
 <blockquote>
-<p>输入: pressedKeys = “222222222222222222222222222222222222”<br>输出: 82876089<br>解释: 总共有 2082876103 种 Alice 可能发出的文字信息。由于我们需要将答案对 109 + 7 取余，所以我们返回 2082876103 % (109 + 7) = 82876089 。</p>
+<p>输入: pressedKeys &#x3D; “222222222222222222222222222222222222”<br>输出: 82876089<br>解释: 总共有 2082876103 种 Alice 可能发出的文字信息。由于我们需要将答案对 109 + 7 取余，所以我们返回 2082876103 % (109 + 7) &#x3D; 82876089 。</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= pressedKeys.length &lt;= 105</li>
+<li>1 &lt;&#x3D; pressedKeys.length &lt;&#x3D; 105</li>
 <li>pressedKeys 只包含数字 ‘2’ 到 ‘9’ 。</li>
 </ul>
 <h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong> dp[i]表示以pressKey第i个位置上字符结尾的方案个数，chas[i]表示pressKey第i个位置上的字符，分情况讨论：</p>
-<p>根据题目可知dp[-1] = 1、dp[0] = 1，即没有字符时方案数为1，以第0个位置上的字符结尾时方案数也为1。</p>
+<p>根据题目可知dp[-1] &#x3D; 1、dp[0] &#x3D; 1，即没有字符时方案数为1，以第0个位置上的字符结尾时方案数也为1。</p>
 <p>对于非 ‘7’ 和 ‘9’ 按键：</p>
 <ul>
-<li>当chas[i] != chas[i - 1]时，最后的按键情况只有一种，如 ‘1’ ，对应按出字符 ‘a’ ，所以方案数取决于 i - 1 位置上的方案数 ，dp[i] = dp[i - 1]</li>
-<li>当chas[i] == chas[i - 1]时，最后的按键情况会有两种，如 ‘1’ 或者 ‘11’ ，对应按出字符 ‘a’ 、’b’ ，所以方案数应为 i - 1 位置上的方案数加上 i - 2 位置上的方案数，dp[i] = dp[i - 1] + dp[i - 2]</li>
-<li>当chas[i] == chas[i - 1] == chas[i - 2]时，最后的按键情况会有三种，如 ‘1’ 或者  ‘11’ 或者 ‘111’ ，对应按出字符 ‘a’ 、’b’ 、’c’，所以方案数应为 i - 1 位置上的方案数加上 i - 2 位置上的方案数加上 i - 3 位置上的方案数，dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3]</li>
+<li>当chas[i] !&#x3D; chas[i - 1]时，最后的按键情况只有一种，如 ‘1’ ，对应按出字符 ‘a’ ，所以方案数取决于 i - 1 位置上的方案数 ，dp[i] &#x3D; dp[i - 1]</li>
+<li>当chas[i] &#x3D;&#x3D; chas[i - 1]时，最后的按键情况会有两种，如 ‘1’ 或者 ‘11’ ，对应按出字符 ‘a’ 、’b’ ，所以方案数应为 i - 1 位置上的方案数加上 i - 2 位置上的方案数，dp[i] &#x3D; dp[i - 1] + dp[i - 2]</li>
+<li>当chas[i] &#x3D;&#x3D; chas[i - 1] &#x3D;&#x3D; chas[i - 2]时，最后的按键情况会有三种，如 ‘1’ 或者  ‘11’ 或者 ‘111’ ，对应按出字符 ‘a’ 、’b’ 、’c’，所以方案数应为 i - 1 位置上的方案数加上 i - 2 位置上的方案数加上 i - 3 位置上的方案数，dp[i] &#x3D; dp[i - 1] + dp[i - 2] + dp[i - 3]</li>
 </ul>
 <p>对于 ‘7’ 和 ‘9’ 按键，仍包含上述三种情况，此外，由于 ‘7’ 和 ‘9’ 按键上有4个字符，其还包含第四种情况：</p>
 <ul>
-<li>当chas[i] == chas[i - 1] == chas[i - 2] == chas[i - 3]时，最后的按键情况会有四种，如 ‘1’ 或者  ‘11’ 或者 ‘111’  或者 ‘1111’ ，对应按出字符 ‘p’ 、’q’ 、’r’ 、’s’，所以方案数应为 i - 1 位置上的方案数加上 i - 2 位置上的方案数加上 i - 3 位置上的方案数加上 i - 4 位置上的方案数，dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3] + dp[i - 4]</li>
+<li>当chas[i] &#x3D;&#x3D; chas[i - 1] &#x3D;&#x3D; chas[i - 2] &#x3D;&#x3D; chas[i - 3]时，最后的按键情况会有四种，如 ‘1’ 或者  ‘11’ 或者 ‘111’  或者 ‘1111’ ，对应按出字符 ‘p’ 、’q’ 、’r’ 、’s’，所以方案数应为 i - 1 位置上的方案数加上 i - 2 位置上的方案数加上 i - 3 位置上的方案数加上 i - 4 位置上的方案数，dp[i] &#x3D; dp[i - 1] + dp[i - 2] + dp[i - 3] + dp[i - 4]</li>
 </ul>
-<p>状态转移方程为：<br>$$<br>\begin{cases}<br>dp[i] = 1, &amp; \text {i = -1, i = 0} \\<br>dp[i] = dp[i - 1], &amp; \text {chas[i] != chas[i - 1]} \\<br>dp[i] = dp[i - 1] + dp[i - 2], &amp; \text {chas[i] = chas[i - 1]} \\<br>dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3], &amp; \text {chas[i] = chas[i - 1] = chas[i - 2]} \\<br>dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3] + dp[i - 4], &amp; \text {chas[i] = chas[i - 1] = chas[i - 2] = chas[i - 3], 按键为 ‘7’ | ‘9’} \\<br>\end{cases}<br>$$<br><strong>运行数据：</strong> 执行用时：17 ms，内存消耗：42.2 MB</p>
+<p>状态转移方程为：<br>$$<br>\begin{cases}<br>dp[i] &#x3D; 1, &amp; \text {i &#x3D; -1, i &#x3D; 0} \\<br>dp[i] &#x3D; dp[i - 1], &amp; \text {chas[i] !&#x3D; chas[i - 1]} \\<br>dp[i] &#x3D; dp[i - 1] + dp[i - 2], &amp; \text {chas[i] &#x3D; chas[i - 1]} \\<br>dp[i] &#x3D; dp[i - 1] + dp[i - 2] + dp[i - 3], &amp; \text {chas[i] &#x3D; chas[i - 1] &#x3D; chas[i - 2]} \\<br>dp[i] &#x3D; dp[i - 1] + dp[i - 2] + dp[i - 3] + dp[i - 4], &amp; \text {chas[i] &#x3D; chas[i - 1] &#x3D; chas[i - 2] &#x3D; chas[i - 3], 按键为 ‘7’ | ‘9’} \\<br>\end{cases}<br>$$<br><strong>运行数据：</strong> 执行用时：17 ms，内存消耗：42.2 MB</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
 <li>时间复杂度：O(n)，n为pressedKeys字符串长度。</li>
@@ -474,7 +474,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

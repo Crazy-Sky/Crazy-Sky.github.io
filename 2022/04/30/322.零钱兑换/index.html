@@ -194,23 +194,23 @@
 <p>你可以认为每种硬币的数量是无限的。</p>
 <p><strong>示例1:</strong></p>
 <blockquote>
-<p>输入: coins = [1, 2, 5], amount = 11<br>输出: 3<br>解释: 11 = 5 + 5 + 1</p>
+<p>输入: coins &#x3D; [1, 2, 5], amount &#x3D; 11<br>输出: 3<br>解释: 11 &#x3D; 5 + 5 + 1</p>
 </blockquote>
 <p><strong>示例2:</strong></p>
 <blockquote>
-<p>输入: coins = [2], amount = 3<br>输出: -1</p>
+<p>输入: coins &#x3D; [2], amount &#x3D; 3<br>输出: -1</p>
 </blockquote>
 <p><strong>示例3:</strong></p>
 <blockquote>
-<p>输入: coins = [1], amount = 0<br>输出: 0</p>
+<p>输入: coins &#x3D; [1], amount &#x3D; 0<br>输出: 0</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= coins.length &lt;= 12</li>
-<li>1 &lt;= coins[i] &lt;= 231 - 1</li>
-<li>0 &lt;= amount &lt;= 104</li>
+<li>1 &lt;&#x3D; coins.length &lt;&#x3D; 12</li>
+<li>1 &lt;&#x3D; coins[i] &lt;&#x3D; 231 - 1</li>
+<li>0 &lt;&#x3D; amount &lt;&#x3D; 104</li>
 </ul>
-<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>因为硬币可以重复使用，因此这是一个完全背包问题。由于硬币面额为正整数，组成总金额amount的硬币数量不会超过amount个，在未知金币面额时，可以确定的是组成总金额0的最少硬币数为0，对于组成面额1~amount所需的最少硬币数是无法确定的，所以将组成金额的最小硬币数设置的尽可能大，初始为amount + 1，状态转移方程为：<br>$$<br>\begin{cases}<br>dp[j] = 0, &amp; \text {j = 0} \\<br>dp[j] = min(dp[j], dp[j - coins[i]] + 1), &amp; \text {j &gt; 0}<br>\end{cases}<br>$$<br>j表示总金额，dp[j]表示组成总金额j所需的最少硬币数量，coins[i]表示提供的第i个硬币的面额。</p>
+<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>因为硬币可以重复使用，因此这是一个完全背包问题。由于硬币面额为正整数，组成总金额amount的硬币数量不会超过amount个，在未知金币面额时，可以确定的是组成总金额0的最少硬币数为0，对于组成面额1~amount所需的最少硬币数是无法确定的，所以将组成金额的最小硬币数设置的尽可能大，初始为amount + 1，状态转移方程为：<br>$$<br>\begin{cases}<br>dp[j] &#x3D; 0, &amp; \text {j &#x3D; 0} \\<br>dp[j] &#x3D; min(dp[j], dp[j - coins[i]] + 1), &amp; \text {j &gt; 0}<br>\end{cases}<br>$$<br>j表示总金额，dp[j]表示组成总金额j所需的最少硬币数量，coins[i]表示提供的第i个硬币的面额。</p>
 <p><strong>运行数据：</strong>执行用时：16 ms，内存消耗：41 MB</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
@@ -465,7 +465,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

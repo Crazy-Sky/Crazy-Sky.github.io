@@ -203,7 +203,7 @@
 <blockquote>
 <p>输入: [1, 2, 3, 5]<br>输出: false<br>解释: 数组不能分割成两个元素和相等的子集.输入的字符串只含有小写英文字符。</p>
 </blockquote>
-<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>动态规划。状态转移方程为：dp[j] = max(dp[j], dp[j - nums[i]] + nums[i])。dp[j]表示剩余空间为j时所能装下的最体积。把nums中的数字看作体积。将是否可以将这个数组分割成两个子集，使得两个子集的元素和相等这个问题转换成是否能从使数组中的选择一些元素，使得这些元素的和刚好为数组所有元素总和的一半。然后将其装换成01背包问题，判断当背包空间为数组所有元素总和的一半时，所装入的体积最大是否等于背包空间，如果相等则说明可以从使数组中的选择一些元素，使得这些元素的和刚好为数组所有元素总和的一半，即说明可以将这个数组分割成两个子集，使得两个子集的元素和相等。</p>
+<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>动态规划。状态转移方程为：dp[j] &#x3D; max(dp[j], dp[j - nums[i]] + nums[i])。dp[j]表示剩余空间为j时所能装下的最体积。把nums中的数字看作体积。将是否可以将这个数组分割成两个子集，使得两个子集的元素和相等这个问题转换成是否能从使数组中的选择一些元素，使得这些元素的和刚好为数组所有元素总和的一半。然后将其装换成01背包问题，判断当背包空间为数组所有元素总和的一半时，所装入的体积最大是否等于背包空间，如果相等则说明可以从使数组中的选择一些元素，使得这些元素的和刚好为数组所有元素总和的一半，即说明可以将这个数组分割成两个子集，使得两个子集的元素和相等。</p>
 <p><strong>运行数据：</strong>执行用时：18 ms，内存消耗：38.9 MB</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
@@ -458,7 +458,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

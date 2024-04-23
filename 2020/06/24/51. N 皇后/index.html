@@ -191,21 +191,21 @@
 <hr>
 <p><strong>题目：<a href="https://leetcode-cn.com/problems/n-queens/">51. N 皇后</a></strong></p>
 <p>n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。</p>
-<p><img src="/2020/06/24/51.%20N%20%E7%9A%87%E5%90%8E/1.png" alt></p>
+<p><img src="/2020/06/24/51.%20N%20%E7%9A%87%E5%90%8E/1.png"></p>
 <p>上图为 8 皇后问题的一种解法。</p>
 <p>给定一个整数 n，返回所有不同的 n 皇后问题的解决方案。</p>
 <p>每一种解法包含一个明确的 n 皇后问题的棋子放置方案，该方案中 ‘Q’ 和 ‘.’ 分别代表了皇后和空位。</p>
 <p><strong>示例:</strong></p>
 <blockquote>
-<p>输入：4<br>输出：<br>[<br>[“.Q..”,  // 解法 1<br>“…Q”,<br>“Q…”,<br>“..Q.”],</p>
-<p>[“..Q.”,  // 解法 2<br>“Q…”,<br>“…Q”,<br>“.Q..”]<br>]</p>
+<p>输入：4<br>输出：<br>[<br>[“.Q..”,  &#x2F;&#x2F; 解法 1<br>“…Q”,<br>“Q…”,<br>“..Q.”],</p>
+<p>[“..Q.”,  &#x2F;&#x2F; 解法 2<br>“Q…”,<br>“…Q”,<br>“.Q..”]<br>]</p>
 <p>解释: 4 皇后问题存在两个不同的解法。</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
 <li>皇后彼此不能相互攻击，也就是说：任何两个皇后都不能处于同一条横行、纵行或斜线上。</li>
 </ul>
-<h2 id="方法：Backtracking（回溯）"><a href="#方法：Backtracking（回溯）" class="headerlink" title="方法：Backtracking（回溯）"></a>方法：Backtracking（回溯）</h2><p><strong>思路：</strong>Backtracking（回溯），将问题转化为为每一行的合适列放入一个皇后，通过三个集合columns、diagonals1、diagonals2分别记录已有皇后的所在的列数、所在从左上角指向右下角斜线位置的行数与列数的差、所在从左下角指向右上角斜线位置的行数与列数的和，用于皇后放置前的位置判断。<br><strong>运行数据：</strong>执行用时：5 ms，内存消耗：39.5 MB    </p>
+<h2 id="方法：Backtracking（回溯）"><a href="#方法：Backtracking（回溯）" class="headerlink" title="方法：Backtracking（回溯）"></a>方法：Backtracking（回溯）</h2><p><strong>思路：</strong>Backtracking（回溯），将问题转化为为每一行的合适列放入一个皇后，通过三个集合columns、diagonals1、diagonals2分别记录已有皇后的所在的列数、所在从左上角指向右下角斜线位置的行数与列数的差、所在从左下角指向右上角斜线位置的行数与列数的和，用于皇后放置前的位置判断。<br><strong>运行数据：</strong>执行用时：5 ms，内存消耗：39.5 MB	</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
 <li>时间复杂度：O(n!)，其中 n 是皇后数量。</li>
@@ -459,7 +459,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

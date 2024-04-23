@@ -228,7 +228,7 @@
 <li>访问类：使用单例的类。（如下图“Test”）</li>
 </ul>
 </blockquote>
-<p><img src="/2020/10/03/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/singleton.png" alt></p>
+<p><img src="/2020/10/03/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/singleton.png"></p>
 <h4 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 饿汉式单例模式(线程安全、调用效率高、不可延迟加载) </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonTest1</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 类初始化时，立即创建对象（没有延迟加载的优势）。加载类时，天然的是线程安全的。</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingletonTest1 instance = <span class="keyword">new</span> SingletonTest1();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 私有化构造器</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonTest1</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 方法不需要同步，调用效率高。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonTest1 <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 懒汉式单例模式(线程安全、调用效率低、可延迟加载)    </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonTest2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 类初始化时，不立即创建对象（延迟加载，真正用的时候再创建）。</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingletonTest2 instance;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 私有化构造器</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonTest2</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 方法需要同步，调用效率低。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> SingletonTest2 <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> SingletonTest2();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -284,7 +284,7 @@
 <hr>
 <p><strong>相关链接：</strong></p>
 <ul>
-<li><a href="/2020/10/01/设计模式/">设计模式</a></li>
+<li><a href="/2020/10/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li>
 </ul>
 <p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
 <p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
@@ -558,7 +558,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

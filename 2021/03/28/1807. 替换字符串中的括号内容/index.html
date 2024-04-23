@@ -193,7 +193,7 @@
 <ul>
 <li>比方说，字符串 “(name)is(age)yearsold” 中，有 两个 括号对，分别包含键 “name” 和 “age” 。</li>
 </ul>
-<p>你知道许多键对应的值，这些关系由二维字符串数组 knowledge 表示，其中 knowledge[i] = [keyi, valuei] ，表示键 keyi 对应的值为 valuei 。</p>
+<p>你知道许多键对应的值，这些关系由二维字符串数组 knowledge 表示，其中 knowledge[i] &#x3D; [keyi, valuei] ，表示键 keyi 对应的值为 valuei 。</p>
 <p>你需要替换 所有 的括号对。当你替换一个括号对，且它包含的键为 keyi 时，你需要：</p>
 <ul>
 <li>将 keyi 和括号用对应的值 valuei 替换。</li>
@@ -203,26 +203,26 @@
 <p>请你返回替换 所有 括号对后的结果字符串。</p>
 <p><strong>示例1:</strong></p>
 <blockquote>
-<p>输入: s = “(name)is(age)yearsold”, knowledge = [[“name”,”bob”],[“age”,”two”]]<br>输出: “bobistwoyearsold”<br>解释: 键 “name” 对应的值为 “bob” ，所以将 “(name)” 替换为 “bob” 。键 “age” 对应的值为 “two” ，所以将 “(age)” 替换为 “two” 。</p>
+<p>输入: s &#x3D; “(name)is(age)yearsold”, knowledge &#x3D; [[“name”,”bob”],[“age”,”two”]]<br>输出: “bobistwoyearsold”<br>解释: 键 “name” 对应的值为 “bob” ，所以将 “(name)” 替换为 “bob” 。键 “age” 对应的值为 “two” ，所以将 “(age)” 替换为 “two” 。</p>
 </blockquote>
 <p><strong>示例2:</strong></p>
 <blockquote>
-<p>输入: s = “hi(name)”, knowledge = [[“a”,”b”]]<br>输出: “hi?”<br>解释: 由于不知道键 “name” 对应的值，所以用 “?” 替换 “(name)” 。</p>
+<p>输入: s &#x3D; “hi(name)”, knowledge &#x3D; [[“a”,”b”]]<br>输出: “hi?”<br>解释: 由于不知道键 “name” 对应的值，所以用 “?” 替换 “(name)” 。</p>
 </blockquote>
 <p><strong>示例3:</strong></p>
 <blockquote>
-<p>输入: s = “(a)(a)(a)aaa”, knowledge = [[“a”,”yes”]]<br>输出: “yesyesyesaaa”<br>解释: 相同的键在 s 中可能会出现多次。键 “a” 对应的值为 “yes” ，所以将所有的 “(a)” 替换为 “yes” 。注意，不在括号里的 “a” 不需要被替换。</p>
+<p>输入: s &#x3D; “(a)(a)(a)aaa”, knowledge &#x3D; [[“a”,”yes”]]<br>输出: “yesyesyesaaa”<br>解释: 相同的键在 s 中可能会出现多次。键 “a” 对应的值为 “yes” ，所以将所有的 “(a)” 替换为 “yes” 。注意，不在括号里的 “a” 不需要被替换。</p>
 </blockquote>
 <p><strong>示例4:</strong></p>
 <blockquote>
-<p>输入: s = “(a)(b)”, knowledge = [[“a”,”b”],[“b”,”a”]]<br>输出: “ba”</p>
+<p>输入: s &#x3D; “(a)(b)”, knowledge &#x3D; [[“a”,”b”],[“b”,”a”]]<br>输出: “ba”</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= s.length &lt;= 105</li>
-<li>0 &lt;= knowledge.length &lt;= 105</li>
-<li>knowledge[i].length == 2</li>
-<li>1 &lt;= keyi.length, valuei.length &lt;= 10</li>
+<li>1 &lt;&#x3D; s.length &lt;&#x3D; 105</li>
+<li>0 &lt;&#x3D; knowledge.length &lt;&#x3D; 105</li>
+<li>knowledge[i].length &#x3D;&#x3D; 2</li>
+<li>1 &lt;&#x3D; keyi.length, valuei.length &lt;&#x3D; 10</li>
 <li>s 只包含小写英文字母和圆括号 ‘(‘ 和 ‘)’ 。</li>
 <li>s 中每一个左圆括号 ‘(‘ 都有对应的右圆括号 ‘)’ 。</li>
 <li>s 中每对括号内的键都不会为空。</li>
@@ -485,7 +485,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

@@ -184,20 +184,20 @@
         </div>
         
         <div class="content">
-            <p>HDOJ 1576. A/B</p>
+            <p>HDOJ 1576. A&#x2F;B</p>
 <a id="more"></a>
 
 <hr>
-<p><strong>题目：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1576">1576. A/B</a></strong></p>
+<p><strong>题目：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1576">1576. A&#x2F;B</a></strong></p>
 <p><strong>问题描述：</strong></p>
-<p>要求(A/B)%9973，但由于A很大，我们只给出n(n=A%9973)(我们给定的A必能被B整除，且gcd(B,9973) = 1)。</p>
+<p>要求(A&#x2F;B)%9973，但由于A很大，我们只给出n(n&#x3D;A%9973)(我们给定的A必能被B整除，且gcd(B,9973) &#x3D; 1)。</p>
 <p><strong>输入：</strong></p>
 <blockquote>
-<p>数据的第一行是一个T，表示有T组数据。<br>每组数据有两个数n(0 &lt;= n &lt; 9973)和B(1 &lt;= B &lt;= 10^9)。</p>
+<p>数据的第一行是一个T，表示有T组数据。<br>每组数据有两个数n(0 &lt;&#x3D; n &lt; 9973)和B(1 &lt;&#x3D; B &lt;&#x3D; 10^9)。</p>
 </blockquote>
 <p><strong>输出：</strong></p>
 <blockquote>
-<p>对应每组数据输出(A/B)%9973。</p>
+<p>对应每组数据输出(A&#x2F;B)%9973。</p>
 </blockquote>
 <p><strong>样本输入：</strong></p>
 <blockquote>
@@ -207,7 +207,7 @@
 <blockquote>
 <p>7922<br>6060</p>
 </blockquote>
-<h2 id="方法：扩展欧几里得"><a href="#方法：扩展欧几里得" class="headerlink" title="方法：扩展欧几里得"></a>方法：扩展欧几里得</h2><p><strong>思路：</strong>令m = 9973，inv(a)表示a关于m的逆元，根据题意可得 (A / B) % m = ((n + k * m) * inv(B)) % m = ((n + k * m) % m) * (inv(B) % m) = (n % MOD) * (inv(B) % MOD) = n * inv(B) % m。所以只需求n * inv(B) % m的值即可。本题使用扩展欧几里得求逆元。</p>
+<h2 id="方法：扩展欧几里得"><a href="#方法：扩展欧几里得" class="headerlink" title="方法：扩展欧几里得"></a>方法：扩展欧几里得</h2><p><strong>思路：</strong>令m &#x3D; 9973，inv(a)表示a关于m的逆元，根据题意可得 (A &#x2F; B) % m &#x3D; ((n + k * m) * inv(B)) % m &#x3D; ((n + k * m) % m) * (inv(B) % m) &#x3D; (n % MOD) * (inv(B) % MOD) &#x3D; n * inv(B) % m。所以只需求n * inv(B) % m的值即可。本题使用扩展欧几里得求逆元。</p>
 <p><strong>运行数据：</strong>执行用时：249MS，内存消耗：9316K</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> T = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">long</span> m= <span class="number">9973</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span> (T-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">long</span> n = sc.nextLong();</span><br><span class="line">			<span class="keyword">long</span> B = sc.nextLong();</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">long</span> result = n * inv(B) % m;</span><br><span class="line">			System.out.println(result);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> x,y;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 拓展欧几里得算法</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">long</span> a, <span class="keyword">long</span> b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">			x = <span class="number">1</span>;</span><br><span class="line">			y = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">return</span> ;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		exgcd(b, a % b);</span><br><span class="line">		<span class="keyword">long</span> k = x;</span><br><span class="line">		x = y;</span><br><span class="line">		y = k - a / b * y;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 求逆元</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">inv</span><span class="params">(<span class="keyword">long</span> a)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">long</span> b = <span class="number">9973</span>;</span><br><span class="line">		exgcd(a, b);</span><br><span class="line">		<span class="keyword">return</span> (x + b) % b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -457,7 +457,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

@@ -194,23 +194,23 @@
 <p>若这两个字符串没有公共子序列，则返回 0。</p>
 <p><strong>示例1:</strong></p>
 <blockquote>
-<p>输入：text1 = “abcde”, text2 = “ace”<br>输出: 3<br>解释：最长公共子序列是 “ace”，它的长度为 3。</p>
+<p>输入：text1 &#x3D; “abcde”, text2 &#x3D; “ace”<br>输出: 3<br>解释：最长公共子序列是 “ace”，它的长度为 3。</p>
 </blockquote>
 <p><strong>示例2:</strong></p>
 <blockquote>
-<p>输入：text1 = “abc”, text2 = “abc”<br>输出: 3<br>解释：最长公共子序列是 “abc”，它的长度为 3。</p>
+<p>输入：text1 &#x3D; “abc”, text2 &#x3D; “abc”<br>输出: 3<br>解释：最长公共子序列是 “abc”，它的长度为 3。</p>
 </blockquote>
 <p><strong>示例3:</strong></p>
 <blockquote>
-<p>输入：text1 = “abc”, text2 = “def”<br>输出: 0<br>解释：两个字符串没有公共子序列，返回 0。</p>
+<p>输入：text1 &#x3D; “abc”, text2 &#x3D; “def”<br>输出: 0<br>解释：两个字符串没有公共子序列，返回 0。</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= text1.length &lt;= 1000</li>
-<li>1 &lt;= text2.length &lt;= 1000</li>
+<li>1 &lt;&#x3D; text1.length &lt;&#x3D; 1000</li>
+<li>1 &lt;&#x3D; text2.length &lt;&#x3D; 1000</li>
 <li>输入的字符串只含有小写英文字符。</li>
 </ul>
-<h2 id="方法一：动态规划"><a href="#方法一：动态规划" class="headerlink" title="方法一：动态规划"></a>方法一：动态规划</h2><p><strong>思路：</strong>动态规划。状态转移方程为：dp[i][j] = dp[i - 1][j - 1] + 1;（text1.charAt(i - 1) == text2.charAt(j - 1)）。dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);（text1.charAt(i - 1) != text2.charAt(j - 1)）。dp[i][j]表示text1前i个字符和text2的前j个字符的最长公共子序列。</p>
+<h2 id="方法一：动态规划"><a href="#方法一：动态规划" class="headerlink" title="方法一：动态规划"></a>方法一：动态规划</h2><p><strong>思路：</strong>动态规划。状态转移方程为：dp[i][j] &#x3D; dp[i - 1][j - 1] + 1;（text1.charAt(i - 1) &#x3D;&#x3D; text2.charAt(j - 1)）。dp[i][j] &#x3D; max(dp[i - 1][j], dp[i][j - 1]);（text1.charAt(i - 1) !&#x3D; text2.charAt(j - 1)）。dp[i][j]表示text1前i个字符和text2的前j个字符的最长公共子序列。</p>
 <p><strong>运行数据：</strong>执行用时：12 ms，内存消耗：42.2 MB</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
@@ -477,7 +477,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

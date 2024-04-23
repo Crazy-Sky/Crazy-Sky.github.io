@@ -196,7 +196,7 @@
 <li>相邻单元格 C_i 和 C_{i+1} 在八个方向之一上连通（此时，C_i 和 C_{i+1} 不同且共享边或角）</li>
 <li>C_1 位于 (0, 0)（即，值为 grid[0][0]）</li>
 <li>C_k 位于 (N-1, N-1)（即，值为 grid[N-1][N-1]）</li>
-<li>如果 C_i 位于 (r, c)，则 grid[r][c] 为空（即，grid[r][c] == 0）</li>
+<li>如果 C_i 位于 (r, c)，则 grid[r][c] 为空（即，grid[r][c] &#x3D;&#x3D; 0）</li>
 </ul>
 <p>返回这条从左上角到右下角的最短畅通路径的长度。如果不存在这样的路径，返回 -1 。</p>
 <p><strong>示例1:</strong></p>
@@ -217,7 +217,7 @@
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= grid.length == grid[0].length &lt;= 100</li>
+<li>1 &lt;&#x3D; grid.length &#x3D;&#x3D; grid[0].length &lt;&#x3D; 100</li>
 <li>grid[i][j] 为 0 或 1</li>
 </ul>
 <h2 id="方法：BFS（广度优先搜索）"><a href="#方法：BFS（广度优先搜索）" class="headerlink" title="方法：BFS（广度优先搜索）"></a>方法：BFS（广度优先搜索）</h2><p><strong>思路：</strong>BFS（广度优先搜索），最先搜索到终点的路径长度，即为最短路径长度。</p>
@@ -470,7 +470,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

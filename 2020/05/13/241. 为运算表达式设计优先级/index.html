@@ -194,19 +194,19 @@
 <blockquote>
 <p>输入: “2-1-1”<br>输出: [0, 2]<br>解释: </p>
 <ul>
-<li>((2-1)-1) = 0 </li>
-<li>(2-(1-1)) = 2</li>
+<li>((2-1)-1) &#x3D; 0 </li>
+<li>(2-(1-1)) &#x3D; 2</li>
 </ul>
 </blockquote>
 <p><strong>示例2:</strong></p>
 <blockquote>
 <p>输入: “2<em>3-4</em>5”<br>输出: [-34, -14, -10, -10, 10]<br>解释: </p>
 <ul>
-<li>(2<em>(3-(4</em>5))) = -34 </li>
-<li>((2<em>3)-(4</em>5)) = -14</li>
-<li>((2<em>(3-4))</em>5) = -10 </li>
-<li>(2<em>((3-4)</em>5)) = -10 </li>
-<li>(((2<em>3)-4)</em>5) = 10</li>
+<li>(2*(3-(4*5))) &#x3D; -34 </li>
+<li>((2<em>3)-(4</em>5)) &#x3D; -14</li>
+<li>((2*(3-4))*5) &#x3D; -10 </li>
+<li>(2*((3-4)*5)) &#x3D; -10 </li>
+<li>(((2*3)-4)*5) &#x3D; 10</li>
 </ul>
 </blockquote>
 <h2 id="方法：分治"><a href="#方法：分治" class="headerlink" title="方法：分治"></a>方法：分治</h2><p><strong>思路：</strong>通过分治的思想，将字符串以运算符为标识把字符串分为两个部分，然后分别计算这两个部分的值，可以继续细分的继续按运算符细分求结果，两部分中每个部分都有可能会有不同的结果（可以继续细分就会有不同的结果），所以求结果时，要将两部分不同结果组合起来，才能得出最终的结果。</p>
@@ -459,7 +459,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

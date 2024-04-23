@@ -192,15 +192,15 @@
 <blockquote>
 <p><strong>2019 年百度之星·程序设计大赛 - 初赛二</strong></p>
 <ul>
-<li><a href="/2020/03/28/6674.%20度度熊与数字/">6674. 度度熊与数字</a></li>
-<li><a href="/2020/03/30/6675.%20度度熊与排列/">6675. 度度熊与排列</a></li>
-<li><a href="/2020/04/03/6676.%20度度熊与运算式%201/">6676. 度度熊与运算式 1</a></li>
+<li><a href="/2020/03/28/6674.%20%E5%BA%A6%E5%BA%A6%E7%86%8A%E4%B8%8E%E6%95%B0%E5%AD%97/">6674. 度度熊与数字</a></li>
+<li><a href="/2020/03/30/6675.%20%E5%BA%A6%E5%BA%A6%E7%86%8A%E4%B8%8E%E6%8E%92%E5%88%97/">6675. 度度熊与排列</a></li>
+<li><a href="/2020/04/03/6676.%20%E5%BA%A6%E5%BA%A6%E7%86%8A%E4%B8%8E%E8%BF%90%E7%AE%97%E5%BC%8F%201/">6676. 度度熊与运算式 1</a></li>
 </ul>
 </blockquote>
 <p><strong>题目：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6674">6674. 度度熊与数字</a></strong></p>
 <p><strong>问题描述：</strong></p>
-<p>度熊发现，1个， 3 以及 9 这三个数字很神奇，它们的所有的倍数的每位数字的和一定是自己的倍数。 54 是 3 的倍数，同时 5 + 4 = 9 也是 3 的倍数。在另一个例子 666 是 9 的倍数，同时 6 + 6 + 6 = 18 也是 9的倍数。</p>
-<p>度熊又发现，除了1个， 3， 9 以外的正整数，虽然不一定满足“所有的倍数的每位数字的和一定是自己的倍数”，但也存在一些数是它们的倍数且各位数字和也是它们的倍数。888 是 12 的倍数，且他的各位数字和 8 + 8 + 8 = 24 也是 12的倍数。</p>
+<p>度熊发现，1个， 3 以及 9 这三个数字很神奇，它们的所有的倍数的每位数字的和一定是自己的倍数。 54 是 3 的倍数，同时 5 + 4 &#x3D; 9 也是 3 的倍数。在另一个例子 666 是 9 的倍数，同时 6 + 6 + 6 &#x3D; 18 也是 9的倍数。</p>
+<p>度熊又发现，除了1个， 3， 9 以外的正整数，虽然不一定满足“所有的倍数的每位数字的和一定是自己的倍数”，但也存在一些数是它们的倍数且各位数字和也是它们的倍数。888 是 12 的倍数，且他的各位数字和 8 + 8 + 8 &#x3D; 24 也是 12的倍数。</p>
 <p>现在度熊想知道，给你一个正整数V，是否存在一个数 X，从而 V 是 X 的倍数，同时它的每位数字的和也是 X 的倍数呢？请寻找所有这样的数 X。</p>
 <p><strong>输入：</strong></p>
 <blockquote>
@@ -221,9 +221,9 @@
 <p>1 2 3 6 9 18</p>
 </blockquote>
 <p><strong>注意：</strong></p>
-<p>第一个询问中，11 的各位数和为 1=1×1，本身等于1×1 都是 1 的倍数，故 1 确实为 V=1 的答案。</p>
-<p>第三个询问中，666666 的各位数和为 36=9×4，本身等于9×7474 都是 99 的倍数，故 9 确实为 V=666666的答案，经过仔细计算后能发现，除 9 以外, 1,2,3,6,18 也都是答案。</p>
-<h2 id="方法：枚举"><a href="#方法：枚举" class="headerlink" title="方法：枚举"></a>方法：枚举</h2><p><strong>思路：</strong>因为1必为所求X，所以只需从2开始枚举到numberSum(V)满足V%X== 0 &amp;&amp; numberSum(V)%X == 0的即为所求除1外的X。</p>
+<p>第一个询问中，11 的各位数和为 1&#x3D;1×1，本身等于1×1 都是 1 的倍数，故 1 确实为 V&#x3D;1 的答案。</p>
+<p>第三个询问中，666666 的各位数和为 36&#x3D;9×4，本身等于9×7474 都是 99 的倍数，故 9 确实为 V&#x3D;666666的答案，经过仔细计算后能发现，除 9 以外, 1,2,3,6,18 也都是答案。</p>
+<h2 id="方法：枚举"><a href="#方法：枚举" class="headerlink" title="方法：枚举"></a>方法：枚举</h2><p><strong>思路：</strong>因为1必为所求X，所以只需从2开始枚举到numberSum(V)满足V%X&#x3D;&#x3D; 0 &amp;&amp; numberSum(V)%X &#x3D;&#x3D; 0的即为所求除1外的X。</p>
 <p><strong>运行数据：</strong>执行用时：249 MS，内存消耗：9400K</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> m = sc.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (m-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">int</span> v = sc.nextInt();</span><br><span class="line"></span><br><span class="line">            StringBuilder result = <span class="keyword">new</span> StringBuilder(<span class="string">"1"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> numberSum = numberSum(v);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= numberSum; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (v % i == <span class="number">0</span> &amp;&amp; numberSum % i == <span class="number">0</span>) &#123;</span><br><span class="line">                    result.append(<span class="string">" "</span> + i);</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            System.out.println(count);</span><br><span class="line">            System.out.println(result);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 求number各位数字之和</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">numberSum</span><span class="params">(<span class="keyword">int</span> number)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (number != <span class="number">0</span>) &#123;</span><br><span class="line">            sum += number % <span class="number">10</span>;</span><br><span class="line">            number /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -473,7 +473,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

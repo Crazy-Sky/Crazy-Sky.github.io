@@ -203,7 +203,7 @@
 <blockquote>
 <p>true<br>false<br>true<br>true<br>false<br>true<br>false</p>
 </blockquote>
-<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>动态规划。当arr3[i + j - 1] == arr1[i - 1]时，dp[i][j] = dp[i][j] | dp[i - 1][j]。当arr3[i + j - 1] == arr1[j - 1]时，dp[i][j] = dp[i][j] | dp[i][j - 1]。arr1、arr2、arr3代表s1、s2、s3，dp[i][j]表示arr1的前i个字符和arr2的前j个字符是否能够组成arr3前i + j个字符，等于1表示能组成，等于0表示不能组成。</p>
+<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>动态规划。当arr3[i + j - 1] &#x3D;&#x3D; arr1[i - 1]时，dp[i][j] &#x3D; dp[i][j] | dp[i - 1][j]。当arr3[i + j - 1] &#x3D;&#x3D; arr1[j - 1]时，dp[i][j] &#x3D; dp[i][j] | dp[i][j - 1]。arr1、arr2、arr3代表s1、s2、s3，dp[i][j]表示arr1的前i个字符和arr2的前j个字符是否能够组成arr3前i + j个字符，等于1表示能组成，等于0表示不能组成。</p>
 <p><strong>运行数据：</strong>最大执行时间：85.43 ms，最大内存开销：17352 KiB</p>
 <p><strong>复杂度分析：</strong></p>
 <p>由于输入数据组数无法确定，时间复杂度和空间复杂度只考虑一组数据。</p>
@@ -459,7 +459,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

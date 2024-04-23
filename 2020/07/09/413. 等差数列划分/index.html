@@ -191,18 +191,18 @@
 <p><strong>题目：<a href="https://leetcode-cn.com/problems/arithmetic-slices/">413. 等差数列划分</a></strong></p>
 <p>如果一个数列至少有三个元素，并且任意两个相邻元素之差相同，则称该数列为等差数列。</p>
 <p>例如，以下数列为等差数列:</p>
-<p>​    1, 3, 5, 7, 9<br>​    7, 7, 7, 7<br>​    3, -1, -5, -9</p>
+<p>​	1, 3, 5, 7, 9<br>​	7, 7, 7, 7<br>​	3, -1, -5, -9</p>
 <p>以下数列不是等差数列。</p>
-<p>​    1, 1, 2, 5, 7</p>
-<p>数组 A 包含 N 个数，且索引从0开始。数组 A 的一个子数组划分为数组 (P, Q)，P 与 Q 是整数且满足 0&lt;=P&lt;Q&lt;N 。</p>
+<p>​	1, 1, 2, 5, 7</p>
+<p>数组 A 包含 N 个数，且索引从0开始。数组 A 的一个子数组划分为数组 (P, Q)，P 与 Q 是整数且满足 0&lt;&#x3D;P&lt;Q&lt;N 。</p>
 <p>如果满足以下条件，则称子数组(P, Q)为等差数组：</p>
 <p>元素 A[P], A[p + 1], …, A[Q - 1], A[Q] 是等差的。并且 P + 1 &lt; Q 。</p>
 <p>函数要返回数组 A 中所有为等差数组的子数组个数。</p>
 <p><strong>示例:</strong></p>
 <blockquote>
-<p>A = [1, 2, 3, 4]<br>返回: 3, A 中有三个子等差数组: [1, 2, 3], [2, 3, 4] 以及自身 [1, 2, 3, 4]。</p>
+<p>A &#x3D; [1, 2, 3, 4]<br>返回: 3, A 中有三个子等差数组: [1, 2, 3], [2, 3, 4] 以及自身 [1, 2, 3, 4]。</p>
 </blockquote>
-<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>动态规划，状态转移方程为：dp[i] += dp[i - 1] + 1;（A[i- 2]、A[i - 1]、A[i]成等差数列，dp[i]表示前i个数组元素的等差数列个数）。</p>
+<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>动态规划，状态转移方程为：dp[i] +&#x3D; dp[i - 1] + 1;（A[i- 2]、A[i - 1]、A[i]成等差数列，dp[i]表示前i个数组元素的等差数列个数）。</p>
 <p><strong>运行数据：</strong>执行用时：0 ms，内存消耗：36.5 MB</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
@@ -457,7 +457,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

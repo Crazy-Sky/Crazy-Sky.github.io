@@ -10,12 +10,12 @@
 <title>Linux基础（一） - Crazy-Sky</title>
 
 
-    <meta name="description" content="Linux基础（一）    1、linux简介    2、Linux基本目录结构    3、Linux基本指令">
+    <meta name="description" content="Linux基础（一）	1、linux简介	2、Linux基本目录结构	3、Linux基本指令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux基础（一）">
 <meta property="og:url" content="http://www.crazy-sky.top/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Crazy-Sky">
-<meta property="og:description" content="Linux基础（一）    1、linux简介    2、Linux基本目录结构    3、Linux基本指令">
+<meta property="og:description" content="Linux基础（一）	1、linux简介	2、Linux基本目录结构	3、Linux基本指令">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.crazy-sky.top/thumbnails/Linux/Linux.jpg">
 <meta property="article:published_time" content="2020-09-27T14:13:00.000Z">
@@ -184,78 +184,78 @@
         </div>
         
         <div class="content">
-            <p>Linux基础（一）    1、linux简介    2、Linux基本目录结构    3、Linux基本指令</p>
+            <p>Linux基础（一）	1、linux简介	2、Linux基本目录结构	3、Linux基本指令</p>
 <a id="more"></a>
 
 <hr>
 <blockquote>
 <p>Linux基础</p>
-<p>一、<a href="/2020/09/27/Linux基础（一）/">Linux基础（一）</a></p>
-<p>​    1、linux简介</p>
-<p>​    2、Linux基本目录结构</p>
-<p>​    3、Linux基本指令</p>
-<p>二、<a href="/2020/11/16/Linux基础（二）/">Linux基础（二）</a></p>
-<p>​    4、vim编辑器</p>
-<p>​    5、运行级别</p>
-<p>​    6、用户与用户组管理</p>
+<p>一、<a href="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Linux基础（一）</a></p>
+<p>​	1、linux简介</p>
+<p>​	2、Linux基本目录结构</p>
+<p>​	3、Linux基本指令</p>
+<p>二、<a href="/2020/11/16/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Linux基础（二）</a></p>
+<p>​	4、vim编辑器</p>
+<p>​	5、运行级别</p>
+<p>​	6、用户与用户组管理</p>
 </blockquote>
 <h1 id="1、linux简介"><a href="#1、linux简介" class="headerlink" title="1、linux简介"></a>1、linux简介</h1><blockquote>
 <p>Linux 是一种自由和开放源码的类 UNIX 操作系统。<br>Linux 英文解释为 <strong>Linux is not Unix</strong>。<br>Linux 是在 1991 由林纳斯·托瓦兹在赫尔辛基大学上学时创立的，主要受到 Minix 和 Unix 思想的启发。</p>
 </blockquote>
-<h2 id="Linux的发行版"><a href="#Linux的发行版" class="headerlink" title="Linux的发行版"></a>Linux的发行版</h2><p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/Linux%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC.png" alt></p>
+<h2 id="Linux的发行版"><a href="#Linux的发行版" class="headerlink" title="Linux的发行版"></a>Linux的发行版</h2><p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/Linux%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC.png"></p>
 <p>Linux的发行版说简单点就是将Linux内核与应用软件做一个打包。</p>
 <p>目前市面上较知名的发行版有：Ubuntu、RedHat、CentOS、Debian、Fedora、SuSE、OpenSUSE、TurboLinux、BluePoint、RedFlag、Xterm、SlackWare等。</p>
-<h1 id="2、Linux基本目录结构"><a href="#2、Linux基本目录结构" class="headerlink" title="2、Linux基本目录结构"></a>2、Linux基本目录结构</h1><p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/Linux%E5%9F%BA%E6%9C%AC%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.jpg" alt></p>
+<h1 id="2、Linux基本目录结构"><a href="#2、Linux基本目录结构" class="headerlink" title="2、Linux基本目录结构"></a>2、Linux基本目录结构</h1><p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/Linux%E5%9F%BA%E6%9C%AC%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.jpg"></p>
 <ul>
-<li><p><strong>/bin</strong>：<br>bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</p>
+<li><p><strong>&#x2F;bin</strong>：<br>bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</p>
 </li>
-<li><p><strong>/boot：</strong><br>这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+<li><p><strong>&#x2F;boot：</strong><br>这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
 </li>
-<li><p><strong>/dev ：</strong><br>dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</p>
+<li><p><strong>&#x2F;dev ：</strong><br>dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</p>
 </li>
-<li><p><strong>/etc：</strong><br>etc 是 Etcetera(等等) 的缩写,这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p>
+<li><p><strong>&#x2F;etc：</strong><br>etc 是 Etcetera(等等) 的缩写,这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p>
 </li>
-<li><p><strong>/home</strong>：<br>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</p>
+<li><p><strong>&#x2F;home</strong>：<br>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</p>
 </li>
-<li><p><strong>/lib</strong>：<br>lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</p>
+<li><p><strong>&#x2F;lib</strong>：<br>lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</p>
 </li>
-<li><p><strong>/lost+found</strong>：<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
+<li><p><strong>&#x2F;lost+found</strong>：<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
 </li>
-<li><p><strong>/media</strong>：<br>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p>
+<li><p><strong>&#x2F;media</strong>：<br>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p>
 </li>
-<li><p><strong>/mnt</strong>：<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上，然后进入该目录就可以查看光驱里的内容了。</p>
+<li><p><strong>&#x2F;mnt</strong>：<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 &#x2F;mnt&#x2F; 上，然后进入该目录就可以查看光驱里的内容了。</p>
 </li>
-<li><p><strong>/opt</strong>：<br>opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
+<li><p><strong>&#x2F;opt</strong>：<br>opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
 </li>
-<li><p><strong>/proc</strong>：<br>proc 是 Processes(进程) 的缩写，/proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。</p>
+<li><p><strong>&#x2F;proc</strong>：<br>proc 是 Processes(进程) 的缩写，&#x2F;proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。</p>
 </li>
-<li><p><strong>/root</strong>：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
+<li><p><strong>&#x2F;root</strong>：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
 </li>
-<li><p><strong>/sbin</strong>：<br>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</p>
+<li><p><strong>&#x2F;sbin</strong>：<br>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</p>
 </li>
-<li><p><strong>/selinux</strong>：<br>这个目录是 Redhat/CentOS 所特有的目录，Selinux 是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
+<li><p><strong>&#x2F;selinux</strong>：<br>这个目录是 Redhat&#x2F;CentOS 所特有的目录，Selinux 是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
 </li>
-<li><p><strong>/srv</strong>：<br>该目录存放一些服务启动之后需要提取的数据。</p>
+<li><p><strong>&#x2F;srv</strong>：<br>该目录存放一些服务启动之后需要提取的数据。</p>
 </li>
-<li><p><strong>/sys</strong>：</p>
+<li><p><strong>&#x2F;sys</strong>：</p>
 <p>这是 Linux2.6 内核的一个很大的变化。该目录下安装了 2.6 内核中新出现的一个文件系统 sysfs 。</p>
 <p>sysfs 文件系统集成了下面3种文件系统的信息：针对进程信息的 proc 文件系统、针对设备的 devfs 文件系统以及针对伪终端的 devpts 文件系统。</p>
 <p>该文件系统是内核设备树的一个直观反映。</p>
 <p>当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p>
 </li>
-<li><p><strong>/tmp</strong>：<br>tmp 是 temporary(临时) 的缩写这个目录是用来存放一些临时文件的。</p>
+<li><p><strong>&#x2F;tmp</strong>：<br>tmp 是 temporary(临时) 的缩写这个目录是用来存放一些临时文件的。</p>
 </li>
-<li><p><strong>/usr</strong>：<br>usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p>
+<li><p><strong>&#x2F;usr</strong>：<br>usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p>
 </li>
-<li><p><strong>/usr/bin：</strong><br>系统用户使用的应用程序。</p>
+<li><p><strong>&#x2F;usr&#x2F;bin：</strong><br>系统用户使用的应用程序。</p>
 </li>
-<li><p><strong>/usr/sbin：</strong><br>超级用户使用的比较高级的管理程序和系统守护程序。</p>
+<li><p><strong>&#x2F;usr&#x2F;sbin：</strong><br>超级用户使用的比较高级的管理程序和系统守护程序。</p>
 </li>
-<li><p><strong>/usr/src：</strong><br>内核源代码默认的放置目录。</p>
+<li><p><strong>&#x2F;usr&#x2F;src：</strong><br>内核源代码默认的放置目录。</p>
 </li>
-<li><p><strong>/var</strong>：<br>var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+<li><p><strong>&#x2F;var</strong>：<br>var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
 </li>
-<li><p><strong>/run</strong>：<br>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</p>
+<li><p><strong>&#x2F;run</strong>：<br>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 &#x2F;var&#x2F;run 目录，应该让它指向 run。</p>
 </li>
 </ul>
 <h1 id="3、Linux基本指令"><a href="#3、Linux基本指令" class="headerlink" title="3、Linux基本指令"></a>3、Linux基本指令</h1><p>在Linux终端（命令行）种输入的内容称之为指令。</p>
@@ -263,25 +263,25 @@
 <p>#<strong>指令主体</strong> [<strong>选项</strong>] [<strong>操作对象</strong>]</p>
 <p>一个指令可以包含多个选项和多个操作对象</p>
 <h2 id="基础指令"><a href="#基础指令" class="headerlink" title="基础指令"></a>基础指令</h2><ul>
-<li><p><strong>ls</strong>：列出目录下的所有文件/文件夹的名称。</p>
+<li><p><strong>ls</strong>：列出目录下的所有文件&#x2F;文件夹的名称。</p>
 <blockquote>
 <ul>
-<li><p><strong>ls</strong>：列出当前工作目录下的所有文件/文件夹的名称。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_1.png" alt></p>
+<li><p><strong>ls</strong>：列出当前工作目录下的所有文件&#x2F;文件夹的名称。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_1.png"></p>
 </li>
-<li><p><strong>ls 路径</strong>：列出指定路径下的所有文件/文件夹的名称。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_2.png" alt></p>
+<li><p><strong>ls 路径</strong>：列出指定路径下的所有文件&#x2F;文件夹的名称。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_2.png"></p>
 </li>
-<li><p><strong>ls 选项 路径</strong>：列出指定路径下的所有文件/文件夹的名称，并以指定格式进行显示。</p>
+<li><p><strong>ls 选项 路径</strong>：列出指定路径下的所有文件&#x2F;文件夹的名称，并以指定格式进行显示。</p>
 <ul>
-<li><p><strong>ls -l 路径</strong>：列出指定路径下的所有文件/文件夹的名称，以详细列表的形式进行展示。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_3.png" alt></p>
+<li><p><strong>ls -l 路径</strong>：列出指定路径下的所有文件&#x2F;文件夹的名称，以详细列表的形式进行展示。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_3.png"></p>
 </li>
-<li><p><strong>ls -la 路径</strong>：列出指定路径下的所有文件/文件夹的名称，以详细列表的形式进行展示（包含隐藏文件/文件夹）。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_4.png" alt></p>
+<li><p><strong>ls -la 路径</strong>：列出指定路径下的所有文件&#x2F;文件夹的名称，以详细列表的形式进行展示（包含隐藏文件&#x2F;文件夹）。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_4.png"></p>
 </li>
-<li><p><strong>ls -lh 路径</strong>：列出指定路径下的所有文件/文件夹的名称，以详细列表的形式进行展示，并且在显示文档大小时以可读性高的形式显示。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_5.png" alt></p>
+<li><p><strong>ls -lh 路径</strong>：列出指定路径下的所有文件&#x2F;文件夹的名称，以详细列表的形式进行展示，并且在显示文档大小时以可读性高的形式显示。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ls_5.png"></p>
 </li>
 </ul>
 <p><strong>选项”-l“、”-a“、”-h“可搭配使用，顺序没有限制。</strong></p>
@@ -292,27 +292,27 @@
 <li><p><strong>pwd</strong>：print working directory，打印当前工作目录。</p>
 <blockquote>
 <p><strong>pwd</strong>：打印当前工作目录。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4pwd.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4pwd.png"></p>
 </blockquote>
 </li>
 <li><p><strong>cd</strong>：change directory，切换当前工作目录。</p>
 <blockquote>
 <p><strong>cd 路径</strong>：切换当前工作目录到指定路径。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cd.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cd.png"></p>
 </blockquote>
 </li>
 <li><p><strong>mkdir</strong>：make directory，创建目录。</p>
 <blockquote>
 <ul>
 <li><p><strong>mkdir 路径</strong>：创建目录（路径可以是文件夹名称也可以是包含名称的一个完整路径）。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4mkdir_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4mkdir_1.png"></p>
 </li>
 <li><p><strong>mkdir 选项 路径</strong>：</p>
 <p><strong>mkdir -p</strong>：当一次性创建多层不存在的目录时，添加选项”-p“，否则会报错。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4mkdir_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4mkdir_1.png"></p>
 </li>
 <li><p><strong>mkdir 路径1 路径2</strong>：一次性创建多个目录。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4mkdir_3.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4mkdir_3.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -321,56 +321,56 @@
 <blockquote>
 <ul>
 <li><p><strong>touch 路径</strong>：在指定路径创建文件（路径可以是文件名称也可以是包含名称的一个完整路径）。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4touch_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4touch_1.png"></p>
 </li>
 <li><p><strong>touch 路径1 路径2</strong>：一次性创建多个文件。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4touch_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4touch_2.png"></p>
 </li>
 </ul>
 </blockquote>
 </li>
-<li><p><strong>copy</strong>：复制文档（文件/文件夹）。</p>
+<li><p><strong>copy</strong>：复制文档（文件&#x2F;文件夹）。</p>
 <blockquote>
 <ul>
 <li><p><strong>cp 被复制文件路径 文件被复制到的路径</strong>：复制文件到指定位置(文件被复制到的路径不指定具体名称，默认会与原名称相同，即不指定下方图片红色框部分)。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cp_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cp_1.png"></p>
 </li>
 <li><p><strong>cp -r 被复制文件夹路径 文件夹被复制到的路径</strong>：当使用cp命令进行文件夹复制操作的时候需要添加选项“-r“（表示递归复制），否则目录将被忽略。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cp_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cp_2.png"></p>
 </li>
 </ul>
 </blockquote>
 </li>
 <li><p><strong>mv</strong>：move，移动，剪切。</p>
 <blockquote>
-<p><strong>mv 需要移动的文档路径 需要保存的位置路径</strong>：移动文档（文件/文件夹）到新的位置（路径可以是文档名称也可以是包含名称的一个完整路径）。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4mv.png" alt></p>
+<p><strong>mv 需要移动的文档路径 需要保存的位置路径</strong>：移动文档（文件&#x2F;文件夹）到新的位置（路径可以是文档名称也可以是包含名称的一个完整路径）。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4mv.png"></p>
 <p><strong>在Linux中重命名的命令也是mv，语法和移动一样。</strong></p>
 </blockquote>
 </li>
 <li><p><strong>rm</strong>：remove，移除，删除。</p>
 <blockquote>
 <ul>
-<li><p><strong>rm 选项 需要移除的文档路径</strong>：移除/删除文档（路径可以是文档名称也可以是包含名称的一个完整路径）。</p>
+<li><p><strong>rm 选项 需要移除的文档路径</strong>：移除&#x2F;删除文档（路径可以是文档名称也可以是包含名称的一个完整路径）。</p>
 <ul>
 <li><p><strong>rm 需要移除的文档路径</strong>：在删除时如果不带选项，会提示是否删除，如果需要确认输入“y”或“yes”，否则输入”n”或“no”。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_1.png"></p>
 </li>
 <li><p><strong>rm -f 需要移除的文档路径</strong>：如果在删除的时候不想频繁确认，则可在指令中添加选项“-f”，表示force（强制）。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_2.png"></p>
 </li>
 <li><p><strong>rm -rf 需要移除的文档路径</strong>：删除文件夹时需要递归删除，需要在指令中添加选项“-r”。如果不想频繁确认可以配合选项“-f”。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_3.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_3.png"></p>
 </li>
 </ul>
 </li>
 <li><p><strong>rm 选项 需要移除的文档路径1 需要移除的文档路径2</strong>：删除多个文档。</p>
 <ul>
 <li><p><strong>rm -rf 需要移除的文档路径</strong>：添加选项“-rf”，递归强制删除多个文档。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_4.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_4.png"></p>
 </li>
-<li><p><strong>rm -rf /root/test*</strong>：使用通配符，递归强制删除以“/root/test”路径开头的文档。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_5.png" alt></p>
+<li><p><strong>rm -rf &#x2F;root&#x2F;test</strong>*：使用通配符，递归强制删除以“&#x2F;root&#x2F;test”路径开头的文档。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4rm_5.png"></p>
 </li>
 </ul>
 </li>
@@ -381,20 +381,20 @@
 <blockquote>
 <ul>
 <li><p><strong>vim 文件路径</strong>：使用vim打开文件。退出文件，在没有按下其他命令的时候，按下shift+英文冒号，输入q，按下回车即可。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4vim_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4vim_1.png"></p>
 </li>
 </ul>
 </blockquote>
 </li>
-<li><p><strong>&gt;/&gt;&gt;</strong>：输出重定向。”<strong>&gt;</strong>“：覆盖输出，”<strong>&gt;&gt;</strong>“：追加输出。将终端指令输出到指定文件。</p>
+<li><p><strong>&gt;&#x2F;&gt;&gt;<strong>：输出重定向。”</strong>&gt;</strong>“：覆盖输出，”<strong>&gt;&gt;</strong>“：追加输出。将终端指令输出到指定文件。</p>
 <blockquote>
-<p><strong>正常执行指令 &gt;/&gt;&gt; 输出文件路径</strong>：一般命令的输出都会显示在终端中，有些时候需要将一些命令的执行结果想要保存到文件中进行后续的分析/统计，则这时候需要使用到的输出重定向技术。</p>
+<p><strong>正常执行指令 &gt;&#x2F;&gt;&gt; 输出文件路径</strong>：一般命令的输出都会显示在终端中，有些时候需要将一些命令的执行结果想要保存到文件中进行后续的分析&#x2F;统计，则这时候需要使用到的输出重定向技术。</p>
 <ul>
 <li><p>“&gt;”：覆盖输出，会覆盖掉原先的文件内容。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91_1.png"></p>
 </li>
 <li><p>“&gt;&gt;”：追加输出，不会覆盖原始文件内容，会在原始内容末尾继续添加。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91_2.png"></p>
 </li>
 </ul>
 <p><strong>文件可以不存在，不存在则新建。</strong></p>
@@ -404,13 +404,13 @@
 <blockquote>
 <ul>
 <li><p><strong>cat 文件路径</strong>：直接打开文件，输出到终端显示。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cat_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cat_1.png"></p>
 </li>
 <li><p><strong>cat 文件路径1 文件路径2 文件路径3</strong>：直接打开多个文件，输出到终端显示。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cat_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cat_2.png"></p>
 </li>
 <li><p><strong>cat 文件路径1 文件路径2 文件路径3 &gt; 合并文件路径</strong>：直接打开多个文件，配合输出重定向合并文件。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cat_3.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cat_3.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -422,10 +422,10 @@
 <p><strong>df 选项</strong>：按选项指定格式查看磁盘的空间。</p>
 <ul>
 <li><p><strong>df</strong>：不加任何选项，直接显示磁盘空间。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4df_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4df_1.png"></p>
 </li>
 <li><p><strong>df -h</strong>：添加选项“-h”，以较高可读性显示磁盘空间。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4df_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4df_2.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -435,11 +435,11 @@
 <p><strong>free 选项</strong>：按选项指定格式，查看内存使用情况。</p>
 <ul>
 <li><p><strong>free</strong>：不加任何选项，显示内存使用情况时使用kb作为单位。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4free_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4free_1.png"></p>
 </li>
 <li><p><strong>free -m</strong>：添加选项“-m”，显示内存使用情况时使用mb作为单位。如果添加选项“-g”，显示内存使用情况时使用g作为单位。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4free_2.png" alt></p>
-<p><strong>剩余的真实可以用的内存为free + buff/cache。Swap：用于临时内存，当系统真实内存不够用的时候可以临时使用磁盘空间来充当内存。</strong></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4free_2.png"></p>
+<p><strong>剩余的真实可以用的内存为free + buff&#x2F;cache。Swap：用于临时内存，当系统真实内存不够用的时候可以临时使用磁盘空间来充当内存。</strong></p>
 </li>
 </ul>
 </blockquote>
@@ -447,17 +447,17 @@
 <li><p><strong>head</strong>：查看一个文件的前n行。</p>
 <blockquote>
 <p><strong>head -数字n</strong>：查看一个文件的前n行，如果不指定n，则默认显示前10行。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4head.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4head.png"></p>
 </blockquote>
 </li>
 <li><p><strong>tail</strong>：查看一个文件的未n行。</p>
 <blockquote>
 <ul>
 <li><p><strong>tail -数字n</strong>：查看一个文件的未n行，如果n不指定默认显示后10行。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4tail_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4tail_1.png"></p>
 </li>
 <li><p><strong>tail -f 文件路径</strong>：可以通过tail指令来查看一个文件的动态变化内容（<strong>变化的内容不能是用户手动增加的</strong>），通过输出重定向可以看到效果。该命令一般用于查看系统的日志比较多。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4tail_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4tail_2.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -465,35 +465,35 @@
 <li><p><strong>less</strong>：查看文件，以较少的内容进行输出。</p>
 <blockquote>
 <p><strong>less 文件路径</strong>：查看文件，以较少的内容进行输出，按下辅助功能键（数字+回车【跳到指定数字行】、空格键【翻页】+上下方向键【上一行、下一行】）查看更多。退出的只需要按下q键即可。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4less_1.png" alt></p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4less_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4less_1.png"></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4less_2.png"></p>
 </blockquote>
 </li>
 <li><p><strong>wc</strong>：统计文件内容信息（包含行数、单词数、字节数）。</p>
 <blockquote>
 <p><strong>wc 选项 文件路径</strong>：统计文件内容信息（包含行数、单词数【根据空格来计算单词数量】、字节数）。不填加选项则输出行数、单词数、字节数。添加选项”-l“则只输出行数。添加选项”-w“则只输出单词数。添加选项”-c“则只输出字节数。选项可组合使用，如添加选项”-lw“则输出显示行数和单词数。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4wc.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4wc.png"></p>
 </blockquote>
 </li>
 <li><p><strong>date</strong>：表示操作时间日期（读取、设置）。</p>
 <blockquote>
 <ul>
 <li><p><strong>date</strong>：输出当前的系统时间，输出形式：”2020年 10月 27日 星期二 12:54:28“。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4date_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4date_1.png"></p>
 </li>
 <li><p><strong>date 参数</strong>：按指定参数格式输出时间。</p>
 <ul>
-<li><p><strong>date +%F</strong>：等价于<strong>date “+%Y-%m-%d”</strong>，输出形式：”2020-10-27“。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4date_2.png" alt></p>
+<li><p><strong>date +%F</strong>：等价于**date “+%Y-%m-%d”**，输出形式：”2020-10-27“。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4date_2.png"></p>
 </li>
-<li><p><strong>date “+F %T”</strong>：等价于<strong>date “+%Y-%m-%d %H:%M:%S”</strong>，输出形式：”2020-10-27 12:54:28“。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4date_3.png" alt></p>
+<li><p>**date “+F %T”<strong>：等价于</strong>date “+%Y-%m-%d %H:%M:%S”**，输出形式：”2020-10-27 12:54:28“。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4date_3.png"></p>
 </li>
 </ul>
 </li>
 <li><p><strong>date 选项 参数</strong>：获取之前或者之后的某个时间。</p>
-<p><strong>date -d “-1 day” “+%Y-%m-%d %H:%M:%S”</strong>：按指定参数格式输出前一天的时间，输出形式：“2020-10-26 12:54:28”。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4date_4.png" alt></p>
+<p>**date -d “-1 day” “+%Y-%m-%d %H:%M:%S”**：按指定参数格式输出前一天的时间，输出形式：“2020-10-26 12:54:28”。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4date_4.png"></p>
 <ul>
 <li><p>符号的可选值：+（之后） 或者 - （之前）。</p>
 </li>
@@ -521,35 +521,35 @@
 <blockquote>
 <ul>
 <li><p><strong>cal</strong>：等价于<strong>cal -1</strong>，直接输出当前月份的日历。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cal_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cal_1.png"></p>
 </li>
 <li><p><strong>cal -3</strong>：输出上一个月+本月+下个月的日历。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cal_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cal_2.png"></p>
 </li>
 <li><p><strong>cal -y 年份</strong>：输出某一个年份的日历。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cal_3.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4cal_3.png"></p>
 </li>
 </ul>
 </blockquote>
 </li>
-<li><p><strong>clear/ctrl + L</strong>：清除终端中已经存在的命令和结果（信息）。</p>
+<li><p><strong>clear&#x2F;ctrl + L</strong>：清除终端中已经存在的命令和结果（信息）。</p>
 <blockquote>
 <p><strong>clear</strong>：或者使用快捷键ctrl + L，清除终端中已经存在的命令和结果（信息）。需要注意的是，该命令并不是真的清除了之前的信息，而是把之前的信息的隐藏到了最上面，通过滚动条继续查看以前的信息。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4clear.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4clear.png"></p>
 </blockquote>
 </li>
-<li><p><strong>|</strong>：管道符。管道一般可以用于“<strong>过滤</strong>”，“特殊”，“扩展处理”。</p>
+<li><p><strong>|<strong>：管道符。管道一般可以用于“</strong>过滤</strong>”，“特殊”，“扩展处理”。</p>
 <blockquote>
 <ul>
-<li><p><strong>ls /root | grep “test”</strong>：过滤处理，需要通过管道查询出根目录下包含“test”字母的文档名称。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E7%AE%A1%E9%81%93_1.png" alt></p>
+<li><p>**ls &#x2F;root | grep “test”**：过滤处理，需要通过管道查询出根目录下包含“test”字母的文档名称。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E7%AE%A1%E9%81%93_1.png"></p>
 </li>
-<li><p><strong>cat /root/initial-setup-ks.cfg | less</strong>：特殊处理，等价于<strong>less /root/initial-setup-ks.cfg</strong>，通过管道的操作方法来实现less的等价效果。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E7%AE%A1%E9%81%93_2.png" alt></p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E7%AE%A1%E9%81%93_3.png" alt></p>
+<li><p><strong>cat &#x2F;root&#x2F;initial-setup-ks.cfg | less</strong>：特殊处理，等价于<strong>less &#x2F;root&#x2F;initial-setup-ks.cfg</strong>，通过管道的操作方法来实现less的等价效果。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E7%AE%A1%E9%81%93_2.png"></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E7%AE%A1%E9%81%93_3.png"></p>
 </li>
-<li><p><strong>ls /root | wc -l</strong>：扩展处理，通过管道，将之前学过的命令进行组合，来统计某个目录下的文档的总个数。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E7%AE%A1%E9%81%93_4.png" alt></p>
+<li><p><strong>ls &#x2F;root | wc -l</strong>：扩展处理，通过管道，将之前学过的命令进行组合，来统计某个目录下的文档的总个数。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4%E7%AE%A1%E9%81%93_4.png"></p>
 </li>
 </ul>
 <p><strong>以管道作为分界线，管道前面的输出就是后面指令的输入，”grep“指令主要用于过滤。</strong></p>
@@ -561,10 +561,10 @@
 <blockquote>
 <ul>
 <li><p><strong>hostname</strong>：表示输出完整的主机名。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4hostname_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4hostname_1.png"></p>
 </li>
 <li><p><strong>hostname -f</strong>：表示输出当前主机名中FQDN（全限定域名）。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4hostname_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4hostname_2.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -573,26 +573,26 @@
 <blockquote>
 <ul>
 <li><p><strong>id</strong>：默认显示当前执行该命令的用户的基本信息。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4id_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4id_1.png"></p>
 </li>
 <li><p><strong>id 用户名</strong>：显示指定用户的基本信息。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4id_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4id_2.png"></p>
 </li>
 </ul>
-<p><strong>用户信息在“/etc/passwd”，用户组信息在”/etc/group“。</strong></p>
+<p><strong>用户信息在“&#x2F;etc&#x2F;passwd”，用户组信息在”&#x2F;etc&#x2F;group“。</strong></p>
 </blockquote>
 </li>
 <li><p><strong>whoami</strong>：显示当前登录的用户名。</p>
 <blockquote>
 <p><strong>whoami</strong>：一般用于shell脚本。用于获取当前操作的用户名方便记录日志。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4whoami.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4whoami.png"></p>
 </blockquote>
 </li>
 <li><p><strong>ps</strong>：查看服务器的进程信息。</p>
 <blockquote>
 <ul>
 <li><p><strong>ps -ef</strong>：选项”e”等价于“-A”，表示列出全部的进程；选项”f“显示全部的列（显示全字段）。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ps_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ps_1.png"></p>
 <ul>
 <li><p><strong>列的含义</strong>：</p>
 <blockquote>
@@ -609,7 +609,7 @@
 </ul>
 </li>
 <li><p><strong>ps -ef | grep 进程名称</strong>：通过管道和过滤指令，查看想要查看的进程信息。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ps_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ps_2.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -618,17 +618,17 @@
 <blockquote>
 <ul>
 <li><p><strong>top</strong>：动态显示服务器的进程占的资源。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4top.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4top.png"></p>
 <ul>
 <li><p>列的含义</p>
 <blockquote>
 <p>PID：进程id</p>
 <p>USER：该进程执行的用户</p>
-<p>PR：优先级（越小越高，给内核看的，一般情况下，PI = NI + 20）</p>
+<p>PR：优先级（越小越高，给内核看的，一般情况下，PI &#x3D; NI + 20）</p>
 <p>NI：优先级（越小越高，给用户看的）</p>
 <p>VIRT：虚拟内存</p>
 <p>RES：常驻内存</p>
-<p>SHR：共享内存（进程实际使用的内存 = 常驻内存（RES）- 共享内存（SHR））</p>
+<p>SHR：共享内存（进程实际使用的内存 &#x3D; 常驻内存（RES）- 共享内存（SHR））</p>
 <p>S：表示进程的状态（sleeping，其中S表示睡眠，R表示运行）</p>
 <p>%CPU：表示CPU占用百分比</p>
 <p>%MEM：表示内存占用百分比</p>
@@ -652,10 +652,10 @@
 <blockquote>
 <ul>
 <li><p><strong>du 路径</strong>：无选项时显示指定路径（没有指定，则为当前路径）下每个文档的大小（递归显示）。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4du_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4du_1.png"></p>
 </li>
 <li><p><strong>du -sh 路径</strong>：选项“s”，只显示指定路径（没有指定，则为当前路径）下文档汇总的大小（递归汇总）；选项“h”表示以高可读性的形式进行显示。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4du_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4du_2.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -666,21 +666,21 @@
 <li><p><strong>find 路径 选项 选项值</strong>：查找指定路径下的文档（文件或文件夹，递归搜索）。</p>
 <ul>
 <li><p><strong>find 路径 -name 文档名称</strong>：按照文档名称进行搜索（支持模糊搜索）。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4find_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4find_1.png"></p>
 </li>
 <li><p><strong>find 路径 -type 文档类型</strong>：按照文档的类型进行搜索，“-”表示文件（在使用find的时候需要用“f”来替换），“d”表示文件夹。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4find_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4find_2.png"></p>
 </li>
 </ul>
 </li>
 </ul>
 </blockquote>
 </li>
-<li><p><strong>service</strong>：用于控制一些软件的服务启动/停止/重启。</p>
+<li><p><strong>service</strong>：用于控制一些软件的服务启动&#x2F;停止&#x2F;重启。</p>
 <blockquote>
 <ul>
-<li><p><strong>service 服务名称 start/stop/restart</strong>：启动/停止/重启指定服务。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4service.png" alt></p>
+<li><p><strong>service 服务名称 start&#x2F;stop&#x2F;restart</strong>：启动&#x2F;停止&#x2F;重启指定服务。</p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4service.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -689,10 +689,10 @@
 <blockquote>
 <ul>
 <li><p><strong>kill 进程PID</strong>：根据进程PID关闭指定的进程。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4kill_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4kill_1.png"></p>
 </li>
 <li><p><strong>killall 进程名称</strong>：根据进程名称关闭指定的进程。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4kill_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4kill_2.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -701,7 +701,7 @@
 <blockquote>
 <ul>
 <li><p><strong>ifconfig</strong>：获取网卡信息。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ifconfig.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4ifconfig.png"></p>
 </li>
 </ul>
 <p>ens33表示Linux中的一个网卡，ens33是其名称。Lo（loop，本地回还网卡，其ip地址一般都是127.0.0.1）也是一个网卡名称。inet就是网卡的ip地址。</p>
@@ -718,12 +718,12 @@
 <li><p><strong>shutdown</strong>：关闭计算机。</p>
 <blockquote>
 <ul>
-<li><p><strong>shutdown -h now “关机提示”</strong>：等同于指令<strong>shutdown now</strong>，输出关机提示，立即关闭计算机。</p>
+<li><p><strong>shutdown -h now “关机提示”<strong>：等同于指令</strong>shutdown now</strong>，输出关机提示，立即关闭计算机。</p>
 </li>
-<li><p><strong>shutdown -h 时间 “关机提示”</strong>：输出关机提示，根据指定时间关闭计算机。</p>
+<li><p>**shutdown -h 时间 “关机提示”**：输出关机提示，根据指定时间关闭计算机。</p>
 </li>
 <li><p><strong>shutdwon -c</strong>：取消关闭计算机，centos7.x之前可使用快捷键”ctrl + c“。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4shutdown.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4shutdown.png"></p>
 </li>
 </ul>
 <p>除了shutdown以外的关机命令：</p>
@@ -738,7 +738,7 @@
 <blockquote>
 <ul>
 <li><p><strong>uptime</strong>：输出计算机的持续在线时间。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4uptime.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4uptime.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -747,10 +747,10 @@
 <blockquote>
 <ul>
 <li><p><strong>upname</strong>：获取操作系统的类型。</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4uname_1.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4uname_1.png"></p>
 </li>
 <li><p><strong>uname -a</strong>：表示获取全部的系统信息（类型、全部主机名、内核版本、发布时间、开源计划）</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4uname_2.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4uname_2.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -766,7 +766,7 @@
 <li>选项”l“表示过滤出”state（状态）“列中值为”LISTEN（监听）“的连接；</li>
 <li>选项”p“表示显示发起来连接的进程pid和进程名称。</li>
 </ul>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4netstat.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4netstat.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -775,7 +775,7 @@
 <blockquote>
 <ul>
 <li><p><strong>man 指令</strong>：查询指定指令用法说明。(退出按q键)</p>
-<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4man.png" alt></p>
+<p><img src="/2020/09/27/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%8C%87%E4%BB%A4man.png"></p>
 </li>
 </ul>
 </blockquote>
@@ -1045,7 +1045,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

@@ -203,10 +203,10 @@
 <p>学皇来到了一个餐馆吃饭。他觉得这家餐馆很好吃，于是就想办个会员。</p>
 <p>一共有 n 种会员充值卡套餐，假设学皇这餐饭的消费为 a 元，选择第 i 种套餐，需要充值 b[i]∗a 的钱，这次吃饭可以打 c[i]×10 折，由充值的钱支付（即这次吃饭只需要从充值金额中扣除 a×c[i] 元）。以后用剩余的充值的钱吃饭不再打折。</p>
 <p>请问学皇应该选择哪个套餐（必须选择恰好一个套餐），使得优惠的比例最大？</p>
-<p>优惠比例的定义是把充的钱用完以后，(本来应该付的钱 - 实际付的钱) / 本来应该付的钱。在这个题目里，实际付的钱就是这次充值的花费。</p>
+<p>优惠比例的定义是把充的钱用完以后，(本来应该付的钱 - 实际付的钱) &#x2F; 本来应该付的钱。在这个题目里，实际付的钱就是这次充值的花费。</p>
 <p><strong>输入：</strong></p>
 <blockquote>
-<p>第一行一个整数 test(1≤test≤100) 表示数据组数。<br>对于每组数据，第一行一个正整数 n(1≤n≤100) 表示套餐的数目。<br>接下来 n 行，每行一个正整数 b<a href="1≤b[i]≤100">i</a> 和一个小数 c[i](0≤c[i]≤1，c[i] 最多包含两位小数)。</p>
+<p>第一行一个整数 test(1≤test≤100) 表示数据组数。<br>对于每组数据，第一行一个正整数 n(1≤n≤100) 表示套餐的数目。<br>接下来 n 行，每行一个正整数 b<a href="1%E2%89%A4b%5Bi%5D%E2%89%A4100">i</a> 和一个小数 c[i](0≤c[i]≤1，c[i] 最多包含两位小数)。</p>
 </blockquote>
 <p><strong>输出：</strong></p>
 <blockquote>
@@ -221,9 +221,9 @@
 <p>0.23077</p>
 </blockquote>
 <p><strong>样例解释：</strong></p>
-<p>对于第一种套餐，优惠比例为 0.5a / (2a + 0.5a） = 0.2；</p>
-<p>对于第二种套餐，优惠比例为 0.9a / (3a + 0.9a） = 9 / 39；</p>
-<h2 id="方法：模拟"><a href="#方法：模拟" class="headerlink" title="方法：模拟"></a>方法：模拟</h2><p><strong>思路：</strong>根据题目给出的公式进行计算即可。题中给出优惠比例的计算公式为(本来应该付的钱 - 实际付的钱) / 本来应该付的钱 ，根据题意得出具体公式为(b[i] * a + (1 - c[i]) * a - b[i] * a) / b[i] * a + (1 - c[i]) * a (其中b[i] * a + (1 - c[i]) * a为本来应该付的钱，b[i] * a为实际付的钱)，化简后即为1 - c[i] / b[i] + (1 - c[i])。</p>
+<p>对于第一种套餐，优惠比例为 0.5a &#x2F; (2a + 0.5a） &#x3D; 0.2；</p>
+<p>对于第二种套餐，优惠比例为 0.9a &#x2F; (3a + 0.9a） &#x3D; 9 &#x2F; 39；</p>
+<h2 id="方法：模拟"><a href="#方法：模拟" class="headerlink" title="方法：模拟"></a>方法：模拟</h2><p><strong>思路：</strong>根据题目给出的公式进行计算即可。题中给出优惠比例的计算公式为(本来应该付的钱 - 实际付的钱) &#x2F; 本来应该付的钱 ，根据题意得出具体公式为(b[i] * a + (1 - c[i]) * a - b[i] * a) &#x2F; b[i] * a + (1 - c[i]) * a (其中b[i] * a + (1 - c[i]) * a为本来应该付的钱，b[i] * a为实际付的钱)，化简后即为1 - c[i] &#x2F; b[i] + (1 - c[i])。</p>
 <p><strong>运行数据：</strong>执行用时：343MS，内存消耗：14220K</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> test = sc.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (test-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> n = sc.nextInt();</span><br><span class="line">            <span class="keyword">double</span> result = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">int</span> b = sc.nextInt();</span><br><span class="line">                <span class="keyword">double</span> c = <span class="number">1</span> - sc.nextDouble();</span><br><span class="line">                result = Math.max(result, Math.round(c / (b + c) * <span class="number">100000</span>) / (<span class="keyword">double</span>)<span class="number">100000</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(String.format(<span class="string">"%.5f"</span>, result));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -473,7 +473,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

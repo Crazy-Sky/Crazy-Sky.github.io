@@ -189,7 +189,7 @@
 
 <hr>
 <h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><ul>
-<li>Apache Tomcat/7.0.81</li>
+<li>Apache Tomcat&#x2F;7.0.81</li>
 <li>Eclipse Luna Release (4.4.0)</li>
 <li>jdk1.8.0_102</li>
 <li>apache-maven-3.5.3</li>
@@ -218,24 +218,24 @@
 <li><p>经具体查看发现确实是<code>alipay.trade.page.pay-JAVA-UTF-8.xml</code>该XML文件配置的静态资源不存在，导致无法启动<code>alipay.trade.page.pay-JAVA-UTF-8</code>组件</p>
 <ul>
 <li><p>Tomcat下只显示部署了<code>maven-dome-web</code></p>
-<p><img src="/2021/03/09/Error%20starting%20static%20Resources/4.png" alt></p>
+<p><img src="/2021/03/09/Error%20starting%20static%20Resources/4.png"></p>
 </li>
 <li><p>而异常信息中的指定XML文件路径下却有4个项目的XML配置文件</p>
-<p><img src="/2021/03/09/Error%20starting%20static%20Resources/3.png" alt></p>
+<p><img src="/2021/03/09/Error%20starting%20static%20Resources/3.png"></p>
 </li>
 <li><p>查看<code>alipay.trade.page.pay-JAVA-UTF-8.xml</code></p>
-<p><img src="/2021/03/09/Error%20starting%20static%20Resources/5.png" alt></p>
+<p><img src="/2021/03/09/Error%20starting%20static%20Resources/5.png"></p>
 </li>
 <li><p>根据配置文件中的路径查找，发现只有<code>maven-dome-web</code>，并没有<code>alipay.trade.page.pay-JAVA-UTF-8</code></p>
-<p><img src="/2021/03/09/Error%20starting%20static%20Resources/2.png" alt></p>
+<p><img src="/2021/03/09/Error%20starting%20static%20Resources/2.png"></p>
 </li>
 </ul>
 </li>
 </ol>
 <h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>将<code>D:\Learn\code\Eclipse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\conf\Catalina\localhost\alipay.trade.page.pay-JAVA-UTF-8.xml</code>同路径下的除<code>maven-dome-web.xml</code>文件以外的其他XML文件删除即可。</p>
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>后续发现上诉解决办法无法从根本上解决问题，每当有新的未加入Tomcat的项目加入Tomcat启动时，之前被删除的XML文件又恢复了，<code>Error starting static Resources</code>随之再次出现，通过查找资料发现按以下步骤可根本性解决问题。实际上之前删除的XML文件就是由此处配置的，当加入新的项目时，Tomcat会重新加载生成这些XML配置文件，所以出现了之前被删除的文件又恢复的情况。</p>
-<p><img src="/2021/03/09/Error%20starting%20static%20Resources/6.png" alt></p>
-<p><img src="/2021/03/09/Error%20starting%20static%20Resources/7.png" alt></p>
+<p><img src="/2021/03/09/Error%20starting%20static%20Resources/6.png"></p>
+<p><img src="/2021/03/09/Error%20starting%20static%20Resources/7.png"></p>
 <hr>
 <p><strong>学习所得，资料、图片部分来源于网络，如有侵权，请联系本人删除。</strong></p>
 <p><strong>才疏学浅，若有错误或不当之处，可批评指正，还请见谅！</strong></p>
@@ -497,7 +497,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

@@ -194,7 +194,7 @@
 <p>问总共有多少条不同的路径？</p>
 <p><strong>示例1:</strong></p>
 <blockquote>
-<p>输入: m = 3, n = 2<br>输出: 3<br>解释:<br>从左上角开始，总共有 3 条路径可以到达右下角。</p>
+<p>输入: m &#x3D; 3, n &#x3D; 2<br>输出: 3<br>解释:<br>从左上角开始，总共有 3 条路径可以到达右下角。</p>
 <ol>
 <li>向右 -&gt; 向右 -&gt; 向下</li>
 <li>向右 -&gt; 向下 -&gt; 向右</li>
@@ -203,14 +203,14 @@
 </blockquote>
 <p><strong>示例2:</strong></p>
 <blockquote>
-<p>输入: m = 7, n = 3<br>输出: 28</p>
+<p>输入: m &#x3D; 7, n &#x3D; 3<br>输出: 28</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= m, n &lt;= 100</li>
+<li>1 &lt;&#x3D; m, n &lt;&#x3D; 100</li>
 <li>题目数据保证答案小于等于 2 * 10 ^ 9</li>
 </ul>
-<h2 id="方法一：动态规划"><a href="#方法一：动态规划" class="headerlink" title="方法一：动态规划"></a>方法一：动态规划</h2><p><strong>思路：</strong>动态规划，状态转移方程为：dp[i][j] = dp[i][j - 1] + dp[i - 1][j]，dp[i][j]表示到达i，j位置的不同路径数。<br><strong>运行数据：</strong>执行用时：0 ms，内存消耗：35.6 MB</p>
+<h2 id="方法一：动态规划"><a href="#方法一：动态规划" class="headerlink" title="方法一：动态规划"></a>方法一：动态规划</h2><p><strong>思路：</strong>动态规划，状态转移方程为：dp[i][j] &#x3D; dp[i][j - 1] + dp[i - 1][j]，dp[i][j]表示到达i，j位置的不同路径数。<br><strong>运行数据：</strong>执行用时：0 ms，内存消耗：35.6 MB</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
 <li>时间复杂度：O(m * n)。</li>
@@ -218,7 +218,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LeetCode指定调用方法 </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        dp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        dp[<span class="number">0</span>][i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">            dp[i][j] = dp[i][j - <span class="number">1</span>] + dp[i - <span class="number">1</span>][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="方法二：动态规划-优化空间复杂度"><a href="#方法二：动态规划-优化空间复杂度" class="headerlink" title="方法二：动态规划(优化空间复杂度)"></a>方法二：动态规划(优化空间复杂度)</h2><p><strong>思路：</strong>在思路一的基础上将记录动态规划的二维数组压缩成一维数组，状态转移方程为：dp[j] = dp[j - 1] + dp[j]，dp[j]表示到达第j列的不同路径数。<br><strong>运行数据：</strong>执行用时：0 ms，内存消耗：35.6 MB</p>
+<h2 id="方法二：动态规划-优化空间复杂度"><a href="#方法二：动态规划-优化空间复杂度" class="headerlink" title="方法二：动态规划(优化空间复杂度)"></a>方法二：动态规划(优化空间复杂度)</h2><p><strong>思路：</strong>在思路一的基础上将记录动态规划的二维数组压缩成一维数组，状态转移方程为：dp[j] &#x3D; dp[j - 1] + dp[j]，dp[j]表示到达第j列的不同路径数。<br><strong>运行数据：</strong>执行用时：0 ms，内存消耗：35.6 MB</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
 <li>时间复杂度：O(m * n)。</li>
@@ -475,7 +475,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

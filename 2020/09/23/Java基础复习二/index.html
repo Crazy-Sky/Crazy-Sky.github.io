@@ -191,8 +191,8 @@
 <blockquote>
 <p><strong>Java基础复习</strong></p>
 <ul>
-<li><a href="https://crazy-sky.github.io/2020/09/21/Java基础复习一/">Java基础复习一</a></li>
-<li><a href="https://crazy-sky.github.io/2020/09/23/Java基础复习二/">Java基础复习二</a></li>
+<li><a href="https://crazy-sky.github.io/2020/09/21/Java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E4%B8%80/">Java基础复习一</a></li>
+<li><a href="https://crazy-sky.github.io/2020/09/23/Java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E4%BA%8C/">Java基础复习二</a></li>
 </ul>
 </blockquote>
 <h1 id="12、面向对象设计的基本原则"><a href="#12、面向对象设计的基本原则" class="headerlink" title="12、面向对象设计的基本原则"></a>12、<strong>面向对象设计的基本原则</strong></h1><blockquote>
@@ -218,7 +218,7 @@
 <p><strong>导入同名类</strong></p>
 <p>当通过“import java.sql.Date;“导入了Date类，如果在同源文件中有自己写的Date类，使用时优先使用自己写的Date类，如果是在同包但不同源文件中自己写的Date类，则优先使用通过“import java.sql.Date;“导入的Date类。</p>
 <p>当通过“import java.sql.Date;“导入了Date类，又通过“import java.util.*;”导入了util下的所有类，其中util中也包含Date类，此时使用时优先使用通过“import java.sql.Date;“导入的Date类，即优先使用精确导入的类。</p>
-<p>当需要使用非优先使用的同名类时，需要通过“java.util.Date  now2 = new java.util.Date();”这样的方式进行初始化。</p>
+<p>当需要使用非优先使用的同名类时，需要通过“java.util.Date  now2 &#x3D; new java.util.Date();”这样的方式进行初始化。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.Date; <span class="comment">// 精确导入</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner; <span class="comment">// 导入该包下所有的类。会降低编译速度，但不会降低运行速度。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 这里指的是java.sql.Date</span></span><br><span class="line">        Date now; </span><br><span class="line">        </span><br><span class="line">        <span class="comment">// java.util.Date因为和java.sql.Date类同名，由于java.util.Date是非优先使用的类，需要完整路径</span></span><br><span class="line">        java.util.Date  now2 = <span class="keyword">new</span> java.util.Date();</span><br><span class="line">        System.out.println(now2);      </span><br><span class="line">        </span><br><span class="line">        <span class="comment">// java.util包的非同名类不需要完整路径</span></span><br><span class="line">        Scanner input = <span class="keyword">new</span> Scanner(System.in);    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>静态导入</strong></p>
@@ -244,7 +244,7 @@
 </ol>
 <p><strong>方法重写要点</strong></p>
 <ol>
-<li><p>“==”：方法名、形参列表相同。</p>
+<li><p>“&#x3D;&#x3D;”：方法名、形参列表相同。</p>
 </li>
 <li><p>“≤”：返回值类型和声明异常类型，子类小于等于父类。</p>
 </li>
@@ -573,7 +573,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

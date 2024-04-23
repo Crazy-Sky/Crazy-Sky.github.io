@@ -198,9 +198,9 @@
 <p>运行你的函数后，矩阵变为：</p>
 <p>X X X X<br>X X X X<br>X X X X<br>X O X X</p>
 </blockquote>
-<p>*<em>解释: *</em></p>
+<p>**解释: **</p>
 <ul>
-<li>被围绕的区间不会存在于边界上，换句话说，任何边界上的 ‘O’ 都不会被填充为 ‘X’。 任何不在边界上，或不与边界上的 ‘O’ 相连的 ‘O’ 最终都会被填充为 ‘X’。</li>
+<li>被围绕的区间不会存在于边界上，换句话说，任何边界上的 ‘O’ 都不会被填充为 ‘X’。 任何不在边界上，或不与边界上的 ‘O’ 相连的 ‘O’ 最终都会被填充为 ‘X’。</li>
 <li>如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。</li>
 </ul>
 <h2 id="方法：DFS（深度优先搜索）"><a href="#方法：DFS（深度优先搜索）" class="headerlink" title="方法：DFS（深度优先搜索）"></a>方法：DFS（深度优先搜索）</h2><p><strong>思路：</strong>DFS（深度优先搜索），通过DFS将所有没有被 ‘X’ 围绕的区域的所有’O’修改为’T’，此时矩阵中剩余的’O’都是被’X’ 围绕的，然后通过遍历矩阵将所有的’O’修改为’X’,将所有的’T’修改为’O’,即可得到所求结果。</p>
@@ -458,7 +458,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

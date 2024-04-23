@@ -194,20 +194,20 @@
 <p>你的任务是使用给定的 m 个 0 和 n 个 1 ，找到能拼出存在于数组中的字符串的最大数量。每个 0 和 1 至多被使用一次。</p>
 <p><strong>示例1:</strong></p>
 <blockquote>
-<p>输入: strs = [“10”, “0001”, “111001”, “1”, “0”], m = 5, n = 3<br>输出: 4<br>解释: 总共 4 个字符串可以通过 5 个 0 和 3 个 1 拼出，即 “10”,”0001”,”1”,”0” 。</p>
+<p>输入: strs &#x3D; [“10”, “0001”, “111001”, “1”, “0”], m &#x3D; 5, n &#x3D; 3<br>输出: 4<br>解释: 总共 4 个字符串可以通过 5 个 0 和 3 个 1 拼出，即 “10”,”0001”,”1”,”0” 。</p>
 </blockquote>
 <p><strong>示例2:</strong></p>
 <blockquote>
-<p>输入: strs = [“10”, “0”, “1”], m = 1, n = 1<br>输出: 2<br>解释: 你可以拼出 “10”，但之后就没有剩余数字了。更好的选择是拼出 “0” 和 “1” 。</p>
+<p>输入: strs &#x3D; [“10”, “0”, “1”], m &#x3D; 1, n &#x3D; 1<br>输出: 2<br>解释: 你可以拼出 “10”，但之后就没有剩余数字了。更好的选择是拼出 “0” 和 “1” 。</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= strs.length &lt;= 600</li>
-<li>1 &lt;= strs[i].length &lt;= 100</li>
+<li>1 &lt;&#x3D; strs.length &lt;&#x3D; 600</li>
+<li>1 &lt;&#x3D; strs[i].length &lt;&#x3D; 100</li>
 <li>strs[i] 仅由 ‘0’ 和 ‘1’ 组成</li>
-<li>1 &lt;= m, n &lt;= 100</li>
+<li>1 &lt;&#x3D; m, n &lt;&#x3D; 100</li>
 </ul>
-<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>动态规划。状态转移方程为：dp[j][k] = Math.max(dp[j][k], dp[j - zeroCount][k - oneCount] + 1)。dp[j][k]表示装剩余0的个数为j，剩余1的个数为k时所能装下的最大字符串数量。</p>
+<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>动态规划。状态转移方程为：dp[j][k] &#x3D; Math.max(dp[j][k], dp[j - zeroCount][k - oneCount] + 1)。dp[j][k]表示装剩余0的个数为j，剩余1的个数为k时所能装下的最大字符串数量。</p>
 <p><strong>运行数据：</strong>执行用时：33 ms，内存消耗：38.3 MB</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
@@ -462,7 +462,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 

@@ -200,21 +200,21 @@
 <p>返回 你想要完成在给定的列表 days 中列出的每一天的旅行所需要的最低消费 。</p>
 <p><strong>示例1:</strong></p>
 <blockquote>
-<p>输入: days = [1,4,6,7,8,20], costs = [2,7,15]<br>输出: 11<br>解释:<br>例如，这里有一种购买通行证的方法，可以让你完成你的旅行计划：在第 1 天，你花了 costs[0] = $2 买了一张为期 1 天的通行证，它将在第 1 天生效。<br>在第 3 天，你花了 costs[1] = $7 买了一张为期 7 天的通行证，它将在第 3, 4, …, 9 天生效。<br>在第 20 天，你花了 costs[0] = $2 买了一张为期 1 天的通行证，它将在第 20 天生效。<br>你总共花了 $11，并完成了你计划的每一天旅行。</p>
+<p>输入: days &#x3D; [1,4,6,7,8,20], costs &#x3D; [2,7,15]<br>输出: 11<br>解释:<br>例如，这里有一种购买通行证的方法，可以让你完成你的旅行计划：在第 1 天，你花了 costs[0] &#x3D; $2 买了一张为期 1 天的通行证，它将在第 1 天生效。<br>在第 3 天，你花了 costs[1] &#x3D; $7 买了一张为期 7 天的通行证，它将在第 3, 4, …, 9 天生效。<br>在第 20 天，你花了 costs[0] &#x3D; $2 买了一张为期 1 天的通行证，它将在第 20 天生效。<br>你总共花了 $11，并完成了你计划的每一天旅行。</p>
 </blockquote>
 <p><strong>示例2:</strong></p>
 <blockquote>
-<p>输入: days = [1,2,3,4,5,6,7,8,9,10,30,31], costs = [2,7,15]<br>输出: 17<br>解释:<br>例如，这里有一种购买通行证的方法，可以让你完成你的旅行计划：<br>在第 1 天，你花了 costs[2] = $15 买了一张为期 30 天的通行证，它将在第 1, 2, …, 30 天生效。<br>在第 31 天，你花了 costs[0] = $2 买了一张为期 1 天的通行证，它将在第 31 天生效。<br>你总共花了 $17，并完成了你计划的每一天旅行。</p>
+<p>输入: days &#x3D; [1,2,3,4,5,6,7,8,9,10,30,31], costs &#x3D; [2,7,15]<br>输出: 17<br>解释:<br>例如，这里有一种购买通行证的方法，可以让你完成你的旅行计划：<br>在第 1 天，你花了 costs[2] &#x3D; $15 买了一张为期 30 天的通行证，它将在第 1, 2, …, 30 天生效。<br>在第 31 天，你花了 costs[0] &#x3D; $2 买了一张为期 1 天的通行证，它将在第 31 天生效。<br>你总共花了 $17，并完成了你计划的每一天旅行。</p>
 </blockquote>
 <p><strong>提示:</strong></p>
 <ul>
-<li>1 &lt;= days.length &lt;= 365</li>
-<li>1 &lt;= days[i] &lt;= 365</li>
+<li>1 &lt;&#x3D; days.length &lt;&#x3D; 365</li>
+<li>1 &lt;&#x3D; days[i] &lt;&#x3D; 365</li>
 <li>days 按顺序严格递增</li>
-<li>costs.length == 3</li>
-<li>1 &lt;= costs[i] &lt;= 1000</li>
+<li>costs.length &#x3D;&#x3D; 3</li>
+<li>1 &lt;&#x3D; costs[i] &lt;&#x3D; 1000</li>
 </ul>
-<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>状态转移方程为：<br>$$<br>dp[i] = min(dp[preDay1] + costs[0]， dp[preDay2] + costs[1]， dp[preDay3] + costs[2])\\<br>preDay1 = i - 1, preDay2 = i - 7 &gt; 0 ? i - 7 : 0, preDay3 = i - 30 &gt; 0 ? i - 30 : 0<br>$$<br>i表示第几天，dp[i]表示到第i天最便宜的花费，preDay1表示最后一次购票为一天有效票的前置天数，preDay2表示最后一次购票为七天有效票的前置天数，preDay3表示最后一次购票为三十天有效票的前置天数。</p>
+<h2 id="方法：动态规划"><a href="#方法：动态规划" class="headerlink" title="方法：动态规划"></a>方法：动态规划</h2><p><strong>思路：</strong>状态转移方程为：<br>$$<br>dp[i] &#x3D; min(dp[preDay1] + costs[0]， dp[preDay2] + costs[1]， dp[preDay3] + costs[2])\\<br>preDay1 &#x3D; i - 1, preDay2 &#x3D; i - 7 &gt; 0 ? i - 7 : 0, preDay3 &#x3D; i - 30 &gt; 0 ? i - 30 : 0<br>$$<br>i表示第几天，dp[i]表示到第i天最便宜的花费，preDay1表示最后一次购票为一天有效票的前置天数，preDay2表示最后一次购票为七天有效票的前置天数，preDay3表示最后一次购票为三十天有效票的前置天数。</p>
 <p><strong>运行数据：</strong>执行用时：1 ms，内存消耗：39 MB</p>
 <p><strong>复杂度分析：</strong></p>
 <ul>
@@ -469,7 +469,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2022 Crazy-Sky&nbsp;
+                &copy; 2024 Crazy-Sky&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 
